@@ -1,0 +1,371 @@
+@font-face {
+    font-family: IRANSansB;
+    font-style: normal;
+    font-weight: bold;
+    font-display: fallback;
+    src: url('../fonts/IRANSansWeb(FaNum)_Bold.eot');
+    src: url('../fonts/IRANSansWeb(FaNum)_Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/IRANSansWeb(FaNum)_Bold.woff2') format('woff2'), url('../fonts/IRANSansWeb(FaNum)_Bold.woff') format('woff'), url('../fonts/IRANSansWeb(FaNum)_Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSans;
+    font-style: normal;
+    font-weight: normal;
+    font-display: fallback;
+    src: url('../fonts/IRANSansWeb(FaNum).eot');
+    src: url('../fonts/IRANSansWeb(FaNum).eot?#iefix') format('embedded-opentype'), url('../fonts/IRANSansWeb(FaNum).woff2') format('woff2'), url('../fonts/IRANSansWeb(FaNum).woff') format('woff'), url('../fonts/IRANSansWeb(FaNum).ttf') format('truetype');
+}
+
+@font-face {
+    font-family: IRANSansL;
+    font-style: normal;
+    font-weight: 300;
+    font-display: fallback;
+    src: url('../fonts/IRANSansWeb(FaNum)_Light.eot');
+    src: url('../fonts/IRANSansWeb(FaNum)_Light.eot?#iefix') format('embedded-opentype'), url('../fonts/IRANSansWeb(FaNum)_Light.woff2') format('woff2'), url('../fonts/IRANSansWeb(FaNum)_Light.woff') format('woff'), url('../fonts/IRANSansWeb(FaNum)_Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: Vazir;
+    src: url('../fonts/Vazir.eot');
+    src: url('../fonts/Vazir.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir.woff') format('woff'), url('../fonts/Vazir.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: VazirB;
+    src: url('../fonts/Vazir-Bold.eot');
+    src: url('../fonts/Vazir-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Bold.woff') format('woff'), url('../fonts/Vazir-Bold.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: VazirL;
+    src: url('../fonts/Vazir-Light.eot');
+    src: url('../fonts/Vazir-Light.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Light.woff') format('woff'), url('../fonts/Vazir-Light.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: VazirT;
+    src: url('../fonts/Vazir-Thin.eot');
+    src: url('../fonts/Vazir-Thin.eot?#iefix') format('embedded-opentype'), url('../fonts/Vazir-Thin.woff') format('woff'), url('../fonts/Vazir-Thin.ttf') format('truetype');
+}
+
+/* ---------- کلاس‌های فونت و جهت ---------- */
+.V {
+    font-family: Vazir;
+}
+
+.VB {
+    font-family: VazirB;
+}
+
+.VL {
+    font-family: VazirL;
+}
+
+.S {
+    font-family: IRANSans;
+}
+
+.SB {
+    font-family: IRANSansB;
+}
+
+.SL {
+    font-family: IRANSansL;
+}
+
+.rtl {
+    direction: rtl;
+}
+
+.ltr {
+    direction: ltr;
+}
+
+.None {
+    display: none;
+}
+
+.text-justify {
+    text-align: justify;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.pl-0 {
+    padding-left: 0;
+}
+
+/* رنگ قلبِ فوتر */
+.heart-color {
+    color: #fb866a;
+}
+
+.Act {
+    color: #fb866a !important;
+}
+
+.NV {
+    visibility: hidden;
+    width: 2px;
+}
+
+span:has(+ .NV),
+.CP {
+    cursor: pointer;
+}
+
+span.Note {
+    font-size: 0.8rem !important;
+}
+
+/* ---------- نتایج جست‌وجوی سراسری صفحهٔ اصلی ---------- */
+.search-scope{max-width:680px;margin:.7rem auto 0;font-family:Vazir,IRANSans,sans-serif;color:rgba(255,255,255,.72);font-size:.85rem;line-height:1.9;text-align:center}
+.search-results{margin:2.5rem 0 0;padding:0 0 1rem;font-family:Vazir,IRANSans,sans-serif;background:#fff;border:1px solid #e9e9f1;border-radius:.9rem;box-shadow:0 10px 30px rgba(24,28,50,.07);overflow:hidden}
+.search-results .sr-head{padding:1.15rem 1.25rem .9rem;border-bottom:1px solid #eeeef5;margin-bottom:0}
+.search-results .sr-title{font-size:1.15rem;font-weight:700;margin:0 0 .35rem;color:#22283d}
+.search-results .sr-summary{margin:0;color:#5b6379;font-size:.92rem}
+.search-results .sr-summary strong{color:#2f7d4f}
+.search-results .sr-time{color:#9aa1b4;font-size:.8rem;margin-inline-start:.35rem}
+.search-results .sr-empty{color:#b5482f}
+.search-results .sr-group{margin-bottom:1.25rem}
+.search-results .sr-group:last-child{margin-bottom:0}
+.search-results .sr-page{display:flex;align-items:center;gap:.5rem;font-size:.98rem;font-weight:700;color:#2b3350;margin:0;padding:.75rem 1.25rem .5rem;background:#fff}
+.search-results .sr-page-dot{display:inline-block;width:9px;height:9px;border-radius:50%;background:#3a6fd8;flex:0 0 auto}
+.search-results .sr-page-count{margin-inline-start:auto;font-size:.78rem;font-weight:600;color:#3a6fd8;background:#eef4ff;border-radius:999px;padding:.15rem .6rem}
+.search-results .sr-list{list-style:none;margin:0;padding:0}
+.search-results .sr-item{display:flex;align-items:baseline;flex-wrap:wrap;gap:.2rem .75rem;padding:.5rem 1.25rem;border:0;border-radius:0;margin:0;font-size:.9rem;line-height:1.9;transition:background-color .15s ease}
+.search-results .sr-list li:nth-child(odd){background-color:#f5f5f5}
+.search-results .sr-list li:nth-child(even){background-color:#fff}
+.search-results .sr-item:hover{background-color:#eef4ff}
+.search-results .sr-meta{flex:0 0 auto;min-width:11.5rem;font-size:.78rem;color:#6b7387;margin:0}
+.search-results .sr-menu{font-weight:600;color:#3a6fd8}
+.search-results .sr-sep{margin:0 .3rem;color:#b9bfd0}
+.search-results .sr-text{direction:rtl;flex:1 1 18rem;font-size:.9rem;line-height:1.9;color:#252b3d;word-break:break-word}
+.search-results .sr-text .jp,.search-results .sr-mark{background:#fff2b2;color:#3b3300;padding:0 .12em;border-radius:3px}
+.search-results .sr-link{display:inline-block;flex:0 0 auto;margin:0;font-size:.78rem;font-weight:600;color:#3a6fd8}
+.search-results .sr-link i{font-size:.72rem;margin-inline-start:.25rem}
+.search-results .sr-link:hover{color:#24509f}
+@media (max-width:575px){.search-results{padding:0 0 .6rem}.search-results .sr-title{font-size:1rem}.search-results .sr-item{padding:.55rem .85rem}.search-results .sr-meta{min-width:0;flex:1 1 100%}.search-results .sr-link{flex:1 1 100%;margin-top:.15rem}}
+
+.search-results .sr-title,
+.search-results .sr-page,
+.search-results .sr-summary,
+.search-results .sr-more{font-family:Vazir,IRANSans,sans-serif}
+.search-results{position:relative}
+.search-results .sr-head{position:relative;padding-inline-start:3.2rem}
+.search-results .sr-close{position:absolute;top:.85rem;inset-inline-start:1rem;width:32px;height:32px;display:inline-flex;align-items:center;justify-content:center;padding:0;border:1px solid #e2e6ef;border-radius:50%;background:#fff;color:#6b7387;font-family:Vazir,IRANSans,sans-serif;font-size:1.25rem;line-height:1;cursor:pointer;transition:background-color .15s ease,color .15s ease,border-color .15s ease}
+.search-results .sr-close:hover,
+.search-results .sr-close:focus{background:#fdecea;border-color:#f3c2bb;color:#b5482f;outline:none}
+.search-results .sr-more{margin:.5rem 1.25rem 0;font-size:.82rem;color:#8a91a6}
+
+/* دکمهٔ جست‌وجو کنار کادر (برای موبایل هم بدون کلید اینتر) */
+.main-search-box .search-form{display:flex;align-items:stretch;gap:.5rem}
+.main-search-box .search-form .search-input{flex:1 1 auto;min-width:0;padding-right:1.35rem}
+.main-search-box .search-form .search-btn{position:static;right:auto;top:auto;flex:0 0 auto;display:inline-flex;align-items:center;justify-content:center;height:2.75rem;min-width:104px;padding:0 1.3rem;border:none;border-radius:1.5rem;background:#178a4b;color:#fff;border:1px solid rgba(255,255,255,.3);font-family:Vazir,IRANSans,sans-serif;font-size:.95rem;font-weight:700;line-height:1;box-shadow:0 4px 14px rgba(9,58,33,.35);cursor:pointer;transition:background-color .2s ease,box-shadow .2s ease}
+.main-search-box .search-form .search-btn:hover,
+.main-search-box .search-form .search-btn:focus,
+.main-search-box .search-form .search-btn:active{background:#0f6b39;color:#fff;outline:none;box-shadow:0 2px 8px rgba(9,58,33,.4)}
+@media (max-width:575px){.main-search-box .search-form{gap:.4rem}.main-search-box .search-form .search-btn{min-width:86px;padding:0 .8rem;font-size:.88rem}}
+
+/* فونت وزیرمتن در کادر جست‌وجوی صفحهٔ اصلی */
+.main-search-box .search-input,
+.main-search-box .search-input::placeholder{font-family:Vazir,IRANSans,sans-serif}
+.main-search-box .search-input{font-size:1rem;color:#2b3350}
+.main-search-box .search-input::placeholder{color:#9aa1b4;opacity:1}
+
+/* ---------- اجزای مشترک صفحه‌های مرجع ---------- */
+
+/* فونت منوی سمت چپ و محتوای صفحه‌ها */
+#docs-nav,
+#docs-nav .nav-link {
+    font-family: Vazir, IRANSans, sans-serif;
+}
+
+.docs-content .docs-article,
+.docs-content .docs-article *:not(i):not(.fas):not(.far):not(.fab) {
+    font-family: Vazir, IRANSans, sans-serif;
+}
+
+/* نوار ابزار جست‌وجوی هر بخش */
+.word-tools,
+.joyo-tools,
+.conv-tools,
+.kata-tools {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    direction: rtl;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+}
+
+/* کادر جست‌وجو با آیکون ذره‌بین */
+.word-search,
+.joyo-search,
+.conv-search,
+.kata-search {
+    position: relative;
+    flex: 1 1 320px;
+    max-width: 480px;
+}
+
+.word-search .form-control,
+.joyo-tools .form-control,
+.conv-search .form-control,
+.kata-search .form-control {
+    width: 100%;
+    font-family: Vazir, IRANSans, sans-serif;
+    direction: rtl;
+    text-align: right;
+    padding-right: 2.5rem;
+    border: 1px solid #c7d0e0;
+    background-color: #f7f9fc;
+    box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.6), 0 1px 2px rgba(30, 41, 59, 0.06);
+}
+
+.word-search .form-control:focus,
+.joyo-tools .form-control:focus,
+.conv-search .form-control:focus,
+.kata-search .form-control:focus {
+    border-color: #8a9bb8;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 0.18rem rgba(116, 140, 178, 0.18);
+}
+
+.word-search-icon,
+.joyo-search-icon,
+.conv-search-icon,
+.kata-search-icon {
+    position: absolute;
+    top: 50%;
+    right: 0.8rem;
+    transform: translateY(-50%);
+    width: 1rem;
+    height: 1rem;
+    color: #6f7d94;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    pointer-events: none;
+}
+
+.word-count,
+.joyo-count,
+.conv-count,
+.kata-count {
+    font-size: 0.85rem;
+    color: #747f94;
+}
+
+/* پیام «چیزی پیدا نشد» */
+.word-empty,
+.kata-empty {
+    display: none;
+    margin: 0.75rem 0 0;
+    color: #8a94a6;
+}
+
+.joyo-empty {
+    display: none;
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: #b4534b;
+}
+
+.conv-empty {
+    display: none;
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: #b4534b;
+}
+
+/* دکمهٔ پخش تلفظ: واژه‌ها، مکالمات و دو صفحهٔ کانا */
+.word-play,
+.conv-audio,
+.kata-play {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    flex: 0 0 auto;
+    width: 1.6rem;
+    height: 1.6rem;
+    padding: 0;
+    border: 1px solid #d6deea;
+    border-radius: 50%;
+    background: #f7f9fc;
+    color: #5f7dab;
+    cursor: pointer;
+    vertical-align: middle;
+    line-height: 0;
+    transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.word-play:hover,
+.word-play:focus-visible,
+.conv-audio:hover,
+.conv-audio:focus-visible,
+.kata-play:hover,
+.kata-play:focus-visible {
+    background: #eaf1fb;
+    border-color: #9fb6d6;
+    color: #2f5da8;
+    outline: none;
+}
+
+/* هنگام پخش صدا آبی می‌شود و پس از پایان به حالت قبل برمی‌گردد */
+.word-play.playing,
+.conv-audio.speaking,
+.kata-play.playing {
+    background: #2f6fed;
+    border-color: #2f6fed;
+    color: #ffffff !important;
+}
+
+.word-play svg,
+.conv-audio svg,
+.kata-play svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+/* ---------- جعبهٔ جست‌وجوی سراسری: پس‌زمینهٔ سبز روشن ---------- */
+#search-all .word-tools-all,
+#search-all .joyo-tools-all,
+#search-all .conv-tools-all,
+#search-all .kata-tools {
+    margin: 0.4rem 0 0;
+    padding: 0.65rem 0.8rem;
+    border: 1px solid #badbcc;
+    border-radius: 0.6rem;
+    background-color: #d1e7dd;
+}
+
+#search-all .word-search,
+#search-all .joyo-search,
+#search-all .conv-search,
+#search-all .kata-search {
+    max-width: 560px;
+}
+
+#search-all .form-control {
+    font-size: 0.98rem;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+#search-all .word-count,
+#search-all .joyo-count,
+#search-all .conv-count,
+#search-all .kata-count {
+    color: #0f5132;
+    white-space: nowrap;
+}

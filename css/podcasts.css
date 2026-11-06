@@ -1,0 +1,94 @@
+/* مکالمات و جمله‌های کاربردی */
+
+/* آیکون‌های دسته‌ها در منو؛ همان دایرهٔ سبز صفحه‌های هیراگانا و کاتاکانا */
+#docs-nav .theme-icon-holder {
+    color: #28b76b;
+    background: #f4fcf6;
+}
+
+#docs-nav .nav-link.active .theme-icon-holder,
+#docs-nav .nav-item.active .nav-link .theme-icon-holder {
+    color: #ffffff;
+    background: #28b76b;
+}
+
+/* ---------- فهرست جمله‌ها ---------- */
+.conv-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* هر جمله یک سطر چپ‌به‌راست: ژاپنی، دکمهٔ صدا، روماجی و معنی فارسی در لبهٔ راست */
+.docs-article .conv-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.2rem 0.6rem;
+    padding: 0.32rem 0;
+    border-bottom: 1px dashed #eef1f5;
+    direction: ltr;
+    text-align: left;
+}
+
+.docs-article .conv-list li:last-child {
+    border-bottom: none;
+}
+
+/* جملهٔ ژاپنی */
+.conv-list .conv-jp {
+    flex: 0 0 auto;
+    direction: ltr;
+    display: inline-block;
+    font-size: 1.04rem;
+    font-weight: 600;
+    color: #252930;
+    cursor: pointer;
+    outline: none;
+    line-height: 1.9;
+}
+
+/* روماجی، بلافاصله بعد از جمله */
+.conv-list .conv-romaji {
+    flex: 0 1 auto;
+    direction: ltr;
+    font-size: 0.8rem;
+    color: #94a0b3;
+    letter-spacing: 0.01em;
+}
+
+/* معنی فارسی، چسبیده به لبهٔ راست همان سطر */
+.conv-list .conv-meaning {
+    flex: 0 1 auto;
+    margin-left: auto;
+    direction: rtl;
+    text-align: right;
+    color: #252930;
+    line-height: 1.9;
+}
+
+/* نمونهٔ راهنما */
+.conv-demo {
+    border: 1px solid #e7e9ed;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    background: #fbfcfe;
+}
+
+.conv-col-title {
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+@media (max-width: 575.98px) {
+    .conv-list .conv-meaning {
+        margin-left: 0;
+        width: 100%;
+        text-align: right;
+        padding-right: 0;
+    }
+
+    .conv-list .conv-romaji {
+        width: 100%;
+    }
+}

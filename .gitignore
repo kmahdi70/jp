@@ -1,0 +1,35 @@
+# ابزار میزبان (نباید منتشر شود)
+.freebuff/
+.cloud-attachments/
+
+# فایل‌های تصویری و ویدیویی (به‌درخواست کاربر آپلود نمی‌شوند)
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+*.png
+*.PNG
+*.gif
+*.GIF
+*.webp
+*.WEBP
+*.bmp
+*.ico
+*.svg
+*.mp4
+*.MP4
+*.webm
+*.WEBM
+*.mov
+*.MOV
+*.avi
+*.mkv
+*.m4v
+*.ogv
+
+# سیستم و ویرایشگر
+.DS_Store
+Thumbs.db
+desktop.ini
+*.log
+.env

@@ -1,0 +1,173 @@
+/* واژه‌نامه */
+
+/* ---------- فهرست واژه‌ها ---------- */
+.word-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* هر واژه یک سطر چپ‌به‌راست: کانجی، کانا، روماجی و معنی فارسی در لبهٔ راست */
+.docs-article .word-list li {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.15rem 0.7rem;
+    padding: 0.22rem 0.5rem;
+    border-bottom: 1px dashed #eef1f5;
+    direction: ltr;
+    text-align: left;
+}
+
+.docs-article .word-list li:last-child {
+    border-bottom: none;
+}
+
+/* کانجی یا کانای واژه */
+.word-list .jp {
+    flex: 0 0 auto;
+    min-width: 6.4em;
+    direction: ltr;
+    display: inline-block;
+    font-size: 1.04rem;
+    font-weight: 600;
+    color: #252930;
+    cursor: pointer;
+    outline: none;
+}
+
+/* خواندن کانا */
+.word-list .kana {
+    flex: 0 0 auto;
+    min-width: 5.6em;
+    direction: ltr;
+    font-size: 0.86rem;
+    color: #64748b;
+}
+
+/* روماجی، بلافاصله بعد از خواندن */
+.word-list .romaji {
+    flex: 0 1 auto;
+    direction: ltr;
+    font-size: 0.8rem;
+    color: #9aa4b4;
+    line-height: 1.5;
+}
+
+/* معنی فارسی، چسبیده به لبهٔ راست همان سطر */
+.word-list .meaning {
+    flex: 0 1 auto;
+    margin-left: auto;
+    direction: rtl;
+    text-align: right;
+    color: #252930;
+    line-height: 1.9;
+}
+
+/* نمونهٔ راهنما */
+.word-demo {
+    border: 1px solid #e7e9ed;
+    border-radius: 0.4rem;
+    padding: 0.5rem 0.8rem;
+    background: #fbfcfe;
+}
+
+.word-col-title {
+    font-weight: 700;
+    white-space: nowrap;
+    width: 8rem;
+}
+
+@media (max-width: 575.98px) {
+    .word-list .jp,
+    .word-list .kana {
+        min-width: 0;
+    }
+
+    .word-list .meaning {
+        flex: 1 0 100%;
+        margin-left: 0;
+        text-align: right;
+    }
+
+    .word-col-title {
+        width: auto;
+    }
+}
+
+/* دکمهٔ پخش تلفظ، هم‌شکل صفحه‌های هیراگانا و کاتاکانا */
+.word-list .word-play {
+    align-self: center;
+    margin-left: 0;
+    margin-right: 0.25rem;
+}
+
+/* ---------- سرسطر چسبندهٔ فهرست واژه‌ها ---------- */
+.word-head {
+    position: sticky;
+    top: 69px;
+    z-index: 3;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: baseline;
+    gap: 0.15rem 0.7rem;
+    margin: 0 0 0.3rem;
+    padding: 8px 8px 8px 32px;
+    direction: ltr;
+    text-align: left;
+    background: #ffffff;
+    box-shadow: inset 0 -1px 0 #e7e9ed;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #000000;
+}
+
+/* هم‌عرض با ستون‌های هر سطر واژه */
+.word-head .wh-play {
+    flex: 0 0 auto;
+    width: 1.6rem;
+    margin-right: 0.25rem;
+}
+
+.word-head .wh-jp {
+    flex: 0 0 auto;
+    min-width: 6.4em;
+}
+
+.word-head .wh-kana {
+    flex: 0 0 auto;
+    min-width: 5.6em;
+}
+
+.word-head .wh-romaji {
+    flex: 0 1 auto;
+}
+
+.word-head .wh-meaning {
+    flex: 0 1 auto;
+    margin-left: auto;
+    direction: rtl;
+    text-align: right;
+}
+
+@media (max-width: 575.98px) {
+    .word-head .wh-jp,
+    .word-head .wh-kana {
+        min-width: 0;
+    }
+
+    .word-head .wh-meaning {
+        flex: 1 0 100%;
+        margin-left: 0;
+        text-align: right;
+    }
+}
+
+/* ردیف‌های یک‌درمیان کمرنگ و پررنگ، هم‌رنگ جدول‌های صفحهٔ کانجی */
+.docs-article .word-list li:nth-child(odd) {
+    background-color: #f5f5f5;
+}
+
+.docs-article .word-list li:nth-child(even) {
+    background-color: #ffffff;
+}

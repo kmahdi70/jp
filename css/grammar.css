@@ -1,0 +1,149 @@
+/* گرامر */
+
+/* نمونه‌های ژاپنی */
+.jp {
+    direction: ltr;
+    display: inline-block;
+    font-size: 1.08rem;
+    font-weight: 600;
+    color: #252930;
+    cursor: pointer;
+}
+
+.jp-sm {
+    font-size: 0.98rem;
+    font-weight: 600;
+    color: #252930;
+    cursor: pointer;
+}
+
+.jp:focus,
+.jp-sm:focus {
+    outline: none;
+}
+
+/* جدول‌های بخش اول */
+.grammar-table {
+    font-size: 0.92rem;
+    margin-bottom: 0.75rem;
+}
+
+.grammar-table th,
+.grammar-table td {
+    text-align: center;
+    white-space: nowrap;
+}
+
+.grammar-table thead th {
+    background: #f7f9fc;
+    font-weight: 700;
+    color: #252930;
+}
+
+.grammar-table tbody td:first-child,
+.grammar-table thead th:first-child {
+    text-align: right;
+}
+
+.grammar-note {
+    font-size: 0.9rem;
+    color: #747f94;
+}
+
+/* چکیدهٔ گرامر: هر مبحث یک تیتر با دو مثال */
+.grammar-topic {
+    margin: 0 0 1.5rem;
+    padding-inline-start: 0.9rem;
+    border-inline-start: 3px solid #e7e9ed;
+}
+
+.grammar-topic:last-child {
+    margin-bottom: 0;
+}
+
+.grammar-topic-title {
+    font-size: 1.05rem;
+    font-weight: 700;
+    color: #252930;
+    margin: 0 0 0.4rem;
+    line-height: 1.9;
+}
+
+/* الگو یا ذرهٔ ژاپنی داخل تیتر */
+.grammar-pattern {
+    display: inline-block;
+    direction: ltr;
+    background: #f4fcf6;
+    color: #28b76b;
+    border-radius: 0.25rem;
+    padding: 0.05rem 0.4rem;
+    margin: 0 0.15rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    cursor: pointer;
+}
+
+.grammar-pattern:focus {
+    outline: none;
+}
+
+.grammar-examples {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+/* هر مثال یک سطر چپ‌به‌راست است: ژاپنی، سپس روماجی، و ترجمهٔ فارسی در انتهای سمت راست */
+.docs-article .grammar-examples li {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    align-items: baseline;
+    column-gap: 0.7rem;
+    padding: 0.25rem 0;
+    border-bottom: 1px dashed #eef1f5;
+    direction: ltr;
+    text-align: left;
+}
+
+.docs-article .grammar-examples li:last-child {
+    border-bottom: none;
+}
+
+.grammar-examples .jp {
+    min-width: 0;
+}
+
+/* روماجی، بلافاصله بعد از ژاپنی */
+.grammar-examples .romaji {
+    direction: ltr;
+    font-size: 0.84rem;
+    color: #8a94a6;
+    letter-spacing: 0.01em;
+}
+
+/* معنی فارسی، چسبیده به لبهٔ راست همان سطر */
+.grammar-examples .grammar-note {
+    direction: rtl;
+    text-align: right;
+    line-height: 1.9;
+}
+
+/* روی صفحهٔ باریک: ژاپنی، روماجی و معنی هر کدام یک سطر کامل */
+@media (max-width: 767.98px) {
+    .docs-article .grammar-examples li {
+        grid-template-columns: 1fr;
+        row-gap: 0.1rem;
+    }
+
+    .grammar-examples .jp,
+    .grammar-examples .romaji,
+    .grammar-examples .grammar-note {
+        grid-column: 1 / -1;
+    }
+}
+
+@media (max-width: 575.98px) {
+    .grammar-topic {
+        padding-inline-start: 0.7rem;
+    }
+}

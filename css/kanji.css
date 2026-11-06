@@ -1,0 +1,158 @@
+        /* جدول کانجی */
+        .table th,
+        .table td {
+            vertical-align: middle;
+        }
+
+        .kanji-ch {
+            font-size: 1.9rem;
+            line-height: 1.6;
+            font-weight: bold;
+            color: #252930;
+        }
+
+        .kana-cell {
+            font-size: 1.05rem;
+        }
+
+        .ex-list {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            min-width: 16rem;
+        }
+
+        .ex-list li {
+            padding: 0.15rem 0;
+        }
+
+        .ex-jp {
+            font-weight: 600;
+            color: #252930;
+            margin-inline-end: 0.4rem;
+        }
+
+        .ex-ro {
+            color: #28b76b;
+            font-size: 0.9rem;
+            margin-inline-end: 0.5rem;
+        }
+
+        .ex-tr {
+            color: #5d6778;
+        }
+
+        .count-badge {
+            font-size: 0.8rem;
+            vertical-align: middle;
+        }
+
+        /* ردیف‌های سه‌سطریِ مثال‌ها: رنگ پس‌زمینهٔ همهٔ سلول‌های یک گروه
+           (ستون معنی + سه ردیف مثال) یکسان باشد.
+           رنگ باید روی خودِ سلول‌ها گذاشته شود، چون Bootstrap به هر td
+           پس‌زمینهٔ سفید و راه‌راهِ box-shadow ردیفی می‌دهد که رنگ tr را می‌پوشاند؛
+           پس متغیرهای --bs-table-bg و --bs-table-bg-type هر سلول بازنویسی می‌شوند
+           ( hover با --bs-table-bg-state دست‌نخورده می‌ماند ). */
+        .kanji-table>tbody>tr:nth-of-type(6n+1)>*,
+        .kanji-table>tbody>tr:nth-of-type(6n+2)>*,
+        .kanji-table>tbody>tr:nth-of-type(6n+3)>* {
+            --bs-table-bg: #f5f5f5;
+            --bs-table-bg-type: rgba(0, 0, 0, 0);
+            background-color: #f5f5f5;
+        }
+
+        .kanji-table>tbody>tr:nth-of-type(6n+4)>*,
+        .kanji-table>tbody>tr:nth-of-type(6n+5)>*,
+        .kanji-table>tbody>tr:nth-of-type(6n+6)>* {
+            --bs-table-bg: #fff;
+            --bs-table-bg-type: rgba(0, 0, 0, 0);
+            background-color: #fff;
+        }
+
+        /* جدول ضمیمه (Appendix) */
+        .kanji-table>tbody>tr.kanji-group-light>* {
+            --bs-table-bg: #f5f5f5;
+            --bs-table-bg-type: rgba(0, 0, 0, 0);
+            background-color: #f5f5f5;
+        }
+
+        .kanji-table>tbody>tr.kanji-group-dark>* {
+            --bs-table-bg: #fff;
+            --bs-table-bg-type: rgba(0, 0, 0, 0);
+            background-color: #fff;
+        }
+
+        .kanji-ch-sm {
+            font-size: 1.4rem;
+            font-weight: 600;
+            color: #252930;
+        }
+
+        #joyoTable td {
+            font-size: 0.92rem;
+        }
+
+        #joyoTable .kana-cell {
+            font-size: 0.95rem;
+            white-space: normal;
+        }
+
+        .en-meaning {
+            color: #5d6778;
+        }
+
+        /* هدر چسبنده: سطر عنوان همهٔ جدول‌ها همیشه بالا ثابت بماند */
+        .docs-content .table-responsive {
+            overflow: visible;
+        }
+
+        .docs-content .table thead th {
+            position: -webkit-sticky;
+            position: sticky;
+            top: 69px;
+            /* زیر هدر ثابت سایت */
+            z-index: 3;
+            background-color: #fff;
+            box-shadow: inset 0 -1px 0 #e7e9ed;
+        }
+
+        /* در نمایش‌های باریک (موبایل) جدول داخل باکس خودش اسکرول افقی شود،
+           تا کل صفحه افقی نلغزد؛ هدر چسبنده فقط در پهنای ۷۶۸ به بالا فعال می‌ماند */
+        @media (max-width: 767.98px) {
+            .docs-content .table-responsive {
+                overflow-x: auto;
+            }
+
+            .docs-content .table thead th {
+                position: static;
+            }
+        }
+
+.kanji-table-filter,
+#joyoFilter {
+    font-family: Vazir, sans-serif;
+}
+
+.kanji-table-filter::placeholder,
+#joyoFilter::placeholder {
+    font-family: Vazir, sans-serif;
+    font-size: inherit;
+}
+
+/* چیدمان جدول‌ها برعکس: ستون کانجی اولین ستون و در سمت چپ */
+.docs-content .kanji-table,
+.docs-content #joyoTable {
+    direction: ltr;
+}
+
+/* متن فارسیِ سلول‌ها راست‌چین بماند */
+.docs-content .kanji-table>tbody>tr>td.V,
+.docs-content #joyoTable>tbody>tr>td.V {
+    direction: rtl;
+    text-align: right;
+}
+
+.docs-content .kanji-table>thead>tr>th,
+.docs-content #joyoTable>thead>tr>th {
+    text-align: center;
+}
