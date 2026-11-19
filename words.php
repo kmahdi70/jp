@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/lang.php';
+require_once __DIR__ . '/seo.php';
 include __DIR__ . "/words/data.php";
 
 /* شمار کل واژه‌ها برای بخش اپندیکس */
@@ -9,14 +11,25 @@ foreach ($word_sections as $ws) {
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
-    <title>Vocabulary — 5000 Everyday Japanese Words</title>
     <meta charset="utf-8">
+    <?php seo_head([
+        'title' => '۵۰۰۰ واژهٔ پرکاربرد زبان ژاپنی با کانجی و معنی فارسی',
+        'description' => 'فهرست ۵۰۰۰ واژهٔ روزمرهٔ ژاپنی دسته‌بندی‌شده (خانواده، زمان، غذا، سلامتی و…) با کانجی، روماجی، معنی فارسی و جست‌وجوی سریع.',
+        'path' => 'words.php',
+        'nav' => 'واژه‌ها',
+        'jsonld' => [
+            '@type' => 'LearningResource',
+            'name' => 'واژه‌های پرکاربرد زبان ژاپنی',
+            'description' => '۵۰۰۰ واژهٔ روزمرهٔ ژاپنی با کانجی، روماجی و معنی فارسی.',
+            'learningResourceType' => 'فهرست واژه',
+            'educationalLevel' => 'beginner',
+        ],
+    ]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="4000 most useful Japanese words with kanji, romaji and Persian meanings">
     <meta name="author" content="Mahdi Karimian 09123238133">
     <link rel="icon" type="image/png" href="words/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="words/favicon/favicon.svg">
@@ -27,8 +40,8 @@ foreach ($word_sections as $ws) {
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?<?= rand(1,1000)?>">
-    <link rel="stylesheet" href="css/words.css?<?= rand(1,1000)?>">
+    <link rel="stylesheet" href="css/global.css?20261119c">
+    <link rel="stylesheet" href="css/words.css?1793936419">
 </head>
 
 <body class="docs-page">
@@ -47,12 +60,7 @@ foreach ($word_sections as $ws) {
                     <div class="top-search-box d-none d-lg-flex">
                         <a class="btn btn-success V" href="./">بازگشت</a>
                     </div>
-                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                        <li class="list-inline-item"><a href="https://t.me/LearnKyokushin" target="_blank"><i class="fa-brands fa-telegram fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://facebook.com/kmahdi70" target="_blank"><i class="fa-brands fa-facebook-f fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/mkarimian70/" target="_blank"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://instagram.com/kmahdi70" target="_blank"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
-                    </ul>
+                    <?= jp_lang_switch() ?>
                 </div>
             </div>
         </div>
@@ -249,39 +257,9 @@ foreach ($word_sections as $ws) {
     <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
+    <script src="js/functions.js"></script>
     <script>
-        function Copy(obj) {
-            var text = (obj.innerText || obj.textContent || '').trim();
-            if (!text) return;
 
-            var copyPromise;
-            if (navigator.clipboard && window.isSecureContext) {
-                copyPromise = navigator.clipboard.writeText(text);
-            } else {
-                var Inp = document.createElement('textarea');
-                Inp.value = text;
-                Inp.style.position = 'fixed';
-                Inp.style.opacity = '0';
-                document.body.appendChild(Inp);
-                Inp.select();
-                Inp.setSelectionRange(0, 99999);
-                document.execCommand('copy');
-                Inp.remove();
-                copyPromise = Promise.resolve();
-            }
-
-            copyPromise.then(() => {
-                const tooltip = new bootstrap.Tooltip(obj, {
-                    trigger: 'manual',
-                    title: 'Copied'
-                });
-                tooltip.show();
-                setTimeout(() => {
-                    tooltip.hide();
-                    tooltip.dispose();
-                }, 1000);
-            }).catch(() => {});
-        }
 
         /* پخش تلفظ واژه با موتور گفتار سیستم‌عامل، هم‌شکل صفح ه‌های هیراگانا و کاتاکانا */
         function SpeakJa(btn, text) {
@@ -389,6 +367,7 @@ foreach ($word_sections as $ws) {
             }));
         });
     </script>
+    <input type="text" id="Copy" size="2" style="visibility: hidden;">
 </body>
 
 </html>

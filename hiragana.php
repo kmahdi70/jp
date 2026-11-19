@@ -1,15 +1,28 @@
 <?php
+require_once __DIR__ . '/lang.php';
+require_once __DIR__ . '/seo.php';
 include("hiragana/data.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
-    <title>Hiragana Guide</title>
     <meta charset="utf-8">
+    <?php seo_head([
+        'title' => 'آموزش هیراگانا با تلفظ صوتی، فیلم و واژه‌های نمونه',
+        'description' => 'تمام هیراگاناهای پایه و صداهای ترکیبی با تلفظ صوتی، کلیپ ویدیویی، روماجی و واژه‌های نمونهٔ فارسی؛ همراه جدول خلاصه و جست‌وجو.',
+        'path' => 'hiragana.php',
+        'nav' => 'هیراگانا',
+        'jsonld' => [
+            '@type' => 'LearningResource',
+            'name' => 'آموزش هیراگانا',
+            'description' => 'هیراگاناهای پایه و ترکیبی با تلفظ صوتی، فیلم و واژه‌های نمونه.',
+            'learningResourceType' => 'درس',
+            'educationalLevel' => 'beginner',
+        ],
+    ]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn Hiragana">
     <meta name="author" content="Mahdi Karimian 09123238133">
     <link rel="apple-touch-icon" sizes="57x57" href="hiragana/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="hiragana/favicon/apple-icon-60x60.png">
@@ -31,7 +44,7 @@ include("hiragana/data.php");
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?<?= rand(1,1000)?>">
+    <link rel="stylesheet" href="css/global.css?20261119c">
 </head>
 
 <body class="docs-page">
@@ -50,13 +63,8 @@ include("hiragana/data.php");
                     <div class="top-search-box d-none d-lg-flex">
                         <a class="btn btn-success V" href="./">بازگشت</a>
                     </div>
+                    <?= jp_lang_switch() ?>
 
-                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                        <li class="list-inline-item"><a href="https://t.me/LearnKyokushin" target="_blank"><i class="fa-brands fa-telegram fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://facebook.com/kmahdi70" target="_blank"><i class="fa-brands fa-facebook-f fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/mkarimian70/" target="_blank"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://instagram.com/kmahdi70" target="_blank"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -831,9 +839,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-2">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حروف صدا دار
-                        </h1>
+                        </h2>
                         <div class="alert alert-info" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -871,11 +879,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/vowels.jpg" class="img-thumbnail w-100" alt="vowels">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/vowels.jpg" class="img-thumbnail w-100" alt="vowels">
                         </div>
                     </header>
                     <section class="docs-section" id="item-2-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">A (あ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">A (あ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بین صدای آ و ـَ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> کاراکتر A داخل آن دیده میشود و همچنین قیافه این علامت شبیه سیب میباشد</li>
@@ -888,20 +896,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/a.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/a.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/a.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/a_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/a_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-2-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">I (い)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">I (い)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> ایـ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه به مارماهی (eel) است که میتوانید از تلفظ ایل، آنرا به خاطر بسپارید</li>
@@ -914,20 +922,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/i.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/i.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/i.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/i_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/i_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-2-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">U (う)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">U (う)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> برای تلفظ او نباید لبها کاملأ به حالت غنچه در بیاید در حد 30% کافی است و همچنین باید کوتاه ادا شود، زمان تلفظ باید کوتاه باشد</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> شبیه کاراکتر U انگلیسی میباشد که مقداری چرخیده است</li>
@@ -940,20 +948,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/u.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/u.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/u.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/u_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/u_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-2-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">E (え)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">E (え)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ـِ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه یک مرغ میباشد که تخم میگذارد پس با کلمه تخم مرغ (egg) این علامت را بخاطر میسپاریم</li>
@@ -966,20 +974,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/e.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/e.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/e.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/e_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/e_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-2-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">O (お)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">O (お)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت اُ - ـُ تلفظ میشود</li>
                             <li><strong class="me-1">نکته گرامری:</strong> در ابتدای کلمات قرار میگیرد برای نشان دادن ادب</li>
@@ -993,15 +1001,15 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/o.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/o.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/o.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/o_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/o_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -1036,7 +1044,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -1051,9 +1059,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-3">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ک (K) - حرف گ (G)
-                        </h1>
+                        </h2>
                         <div class="alert alert-warning" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -1123,11 +1131,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/k_dakuten.jpg" class="img-thumbnail w-100" alt="k dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/k_dakuten.jpg" class="img-thumbnail w-100" alt="k dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-3-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KA (か), GA (が)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KA (か), GA (が)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کا تلفظ میشود</li>
                             <li><strong class="me-1">نکته گرامری:</strong> در اغلب موارد در انتهای جمله نشانه سوالی بودن جمله است</li>
@@ -1146,30 +1154,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ka.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ka.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ka.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ka_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ka_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ga.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ga.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ga.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-3-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KI (き), GI (ぎ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KI (き), GI (ぎ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کی تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف گی ساخته میشود</li>
@@ -1187,30 +1195,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ki.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ki.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ki.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ki_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ki_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/gi.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/gi.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/gi.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-3-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KU (く), GU (ぐ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KU (く), GU (ぐ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کو تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف گو ساخته میشود</li>
@@ -1228,30 +1236,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ku.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ku.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ku.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ku_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ku_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/gu.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/gu.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/gu.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-3-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KE (け), GE (げ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KE (け), GE (げ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کـِ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف گـِ ساخته میشود</li>
@@ -1269,30 +1277,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 pt-1 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ke.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ke.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ke.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ke_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ke_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 pt-1 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ge.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ge.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ge.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-3-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KO (こ), GO (ご)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KO (こ), GO (ご)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف گـُ ساخته میشود</li>
@@ -1310,25 +1318,25 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 pt-1 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ko.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ko.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ko.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ko_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ko_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 pt-1 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/go.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/go.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/go.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -1363,7 +1371,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -1378,9 +1386,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-4">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف س (S) - حرف ج (J)
-                        </h1>
+                        </h2>
                         <div class="alert alert-success" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -1450,11 +1458,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/s_dakuten.jpg" class="img-thumbnail w-100" alt="s dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/s_dakuten.jpg" class="img-thumbnail w-100" alt="s dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-4-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SA (さ), JA (ざ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SA (さ), JA (ざ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سا تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جا (زا) ساخته میشود</li>
@@ -1472,30 +1480,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/sa.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/sa.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/sa.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/sa_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/sa_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ja.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ja.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ja.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-4-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SHI (し), JI (じ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SHI (し), JI (じ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سی یا شی تلفظ میشود البته بصورت دقیق حالتی بین س و ش ادا میشود </li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جی ساخته میشود</li>
@@ -1513,30 +1521,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/si.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/si.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/si.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/si_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/si_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ji.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ji.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ji.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-4-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SU (す), JU (ず)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SU (す), JU (ず)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سو تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جو ساخته میشود</li>
@@ -1554,30 +1562,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/su.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/su.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/su.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/su_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/su_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ju.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ju.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ju.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-4-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SE (せ), JE (ぜ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SE (せ), JE (ぜ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سـِ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جـِ ساخته میشود</li>
@@ -1595,30 +1603,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/se.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/se.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/se.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/se_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/se_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/je.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/je.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/je.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-4-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SO (そ), JO (ぞ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SO (そ), JO (ぞ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جـُ ساخته میشود</li>
@@ -1636,25 +1644,25 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/so.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/so.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/so.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/so_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/so_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/jo.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/jo.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/jo.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -1689,7 +1697,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -1704,9 +1712,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-5">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ت (T) - حرف د (D)
-                        </h1>
+                        </h2>
                         <div class="alert alert-danger" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -1776,11 +1784,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/t_dakuten.jpg" class="img-thumbnail w-100" alt="t dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/t_dakuten.jpg" class="img-thumbnail w-100" alt="t dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-5-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">TA (た), DA (だ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">TA (た), DA (だ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت تا تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف دا ساخته میشود</li>
@@ -1798,30 +1806,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ta.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ta.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ta.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ta_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ta_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/da.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/da.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/da.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-5-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">CHI (ち), DJI (ぢ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">CHI (ち), DJI (ぢ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت چی تلفظ میشود </li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جی ساخته میشود</li>
@@ -1839,30 +1847,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/chi.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/chi.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/chi.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/chi_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/chi_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/dji.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/dji.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/dji.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-5-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">TSU (つ), DJU (づ), っ</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">TSU (つ), DJU (づ), っ</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت چو(تسو) تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جو ساخته میشود</li>
@@ -1882,30 +1890,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/tsu.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/tsu.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/tsu.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/tsu_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/tsu_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/dju.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/dju.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/dju.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-5-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">TE (て), DE (で)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">TE (て), DE (で)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت تـِ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف دِ ساخته میشود</li>
@@ -1923,30 +1931,30 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/te.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/te.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/te.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/te_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/te_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/de.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/de.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/de.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-5-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">TO (と), DO (ど)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">TO (と), DO (ど)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت تـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف دُ ساخته میشود</li>
@@ -1964,25 +1972,25 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/to.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/to.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/to.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/to_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/to_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/do.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/do.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/do.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -2017,7 +2025,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2032,9 +2040,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-6">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ن (N)
-                        </h1>
+                        </h2>
                         <div class="alert alert-info" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2072,11 +2080,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/n_dakuten.jpg" class="img-thumbnail w-100" alt="n dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/n_dakuten.jpg" class="img-thumbnail w-100" alt="n dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-6-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NA (な)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NA (な)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نا تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه گره(Knot) است</li>
@@ -2089,20 +2097,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/na.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/na.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/na.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/na_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/na_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-6-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NI (に)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NI (に)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نی تلفظ میشود </li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه سوزن یا نیدل(Needle) میباشد</li>
@@ -2115,20 +2123,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ni.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ni.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ni.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ni_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ni_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-6-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NU (ぬ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NU (ぬ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نو تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه نودل(Noodle) میباشد</li>
@@ -2141,20 +2149,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/nu.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/nu.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/nu.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/nu_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/nu_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-6-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NE (ね)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NE (ね)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نـِ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه گربه یا نکو است</li>
@@ -2167,20 +2175,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ne.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ne.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ne.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ne_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ne_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-6-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NO (の)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NO (の)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نـُ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه علامت ورود ممنوع (No) یا بینی(Nose) است</li>
@@ -2193,15 +2201,15 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/no.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/no.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/no.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/no_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/no_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -2236,7 +2244,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2251,9 +2259,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-7">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ه (H) - حرف ب (B) - حرف پ (P)
-                        </h1>
+                        </h2>
                         <div class="alert alert-warning" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2355,11 +2363,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/h_dakuten.jpg" class="img-thumbnail w-100" alt="h dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/h_dakuten.jpg" class="img-thumbnail w-100" alt="h dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-7-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HA,WA (は), BA (ば), PA (ぱ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HA,WA (は), BA (ば), PA (ぱ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ها یا وا تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف با ساخته میشود</li>
@@ -2382,40 +2390,40 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ha.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ha.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ha.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ha_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ha_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ba.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ba.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ba.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/pa.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/pa.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/pa.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-7-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HI (ひ), BI (び), PI (ぴ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HI (ひ), BI (び), PI (ぴ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت هی تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف بی ساخته میشود</li>
@@ -2438,40 +2446,40 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/hi.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/hi.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/hi.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/hi_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/hi_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/bi.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/bi.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/bi.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/pi.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/pi.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/pi.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-7-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HU (ふ), BU (ぶ), PU (ぷ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HU (ふ), BU (ぶ), PU (ぷ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> تلفظ این حرف چیزی بین هو و فو است</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف بو ساخته میشود</li>
@@ -2494,40 +2502,40 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/hu.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/hu.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/hu.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/hu_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/hu_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/bu.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/bu.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/bu.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/pu.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/pu.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/pu.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-7-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HE,E (へ), BE (べ), PE (ぺ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HE,E (へ), BE (べ), PE (ぺ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت هـِ یا اِ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف بـِ ساخته میشود</li>
@@ -2550,40 +2558,40 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/he.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/he.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/he.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/he_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/he_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/be.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/be.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/be.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/pe.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/pe.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/pe.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-7-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HO (ほ), BO (ぼ), PO (ぽ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HO (ほ), BO (ぼ), PO (ぽ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت هـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف بـُ ساخته میشود</li>
@@ -2606,45 +2614,45 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ho.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ho.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ho.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-6 mb-3">
-                                <img src="hiragana/pic/ha-ho.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ha-ho.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-6 mb-3">
-                                <img src="hiragana/pic/ho1.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ho1.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ho_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ho_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/bo.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/bo.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/bo.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/po.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/po.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/po.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -2679,7 +2687,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2694,9 +2702,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-8">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف م (M)
-                        </h1>
+                        </h2>
                         <div class="alert alert-success" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2734,11 +2742,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/m_dakuten.jpg" class="img-thumbnail w-100" alt="m dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/m_dakuten.jpg" class="img-thumbnail w-100" alt="m dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-8-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">MA (ま)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">MA (ま)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ما تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه جادویی(Magic) است که سر یک مارمورلک را قطع کرده، یا شبیه یک ماسک(Mask) میباشد </li>
@@ -2751,20 +2759,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ma.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ma.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ma.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ma_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ma_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-8-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">MI (み)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">MI (み)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت می تلفظ میشود </li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه عدد شانس 21 در پاسور میباشد، کی برنده است؟ من(Me)، همچنین مانند نت می در موسیقی است</li>
@@ -2777,20 +2785,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/mi.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/mi.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/mi.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/mi_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/mi_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-8-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">MU (む)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">MU (む)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت مو تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه یک گاو میباشد که صدای موووو در میاورد</li>
@@ -2803,20 +2811,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/mu.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/mu.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/mu.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/mu_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/mu_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-8-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">ME (め)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">ME (め)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت مـِ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه چشم است که به ژاپنی هم مه تلفظ میشود</li>
@@ -2829,20 +2837,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/me.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/me.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/me.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/me_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/me_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-8-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">MO (も)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">MO (も)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت مـُ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> اگر میخواهید ماهی بیشتری(More Fish) بگیرید کرم بیشتری بذارید توی قلاب، همچنین این شکل شبیه مارمولک(Monitor) میباشد</li>
@@ -2855,15 +2863,15 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/mo.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/mo.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/mo.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/mo_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/mo_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -2898,7 +2906,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2913,9 +2921,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-9">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ر (R)
-                        </h1>
+                        </h2>
                         <div class="alert alert-danger" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2953,11 +2961,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/r_dakuten.jpg" class="img-thumbnail w-100" alt="r dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/r_dakuten.jpg" class="img-thumbnail w-100" alt="r dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-9-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RA (ら)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RA (ら)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت را تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong>این علامت شبیه خرگوش(Rabbit) میباشد</li>
@@ -2970,20 +2978,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ra.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ra.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ra.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ra_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ra_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-9-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RI (り)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RI (り)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ری تلفظ میشود </li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه نی(Reed) میباشد، همچنین مشابه رودخانه(River) است</li>
@@ -2996,20 +3004,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ri.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ri.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ri.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ri_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ri_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-9-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RU (る)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RU (る)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت رو تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه دست کسی است که یک یاقوت در مشت خود دارد، همچنین مانند مسیر(Route) میباشد </li>
@@ -3022,20 +3030,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid" width="80%" autoplay muted loop>
+                                <video preload="none" class="img-fluid" width="80%" autoplay muted loop>
                                     <source src="hiragana/media/ru.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ru.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ru.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ru_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ru_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-9-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RE (れ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RE (れ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت رِ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه کسی است که در حال آروغ زدن(Retch) است، همچنین مانند گوزن شاخدار(Reindeer) است</li>
@@ -3048,20 +3056,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/re.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/re.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/re.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/re_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/re_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-9-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RO (ろ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RO (ろ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت رُ تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه دست کسی است که یاقوت را از دستش دزدیده‌اند(Rubbed)</li>
@@ -3074,15 +3082,15 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ro.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ro.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ro.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ro_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ro_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -3117,7 +3125,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -3132,9 +3140,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-10">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ی (Y)
-                        </h1>
+                        </h2>
                         <div class="alert alert-info" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -3160,11 +3168,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/y_dakuten.jpg" class="img-thumbnail w-100" alt="y dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/y_dakuten.jpg" class="img-thumbnail w-100" alt="y dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-10-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">YA (や, ゃ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">YA (や, ゃ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت یا تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> علامت کوچک یا به منظور مخفف کردن تلفظ مورد استفاده قرار میگیرد き + ゃ → KIYA → KYA</li>
@@ -3178,20 +3186,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/ya.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/ya.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ya.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/ya_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/ya_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-10-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">YU (ゆ, ゅ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">YU (ゆ, ゅ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت یو تلفظ میشود </li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> علامت کوچک یو به منظور مخفف کردن تلفظ مورد استفاده قرار میگیرد き + ゅ → KIYU → KYU</li>
@@ -3205,20 +3213,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/yu.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/yu.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/yu.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/yu_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/yu_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-10-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">YO (よ, ょ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">YO (よ, ょ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت یـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> علامت کوچک یـُ به منظور مخفف کردن تلفظ مورد استفاده قرار میگیرد じ + ょ → JIYO → JYO</li>
@@ -3232,18 +3240,18 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/yo.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/yo.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/yo.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/yo_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/yo_font.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/y_combinations.jpg" class="img-thumbnail w-100" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/y_combinations.jpg" class="img-thumbnail w-100" alt="">
                             </div>
                         </div>
                     </section>
@@ -3278,7 +3286,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -3293,9 +3301,9 @@ include("hiragana/data.php");
                 </article>
                 <article class="docs-article" id="section-11">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف و (W)
-                        </h1>
+                        </h2>
                         <div class="alert alert-warning" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -3321,11 +3329,11 @@ include("hiragana/data.php");
                             </table>
                         </div>
                         <div class="col-12 text-center">
-                            <img src="hiragana/pic/w_dakuten.jpg" class="img-thumbnail w-100" alt="w dakuten">
+                            <img loading="lazy" decoding="async" src="hiragana/pic/w_dakuten.jpg" class="img-thumbnail w-100" alt="w dakuten">
                         </div>
                     </header>
                     <section class="docs-section" id="item-11-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">WA (わ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">WA (わ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت وا تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه قوی سپید(White Swan) میباشد، همچنین شبیه زنبور(Wasp) میباشد</li>
@@ -3338,23 +3346,23 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/wa.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/wa.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/wa.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/wa_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/wa_font.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/similar.jpg" class="img-thumbnail w-100" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/similar.jpg" class="img-thumbnail w-100" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-11-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">WO,O (を)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">WO,O (を)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت وُ یا اُ تلفظ میشود </li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شکل کسی است که بومرنگ به صورتش اصابت کرده و این صدا را میدهد، همچننی مانند یک دیوار(Wall) شکسته است</li>
@@ -3367,20 +3375,20 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/wo.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/wo.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/wo.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/wo_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/wo_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-11-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">N (ん)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">N (ん)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ن یا م یا انگ(ng) تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت مانند n میباشد</li>
@@ -3393,15 +3401,15 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video class="img-fluid Video" width="70%" autoplay muted loop>
+                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
                                     <source src="hiragana/media/n.mp4" type="video/mp4">
                                 </video>
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="hiragana/pic/n.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/n.jpg" class="img-thumbnail" alt="">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="hiragana/pic/n_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="hiragana/pic/n_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
@@ -3436,7 +3444,7 @@ include("hiragana/data.php");
                                                     <source src="hiragana/media/<?= $v['ro'] ?>.mp3" type="audio/mpeg">
                                                 </audio>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -3462,6 +3470,7 @@ include("hiragana/data.php");
     <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
+    <script src="js/functions.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         function ClickAudio(obj) {
@@ -3535,22 +3544,9 @@ include("hiragana/data.php");
             $(obj).removeClass("Act");
         }
 
-        function Copy(obj) {
-            $(obj).next().val($(obj).html());
-            var Inp = obj.nextElementSibling;
-            Inp.select();
-            Inp.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(Inp.value);
-            const tooltip = new bootstrap.Tooltip(obj, {
-                trigger: 'manual',
-                title: 'Copied'
-            });
-            tooltip.show();
-            setTimeout(() => {
-                tooltip.hide();
-            }, 1000);
-        }
+
     </script>
+    <input type="text" id="Copy" size="2" style="visibility: hidden;">
 </body>
 
 </html>

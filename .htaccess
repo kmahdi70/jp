@@ -1,0 +1,52 @@
+# robots.txt و sitemap.xml از نسخهٔ پویا ساخته می‌شوند تا آدرس دامنه همیشه درست باشد
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+
+    RewriteRule ^robots\.txt$ robots.php [L]
+    RewriteRule ^sitemap\.xml$ sitemap.php [L]
+
+    # نسخهٔ تکراری sitemap.php → آدرس رسمی نقشهٔ سایت
+    RewriteRule ^sitemap\.php$ /jp/sitemap.xml [R=301,L]
+
+    # درخواست خودکار مرورگر به /jp/favicon.ico — فایل واقعی داخل پوشهٔ favicon است
+    RewriteRule ^favicon\.ico$ favicon/favicon.ico [L]
+
+    # www → بدون www (جلوگیری از محتوای تکراری)
+    RewriteCond %{HTTP_HOST} ^www\.(.+)$ [NC]
+    RewriteRule ^ https://%1%{REQUEST_URI} [R=301,L]
+
+    # http → https — .htaccess زیرشاخه قواعد والد را به ارث نمی‌برد، پس اینجا تکرار می‌شود.
+    # پشت CDN مقدار %{HTTPS} همیشه on است، بنابراین X-Forwarded-Proto مبنا است.
+    RewriteCond %{HTTP:X-Forwarded-Proto} ^http$ [NC]
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    RewriteCond %{HTTPS} !=on
+    RewriteCond %{HTTP:X-Forwarded-Proto} !^https$ [NC]
+    RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+    # index.php تکراری → آدرس اصلی صفحه؛ فقط وقتی کوئری ندارد تا جست‌وجو نشکند
+    RewriteCond %{QUERY_STRING} ^$
+    RewriteRule ^index\.php$ /jp/ [R=301,L]
+</IfModule>
+
+DirectoryIndex index.php index.html
+
+# فشرده‌سازی: صفحهٔ واژه‌ها حدود ۳ مگابایت و صفحهٔ کانجی حدود ۵ مگابایت HTML دارند
+<IfModule mod_deflate.c>
+    AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/rss+xml application/javascript text/javascript application/json image/svg+xml
+</IfModule>
+
+# کش مرورگر برای فایل‌های ثابت
+<IfModule mod_expires.c>
+    ExpiresActive On
+    ExpiresByType text/css "access plus 1 month"
+    ExpiresByType application/javascript "access plus 1 month"
+    ExpiresByType text/javascript "access plus 1 month"
+    ExpiresByType image/jpeg "access plus 6 months"
+    ExpiresByType image/png "access plus 6 months"
+    ExpiresByType image/svg+xml "access plus 6 months"
+    ExpiresByType image/webp "access plus 6 months"
+    ExpiresByType video/mp4 "access plus 6 months"
+    ExpiresByType font/ttf "access plus 6 months"
+    ExpiresByType font/woff2 "access plus 6 months"
+</IfModule>

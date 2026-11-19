@@ -1,12 +1,37 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php
+require_once __DIR__ . '/lang.php';
+require_once __DIR__ . '/seo.php';
+define('JP_GRAMMAR', true);
+require_once __DIR__ . '/grammar/render.php';
+
+/* بخش‌های داده‌محور گرامر: N5، N4 و جدول‌های مرجع */
+$grammar_parts = [];
+foreach (['data-n5', 'data-n4', 'data-ref'] as $grammar_data) {
+    $grammar_file = __DIR__ . '/grammar/' . $grammar_data . '.php';
+    if (is_file($grammar_file)) {
+        $grammar_parts = array_merge($grammar_parts, require $grammar_file);
+    }
+}
+?><!DOCTYPE html>
+<html lang="fa">
 
 <head>
-    <title>Grammar Guide</title>
     <meta charset="utf-8">
+    <?php seo_head([
+        'title' => 'گرامر زبان ژاپنی از صفر تا N4: مرجع کامل با مثال فارسی',
+        'description' => 'مرجع گرامر ژاپنی از は و です تا مجهول، شرطی و ادب: بیش از ۷۰ الگوی N5 و N4 با مثال دوزبانه، روماجی و جدول صفت و فعل.',
+        'path' => 'grammar.php',
+        'nav' => 'گرامر',
+        'jsonld' => [
+            '@type' => 'LearningResource',
+            'name' => 'گرامر زبان ژاپنی',
+            'description' => 'قواعد گرامر ژاپنی با مثال‌های دوزبانه و توضیح فارسی.',
+            'learningResourceType' => 'درس',
+            'educationalLevel' => 'beginner, intermediate',
+        ],
+    ]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn Japanese Grammar">
     <meta name="author" content="Mahdi Karimian 09123238133">
     <link rel="icon" type="image/png" href="grammar/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="grammar/favicon/favicon.svg">
@@ -18,7 +43,7 @@
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?<?= rand(1,1000)?>">
+    <link rel="stylesheet" href="css/global.css?20261119c">
     <link rel="stylesheet" href="css/grammar.css">
 </head>
 
@@ -38,13 +63,8 @@
                     <div class="top-search-box d-none d-lg-flex">
                         <a class="btn btn-success V" href="./">بازگشت</a>
                     </div>
+                    <?= jp_lang_switch() ?>
 
-                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                        <li class="list-inline-item"><a href="https://t.me/LearnKyokushin" target="_blank"><i class="fa-brands fa-telegram fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://facebook.com/kmahdi70" target="_blank"><i class="fa-brands fa-facebook-f fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/mkarimian70/" target="_blank"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://instagram.com/kmahdi70" target="_blank"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -77,6 +97,7 @@
                     <li class="nav-item"><a class="nav-link scrollto" href="#item-2-3">これ・この・ここ</a></li>
                     <li class="nav-item"><a class="nav-link scrollto" href="#item-2-4">Questions &amp; Answers</a></li>
                     <li class="nav-item"><a class="nav-link scrollto" href="#item-2-5">Numbers &amp; Everyday Questions</a></li>
+                    <?php jp_g_nav($grammar_parts); ?>
                 </ul>
             </nav>
         </div>
@@ -872,6 +893,7 @@
                             </ul>
                         </div>
                     </section>
+                    <?php jp_g_body($grammar_parts); ?>
                 </article>
                 <?php
                 include("footer.php");
@@ -885,40 +907,11 @@
     <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
+    <script src="js/functions.js"></script>
     <script>
-        function Copy(obj) {
-            var text = (obj.innerText || obj.textContent || '').trim();
-            if (!text) return;
 
-            var copyPromise;
-            if (navigator.clipboard && window.isSecureContext) {
-                copyPromise = navigator.clipboard.writeText(text);
-            } else {
-                var Inp = document.createElement('textarea');
-                Inp.value = text;
-                Inp.style.position = 'fixed';
-                Inp.style.opacity = '0';
-                document.body.appendChild(Inp);
-                Inp.select();
-                Inp.setSelectionRange(0, 99999);
-                document.execCommand('copy');
-                Inp.remove();
-                copyPromise = Promise.resolve();
-            }
-
-            copyPromise.then(() => {
-                const tooltip = new bootstrap.Tooltip(obj, {
-                    trigger: 'manual',
-                    title: 'Copied'
-                });
-                tooltip.show();
-                setTimeout(() => {
-                    tooltip.hide();
-                    tooltip.dispose();
-                }, 1000);
-            }).catch(() => {});
-        }
     </script>
+    <input type="text" id="Copy" size="2" style="visibility: hidden;">
 </body>
 
 </html>

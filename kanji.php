@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/lang.php';
+require_once __DIR__ . '/seo.php';
 include("kanji/data.php");
 foreach ($kanji_categories as $categoryIndex => $category) {
     if (($category['title_en'] ?? '') === 'Grade 1 School Kanji') {
@@ -56,14 +58,25 @@ foreach ($kanji_categories as $c) {
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
-    <title>Kanji Guide</title>
     <meta charset="utf-8">
+    <?php seo_head([
+        'title' => 'آموزش کانجی ژویو با معنی فارسی، خوانش و روماجی',
+        'description' => 'کانجی‌های ژویو با معنی فارسی، خوانش آنی و کونی، روماجی، دستهٔ دستوری، واژه‌های نمونه و جست‌وجوی سراسری در صفحه.',
+        'path' => 'kanji.php',
+        'nav' => 'کانجی',
+        'jsonld' => [
+            '@type' => 'LearningResource',
+            'name' => 'کانجی‌های ژویو',
+            'description' => 'کانجی‌های ژویو با خوانش، معنی فارسی و واژه‌های نمونه.',
+            'learningResourceType' => 'درس',
+            'educationalLevel' => 'intermediate',
+        ],
+    ]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn Kanji">
     <meta name="author" content="Mahdi Karimian 09123238133">
     <link rel="icon" type="image/png" href="kanji/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="kanji/favicon/favicon.svg">
@@ -76,8 +89,8 @@ foreach ($kanji_categories as $c) {
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?<?= rand(1,1000)?>">
-    <link rel="stylesheet" href="css/kanji.css?<?= rand(1,1000)?>">
+    <link rel="stylesheet" href="css/global.css?20261119c">
+    <link rel="stylesheet" href="css/kanji.css?20261118b">
 </head>
 
 <body class="docs-page">
@@ -96,13 +109,8 @@ foreach ($kanji_categories as $c) {
                     <div class="top-search-box d-none d-lg-flex">
                         <a class="btn btn-success V" href="./">بازگشت</a>
                     </div>
+                    <?= jp_lang_switch() ?>
 
-                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                        <li class="list-inline-item"><a href="https://t.me/LearnKyokushin" target="_blank"><i class="fa-brands fa-telegram fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://facebook.com/kmahdi70" target="_blank"><i class="fa-brands fa-facebook-f fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/mkarimian70/" target="_blank"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://instagram.com/kmahdi70" target="_blank"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -164,7 +172,7 @@ foreach ($kanji_categories as $c) {
                         </div>
                         <div class="row justify-content-center">
                             <div class="col-12 col-md-6 text-center">
-                                <img src="kanji/pic/kanji.jpg" class="figure-img img-fluid shadow rounded" alt="Kanji">
+                                <img loading="lazy" decoding="async" src="kanji/pic/kanji.jpg" class="figure-img img-fluid shadow rounded" alt="Kanji">
                             </div>
                         </div>
                     </section>
@@ -275,9 +283,9 @@ foreach ($kanji_categories as $c) {
                 foreach ($kanji_categories as $cat) { ?>
                     <article class="docs-article" id="section-<?= $i ?>">
                         <header class="docs-header">
-                            <h1 class="docs-heading V rtl">
+                            <h2 class="docs-heading V rtl">
                                 <?= $cat['title'] ?> <span class="badge bg-success count-badge"><?= count($cat['items']) ?> کانجی</span>
-                            </h1>
+                            </h2>
                             <div class="alert alert-info rtl V mb-4" role="alert">
                                 <?= $cat['desc'] ?>
                             </div>
@@ -299,6 +307,7 @@ foreach ($kanji_categories as $c) {
                                         <?php if (!empty($cat['no_examples'])) { ?>
                                             <tr>
                                                 <th scope="col" width="90">کانجی</th>
+                                                <th scope="col" class="stroke-col"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="sr-only">ترتیب نوشتن</span></th>
                                                 <th scope="col">کونیومی</th>
                                                 <th scope="col">اونیومی</th>
                                                 <th scope="col">معنی فارسی</th>
@@ -307,6 +316,7 @@ foreach ($kanji_categories as $c) {
                                         <?php } else { ?>
                                             <tr>
                                                 <th scope="col" width="90">کانجی</th>
+                                                <th scope="col" class="stroke-col"><i class="fas fa-pencil-alt" aria-hidden="true"></i><span class="sr-only">ترتیب نوشتن</span></th>
                                                 <th scope="col">کونیومی</th>
                                                 <th scope="col">اونیومی</th>
                                                 <th scope="col">معنی</th>
@@ -321,6 +331,7 @@ foreach ($kanji_categories as $c) {
                                             foreach ($cat['items'] as $item) { ?>
                                                 <tr data-verb-group="<?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>">
                                                     <td class="text-center"><span class="kanji-ch CP" onclick="Copy(this)"><?= $item['k'] ?></span><input type="text" class="NV"></td>
+                                                    <td class="text-center"><button type="button" class="stroke-btn" data-bs-toggle="modal" data-bs-target="#StrokeModal" onclick="StrokeOrder('<?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>')" title="ترتیب نوشتن" aria-label="ترتیب نوشتن <?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></td>
                                                     <td class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr"><?= htmlspecialchars($item['kun'], ENT_QUOTES, 'UTF-8') ?></span></td>
                                                     <td class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr"><?= htmlspecialchars($item['on'], ENT_QUOTES, 'UTF-8') ?></span></td>
                                                     <td class="V"><?= htmlspecialchars($item['mean'], ENT_QUOTES, 'UTF-8') ?></td>
@@ -343,6 +354,9 @@ foreach ($kanji_categories as $c) {
                                                             $first = false; ?>
                                                             <td rowspan="<?= $rowCount ?>" class="text-center">
                                                                 <span class="kanji-ch CP" onclick="Copy(this)"><?= $item['k'] ?></span><input type="text" class="NV">
+                                                            </td>
+                                                            <td rowspan="<?= $rowCount ?>" class="text-center">
+                                                                <button type="button" class="stroke-btn" data-bs-toggle="modal" data-bs-target="#StrokeModal" onclick="StrokeOrder('<?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>')" title="ترتیب نوشتن" aria-label="ترتیب نوشتن <?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>
                                                             </td>
                                                             <td rowspan="<?= $rowCount ?>" class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr"><?= $item['kun'] ?></span></td>
                                                             <td rowspan="<?= $rowCount ?>" class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr"><?= $item['on'] ?></span></td>
@@ -370,14 +384,55 @@ foreach ($kanji_categories as $c) {
             </div>
         </div>
     </div>
+    <!-- مودال ترتیب نوشتن کانجی -->
+    <div class="modal fade" id="StrokeModal" tabindex="-1" aria-labelledby="StrokeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-sm">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="StrokeModalLabel">ترتیب نوشتن</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <div id="StrokeBox" class="stroke-box"></div>
+                    <p id="StrokeEmpty" class="stroke-empty mb-0" hidden>برای این کانجی فایل ترتیب نوشتن موجود نیست.</p>
+                </div>
+            </div>
+        </div>
+    </div>
     <script src="assets/plugins/popper.min.js"></script>
     <script src="assets/plugins/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/plugins/smoothscroll.min.js"></script>
     <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
+    <script src="js/functions.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
+        /* ترتیب نوشتن: برای هر کاراکتر GIF مربوط را از پوشهٔ kanji/media نشان می‌دهد
+           نام فایل برابر کد یونیکد کاراکتر است (مثلاً 日 → 65e5.gif) */
+        function StrokeOrder(chars) {
+            var box = document.getElementById('StrokeBox');
+            var empty = document.getElementById('StrokeEmpty');
+            var label = document.getElementById('StrokeModalLabel');
+            box.innerHTML = '';
+            empty.hidden = true;
+            label.textContent = <?= json_encode(jp_t('ترتیب نوشتن') . ' ', JSON_UNESCAPED_UNICODE) ?> + chars;
+            Array.from(chars).forEach(function(ch) {
+                var img = document.createElement('img');
+                img.className = 'stroke-gif';
+                img.width = 150;
+                img.height = 150;
+                img.decoding = 'async';
+                img.alt = <?= json_encode(jp_t('ترتیب نوشتن') . ' ', JSON_UNESCAPED_UNICODE) ?> + ch;
+                img.onerror = function() {
+                    img.remove();
+                    if (!box.children.length) empty.hidden = false;
+                };
+                img.src = 'kanji/media/' + ch.codePointAt(0).toString(16) + '.gif';
+                box.appendChild(img);
+            });
+        }
+
         function ClickAudio(obj) {
             $(obj).next("audio")[0].play();
         }
@@ -391,38 +446,7 @@ foreach ($kanji_categories as $c) {
             $(obj).removeClass("Act");
         }
 
-        function Copy(obj) {
-            var text = (obj.innerText || obj.textContent || '').trim();
-            if (!text) return;
 
-            var copyPromise;
-            if (navigator.clipboard && window.isSecureContext) {
-                copyPromise = navigator.clipboard.writeText(text);
-            } else {
-                var Inp = document.createElement('textarea');
-                Inp.value = text;
-                Inp.style.position = 'fixed';
-                Inp.style.opacity = '0';
-                document.body.appendChild(Inp);
-                Inp.select();
-                Inp.setSelectionRange(0, 99999);
-                document.execCommand('copy');
-                Inp.remove();
-                copyPromise = Promise.resolve();
-            }
-
-            copyPromise.then(() => {
-                const tooltip = new bootstrap.Tooltip(obj, {
-                    trigger: 'manual',
-                    title: 'Copied'
-                });
-                tooltip.show();
-                setTimeout(() => {
-                    tooltip.hide();
-                    tooltip.dispose();
-                }, 1000);
-            }).catch(() => {});
-        }
 
         /* گروه‌های هر جدول: هر کانجی یک گروه است و ردیف‌های مثالش با هم می‌آیند */
         function KanjiGroups(table) {
@@ -507,6 +531,7 @@ foreach ($kanji_categories as $c) {
             }));
         });
     </script>
+    <input type="text" id="Copy" size="2" style="visibility: hidden;">
 </body>
 
 </html>

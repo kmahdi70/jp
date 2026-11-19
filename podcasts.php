@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/lang.php';
+require_once __DIR__ . '/seo.php';
 /* صفحهٔ مکالمات: هر فایل داخل podcasts/data/ یک بخش (موضوع) را برمی‌گرداند.
    [جملهٔ ژاپنی، روماجی، معنی فارسی] */
 $podcast_sections = [];
@@ -56,14 +58,25 @@ function podcast_fa_num($value)
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
-    <title>Conversations — Everyday Japanese Sentences</title>
     <meta charset="utf-8">
+    <?php seo_head([
+        'title' => 'مکالمات روزمرهٔ ژاپنی با ترجمهٔ فارسی و تلفظ صوتی',
+        'description' => 'جمله‌های پرکاربرد ژاپنی در ۲۰ موقعیت روزمره (احوال‌پرسی، سفر، خرید، رستوران و…) با روماجی، معنی فارسی و پخش صدا.',
+        'path' => 'podcasts.php',
+        'nav' => 'مکالمات',
+        'jsonld' => [
+            '@type' => 'LearningResource',
+            'name' => 'مکالمات روزمرهٔ ژاپنی',
+            'description' => 'جمله‌های روزمرهٔ ژاپنی با ترجمهٔ فارسی و تلفظ صوتی.',
+            'learningResourceType' => 'درس',
+            'educationalLevel' => 'beginner',
+        ],
+    ]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Everyday Japanese sentences with romaji, Persian meanings and audio">
     <meta name="author" content="Mahdi Karimian 09123238133">
     <link rel="icon" type="image/png" href="podcasts/favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="podcasts/favicon/favicon.svg">
@@ -74,8 +87,8 @@ function podcast_fa_num($value)
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?<?= rand(1,1000)?>">
-    <link rel="stylesheet" href="css/podcasts.css?<?= rand(1,1000)?>">
+    <link rel="stylesheet" href="css/global.css?20261119c">
+    <link rel="stylesheet" href="css/podcasts.css?1793936419">
 </head>
 
 <body class="docs-page">
@@ -94,12 +107,7 @@ function podcast_fa_num($value)
                     <div class="top-search-box d-none d-lg-flex">
                         <a class="btn btn-success V" href="./">بازگشت</a>
                     </div>
-                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                        <li class="list-inline-item"><a href="https://t.me/LearnKyokushin" target="_blank"><i class="fa-brands fa-telegram fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://facebook.com/kmahdi70" target="_blank"><i class="fa-brands fa-facebook-f fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/mkarimian70/" target="_blank"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://instagram.com/kmahdi70" target="_blank"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
-                    </ul>
+                    <?= jp_lang_switch() ?>
                 </div>
             </div>
         </div>
@@ -278,39 +286,9 @@ function podcast_fa_num($value)
     <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
+    <script src="js/functions.js"></script>
     <script>
-        function Copy(obj) {
-            var text = (obj.innerText || obj.textContent || '').trim();
-            if (!text) return;
 
-            var copyPromise;
-            if (navigator.clipboard && window.isSecureContext) {
-                copyPromise = navigator.clipboard.writeText(text);
-            } else {
-                var Inp = document.createElement('textarea');
-                Inp.value = text;
-                Inp.style.position = 'fixed';
-                Inp.style.opacity = '0';
-                document.body.appendChild(Inp);
-                Inp.select();
-                Inp.setSelectionRange(0, 99999);
-                document.execCommand('copy');
-                Inp.remove();
-                copyPromise = Promise.resolve();
-            }
-
-            copyPromise.then(() => {
-                const tooltip = new bootstrap.Tooltip(obj, {
-                    trigger: 'manual',
-                    title: 'Copied'
-                });
-                tooltip.show();
-                setTimeout(() => {
-                    tooltip.hide();
-                    tooltip.dispose();
-                }, 1000);
-            }).catch(() => {});
-        }
 
         /* فیلتر سطرهای یک فهرست؛ تعداد سطرهای مانده را برمی‌گرداند */
         function FilterRows(rows, q) {
@@ -436,6 +414,7 @@ function podcast_fa_num($value)
             }));
         });
     </script>
+    <input type="text" id="Copy" size="2" style="visibility: hidden;">
 </body>
 
 </html>

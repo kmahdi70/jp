@@ -1,4 +1,6 @@
 <?php
+require_once __DIR__ . '/lang.php';
+require_once __DIR__ . '/seo.php';
 require_once __DIR__ . '/search/lib.php';
 
 /* جست‌وجوی سراسری صفحهٔ اصلی روی شش بخش سایت */
@@ -6,16 +8,27 @@ $search_q = isset($_GET['q']) ? trim((string) $_GET['q']) : '';
 $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
-    <title>Learn Japanese</title>
     <meta charset="utf-8">
+    <?php seo_head([
+        'title' => $search_q !== '' ? 'نتایج جست‌وجو برای «' . $search_q . '» | JapanDocs' : 'آموزش زبان ژاپنی از صفر: هیراگانا، کاتاکانا، کانجی، گرامر و واژه‌ها',
+        'robots' => $search_q !== '' ? 'noindex, follow' : null,
+        'description' => 'آموزش کامل زبان ژاپنی به فارسی: هیراگانا و کاتاکانا با تلفظ صوتی و فیلم، کانجی با معنی فارسی، گرامر، ۵۰۰۰ واژهٔ پرکاربرد و مکالمات روزمره.',
+        'path' => '',
+        'type' => 'website',
+        'site' => true,
+        'jsonld' => [
+            '@type' => 'CollectionPage',
+            'name' => 'آموزش زبان ژاپنی',
+            'description' => 'آموزش کامل زبان ژاپنی به فارسی: هیراگانا و کاتاکانا با تلفظ صوتی و فیلم، کانجی با معنی فارسی، گرامر، ۵۰۰۰ واژهٔ پرکاربرد و مکالمات روزمره.',
+            'inLanguage' => 'fa-IR',
+        ],
+    ]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn Japanese">
     <meta name="author" content="Mahdi Karimian 09123238133">
-    <link rel="shortcut icon" href="favicon.ico">
     <link rel="icon" type="image/png" href="favicon/favicon-96x96.png" sizes="96x96">
     <link rel="icon" type="image/svg+xml" href="favicon/favicon.svg">
     <link rel="shortcut icon" href="favicon/favicon.ico">
@@ -30,7 +43,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?<?= rand(1,1000)?>">
+    <link rel="stylesheet" href="css/global.css?20261119c">
 
 </head>
 
@@ -43,12 +56,10 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                     <div class="site-logo"><a class="navbar-brand" href="./"><img class="logo-icon me-2" width="65" src="assets/images/logo.jpg" alt="logo"><span class="logo-text">Japan<span class="text-alt">Docs</span></span></a></div>
                 </div><!--//docs-logo-wrapper-->
                 <div class="docs-top-utilities d-flex justify-content-end align-items-center">
-                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                        <li class="list-inline-item"><a href="#"><i class="fa-brands fa-github fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa-brands fa-x-twitter fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa-brands fa-slack fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="#"><i class="fa-brands fa-product-hunt fa-fw"></i></a></li>
-                    </ul><!--//social-list-->
+                    <div class="top-search-box d-none d-lg-flex">
+                        <a class="btn btn-success V" href="../">بازگشت</a>
+                    </div>
+                    <?= jp_lang_switch() ?>
                     <!-- <a href="https://themes.3rdwavemedia.com/bootstrap-templates/startup/coderdocs-free-bootstrap-5-documentation-template-for-software-projects/" class="btn btn-primary d-none d-lg-flex">Download</a> -->
                 </div><!--//docs-top-utilities-->
             </div><!--//container-->
@@ -60,8 +71,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
         <div class="theme-bg-shapes-right"></div>
         <div class="theme-bg-shapes-left"></div>
         <div class="container">
-            <h1 class="page-heading single-col-max mx-auto">Learn Japanese</h1>
-            <!-- <h1 class="page-heading single-col-max mx-auto V"></h1> -->
+            <h1 class="page-heading single-col-max mx-auto">آموزش زبان ژاپنی <span class="text-alt">Learn Japanese</span></h1>
             <div class="page-intro single-col-max mx-auto V">آموزش جامع زبان ژاپنی</div>
             <div class="main-search-box pt-3 d-block mx-auto">
                 <form class="search-form w-100" method="get" action="index.php">
@@ -132,7 +142,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title mb-3">
-                                    <img src="hiragana/pic/hiragana.jpg" width="60" class="rounded-circle" alt="">
+                                    <img loading="lazy" decoding="async" src="hiragana/pic/hiragana.jpg" width="60" height="60" class="rounded-circle" alt="آموزش هیراگانا ひらがな">
                                     <span class="card-title-text">Hiragana</span>
                                 </h5>
                                 <div class="card-text V rtl">
@@ -146,7 +156,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title mb-3">
-                                    <img src="katakana/pic/katagana.jpg" width="60" class="rounded-circle" alt="">
+                                    <img loading="lazy" decoding="async" src="katakana/pic/katagana.jpg" width="60" height="60" class="rounded-circle" alt="آموزش کاتاکانا カタカナ">
                                     <span class="card-title-text">Katakana</span>
                                 </h5>
                                 <div class="card-text V rtl">
@@ -160,7 +170,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title mb-3">
-                                    <img src="kanji/pic/kanji.jpg" width="60" class="rounded-circle" alt="">
+                                    <img loading="lazy" decoding="async" src="kanji/pic/kanji.jpg" width="60" height="60" class="rounded-circle" alt="آموزش کانجی 漢字 با معنی فارسی">
                                     <span class="card-title-text">Kanji</span>
                                 </h5>
                                 <div class="card-text V rtl">
@@ -174,7 +184,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                         <div class="card shadow-sm">
                             <div class="card-body">
                                 <h5 class="card-title mb-3">
-                                    <img src="grammar/pic/grammar.jpg" width="60" class="rounded-circle" alt="">
+                                    <img loading="lazy" decoding="async" src="grammar/pic/grammar.jpg" width="60" height="60" class="rounded-circle" alt="آموزش گرامر زبان ژاپنی 文法">
                                     <span class="card-title-text">Grammar</span>
                                 </h5>
                                 <div class="card-text V rtl">
@@ -240,7 +250,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                 <li class="list-inline-item"><a href="#"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
             </ul><!--//social-list-->
 
-            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart heart-color"></i> by <a class="theme-link" href="http://MahdiKarimian.ir" target="_blank">Mk70</a></small>
+            <small class="copyright">Designed with <span class="sr-only">love</span><i class="fas fa-heart heart-color"></i> by <a class="theme-link" href="https://mahdikarimian.ir/" target="_blank">Mk70</a></small>
         </div>
     </footer>
 

@@ -156,3 +156,64 @@
 .docs-content #joyoTable>thead>tr>th {
     text-align: center;
 }
+
+/* ستون «ترتیب نوشتن» کنار ستون کانجی */
+.docs-content .kanji-table>thead>tr>th.stroke-col {
+    width: 44px;
+    padding-inline: .25rem;
+    color: #28b76b;
+    font-size: .9rem;
+}
+
+.stroke-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border: 0;
+    border-radius: .45rem;
+    background: #28b76b;
+    color: #fff;
+    font-size: .9rem;
+    line-height: 1;
+    cursor: pointer;
+    transition: background-color .15s ease, color .15s ease;
+}
+
+.stroke-btn>i {
+    color: #fff;
+}
+
+.stroke-btn:hover,
+.stroke-btn:focus-visible {
+    background: #1e8e53;
+    color: #fff;
+}
+
+.stroke-btn:focus-visible {
+    outline: 2px solid #28b76b;
+    outline-offset: 1px;
+}
+
+/* مودال ترتیب نوشتن */
+.stroke-box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: .5rem;
+    justify-content: center;
+}
+
+.stroke-gif {
+    max-width: 150px;
+    height: auto;
+    border: 1px solid #e7e9ed;
+    border-radius: .5rem;
+    background: #fff;
+}
+
+.stroke-empty {
+    color: #8a93a2;
+    font-size: .9rem;
+}

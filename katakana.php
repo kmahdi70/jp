@@ -1,15 +1,28 @@
 <?php
+require_once __DIR__ . '/lang.php';
+require_once __DIR__ . '/seo.php';
 include("katakana/data.php");
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa">
 
 <head>
-    <title>Katakana Guide</title>
     <meta charset="utf-8">
+    <?php seo_head([
+        'title' => 'آموزش کاتاکانا با تلفظ صوتی، فیلم و واژه‌های نمونه',
+        'description' => 'تمام کاتاکاناهای پایه و ترکیب‌ها با تلفظ صوتی، کلیپ ویدیویی، روماجی و واژه‌های نمونهٔ فارسی؛ همراه جدول خلاصه و جست‌وجو.',
+        'path' => 'katakana.php',
+        'nav' => 'کاتاکانا',
+        'jsonld' => [
+            '@type' => 'LearningResource',
+            'name' => 'آموزش کاتاکانا',
+            'description' => 'کاتاکاناهای پایه و ترکیبی با تلفظ صوتی، فیلم و واژه‌های نمونه.',
+            'learningResourceType' => 'درس',
+            'educationalLevel' => 'beginner',
+        ],
+    ]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn Hiragana">
     <meta name="author" content="Mahdi Karimian 09123238133">
     <link rel="apple-touch-icon" sizes="57x57" href="katakana/favicon/apple-icon-57x57.png">
     <link rel="apple-touch-icon" sizes="60x60" href="katakana/favicon/apple-icon-60x60.png">
@@ -32,7 +45,7 @@ include("katakana/data.php");
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?<?= rand(1,1000)?>">
+    <link rel="stylesheet" href="css/global.css?20261119c">
 </head>
 
 <body class="docs-page">
@@ -51,13 +64,8 @@ include("katakana/data.php");
                     <div class="top-search-box d-none d-lg-flex">
                         <a class="btn btn-success V" href="./">بازگشت</a>
                     </div>
+                    <?= jp_lang_switch() ?>
 
-                    <ul class="social-list list-inline mx-md-3 mx-lg-5 mb-0 d-none d-lg-flex">
-                        <li class="list-inline-item"><a href="https://t.me/LearnKyokushin" target="_blank"><i class="fa-brands fa-telegram fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://facebook.com/kmahdi70" target="_blank"><i class="fa-brands fa-facebook-f fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://www.linkedin.com/in/mkarimian70/" target="_blank"><i class="fa-brands fa-linkedin fa-fw"></i></a></li>
-                        <li class="list-inline-item"><a href="https://instagram.com/kmahdi70" target="_blank"><i class="fa-brands fa-instagram fa-fw"></i></a></li>
-                    </ul>
                 </div>
             </div>
         </div>
@@ -819,9 +827,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-2">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حروف صدا دار
-                        </h1>
+                        </h2>
                         <div class="alert alert-info" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -860,7 +868,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-2-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">A (ア)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">A (ア)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بین صدای آ و ـَ تلفظ میشود</li>
                             <li>
@@ -872,15 +880,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ア.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ア.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/a_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/a_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-2-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">I (イ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">I (イ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> ایـ تلفظ میشود</li>
                             <li>
@@ -892,15 +900,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/イ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/イ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/i_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="katakana/pic/i_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-2-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">U (ウ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">U (ウ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> برای تلفظ او نباید لبها کاملأ به حالت غنچه در بیاید در حد 30% کافی است و همچنین باید کوتاه ادا شود، زمان تلفظ باید کوتاه باشد</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> علامت داکوتن به او اضافه میشود و حرف وو را میسازد</li>
@@ -913,15 +921,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ウ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ウ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/u_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="katakana/pic/u_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-2-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">E (エ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">E (エ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ـِ تلفظ میشود</li>
                             <li>
@@ -933,15 +941,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/エ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/エ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/e_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/e_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-2-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">O (オ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">O (オ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت اُ - ـُ تلفظ میشود</li>
                             <li><strong class="me-1">نکته گرامری:</strong> در ابتدای کلمات قرار میگیرد برای نشان دادن ادب</li>
@@ -954,10 +962,10 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/オ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/オ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/o_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/o_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -987,7 +995,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -1002,9 +1010,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-3">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ک (K) - حرف گ (G)
-                        </h1>
+                        </h2>
                         <div class="alert alert-warning" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -1075,7 +1083,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-3-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KA (カ), GA (ガ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KA (カ), GA (ガ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کا تلفظ میشود</li>
                             <li><strong class="me-1">نکته گرامری:</strong> در اغلب موارد در انتهای جمله نشانه سوالی بودن جمله است</li>
@@ -1095,15 +1103,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/カ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/カ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ka_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ka_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-3-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KI (キ), GI (ギ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KI (キ), GI (ギ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کی تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف گی ساخته میشود</li>
@@ -1122,15 +1130,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/キ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/キ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ki_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ki_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-3-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KU (ク), GU (グ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KU (ク), GU (グ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کو تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف گو ساخته میشود</li>
@@ -1149,15 +1157,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ク.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ク.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ku_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ku_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-3-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KE (ケ), GE (ゲ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KE (ケ), GE (ゲ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کـِ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف گـِ ساخته میشود</li>
@@ -1176,15 +1184,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ケ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ケ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ke_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ke_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-3-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">KO (コ), GO (ゴ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">KO (コ), GO (ゴ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت کـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف گـُ ساخته میشود</li>
@@ -1203,10 +1211,10 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/コ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/コ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ko_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ko_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -1236,7 +1244,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -1251,9 +1259,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-4">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف س (S) - حرف ج (J)
-                        </h1>
+                        </h2>
                         <div class="alert alert-success" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -1324,7 +1332,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-4-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SA (サ), JA (ザ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SA (サ), JA (ザ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سا تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جا (زا) ساخته میشود</li>
@@ -1343,15 +1351,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/サ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/サ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/sa_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/sa_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-4-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SHI (シ), JI (ジ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SHI (シ), JI (ジ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سی یا شی تلفظ میشود البته بصورت دقیق حالتی بین س و ش ادا میشود </li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جی ساخته میشود</li>
@@ -1370,15 +1378,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/シ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/シ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/si_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/si_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-4-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SU (ス), JU (ズ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SU (ス), JU (ズ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سو تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جو ساخته میشود</li>
@@ -1398,15 +1406,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ス.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ス.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/su_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/su_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-4-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SE (セ), JE (ゼ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SE (セ), JE (ゼ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سـِ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جـِ ساخته میشود</li>
@@ -1425,15 +1433,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/セ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/セ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/se_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/se_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-4-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">SO (ソ), JO (ゾ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">SO (ソ), JO (ゾ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت سـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جـُ ساخته میشود</li>
@@ -1452,10 +1460,10 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ソ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ソ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/so_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/so_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -1485,7 +1493,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -1500,9 +1508,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-5">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ت (T) - حرف د (D)
-                        </h1>
+                        </h2>
                         <div class="alert alert-danger" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -1573,7 +1581,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-5-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">TA (タ), DA (ダ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">TA (タ), DA (ダ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت تا تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف دا ساخته میشود</li>
@@ -1592,15 +1600,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/タ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/タ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ta_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ta_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-5-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">CHI (チ), DJI (ヂ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">CHI (チ), DJI (ヂ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت چی تلفظ میشود </li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جی ساخته میشود</li>
@@ -1619,15 +1627,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/チ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/チ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/chi_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/chi_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-5-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">TSU (ツ), DJU (ヅ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">TSU (ツ), DJU (ヅ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت چو(تسو) تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف جو ساخته میشود</li>
@@ -1646,18 +1654,18 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ツ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ツ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="katakana/pic/tsu-shi.jpg" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/tsu-shi.jpg" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/tsu_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/tsu_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-5-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">TE (テ), DE (デ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">TE (テ), DE (デ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت تـِ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف دِ ساخته میشود</li>
@@ -1676,15 +1684,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/テ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/テ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/te_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/te_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-5-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">TO (ト), DO (ド)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">TO (ト), DO (ド)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت تـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف دُ ساخته میشود</li>
@@ -1703,10 +1711,10 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ト.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ト.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/to_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/to_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -1736,7 +1744,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -1751,9 +1759,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-6">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ن (N)
-                        </h1>
+                        </h2>
                         <div class="alert alert-info" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -1792,7 +1800,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-6-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NA (ナ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NA (ナ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نا تلفظ میشود</li>
                             <li>
@@ -1804,15 +1812,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ナ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ナ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/na_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/na_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-6-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NI (ニ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NI (ニ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نی تلفظ میشود </li>
                             <li>
@@ -1824,15 +1832,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ニ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ニ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ni_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ni_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-6-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NU (ヌ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NU (ヌ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نو تلفظ میشود</li>
                             <li>
@@ -1844,15 +1852,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ヌ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ヌ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/nu_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/nu_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-6-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NE (ネ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NE (ネ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نـِ تلفظ میشود</li>
                             <li>
@@ -1864,15 +1872,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ネ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ネ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ne_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ne_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-6-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">NO (ノ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">NO (ノ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت نـُ تلفظ میشود</li>
                             <li>
@@ -1884,10 +1892,10 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ノ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ノ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/no_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/no_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -1917,7 +1925,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -1932,9 +1940,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-7">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ه (H) - حرف ب (B) - حرف پ (P)
-                        </h1>
+                        </h2>
                         <div class="alert alert-warning" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2037,7 +2045,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-7-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HA,WA (ハ), BA (バ), PA (パ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HA,WA (ハ), BA (バ), PA (パ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ها یا وا تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف با ساخته میشود</li>
@@ -2063,15 +2071,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ハ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ハ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ha_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ha_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-7-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HI (ヒ), BI (ビ), PI (ピ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HI (ヒ), BI (ビ), PI (ピ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت هی تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف بی ساخته میشود</li>
@@ -2097,15 +2105,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ヒ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ヒ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/hi_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/hi_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-7-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HU (フ), BU (ブ), PU (プ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HU (フ), BU (ブ), PU (プ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> تلفظ این حرف چیزی بین هو و فو است</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف بو ساخته میشود</li>
@@ -2131,15 +2139,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/フ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/フ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/hu_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/hu_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-7-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HE,E (ヘ), BE (べ), PE (ぺ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HE,E (ヘ), BE (べ), PE (ぺ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت هـِ یا اِ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف بـِ ساخته میشود</li>
@@ -2166,15 +2174,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ヘ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ヘ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/he_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/he_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-7-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">HO (ホ), BO (ボ), PO (ポ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">HO (ホ), BO (ボ), PO (ポ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت هـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> با داکوتن حرف بـُ ساخته میشود</li>
@@ -2200,10 +2208,10 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ホ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ホ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ho_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ho_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -2233,7 +2241,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2248,9 +2256,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-8">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف م (M)
-                        </h1>
+                        </h2>
                         <div class="alert alert-success" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2289,7 +2297,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-8-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">MA (マ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">MA (マ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ما تلفظ میشود</li>
                             <li>
@@ -2301,15 +2309,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/マ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/マ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ma_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ma_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-8-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">MI (ミ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">MI (ミ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت می تلفظ میشود </li>
                             <li>
@@ -2321,15 +2329,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ミ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ミ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/mi_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/mi_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-8-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">MU (ム)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">MU (ム)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت مو تلفظ میشود</li>
                             <li>
@@ -2341,15 +2349,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ム.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ム.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/mu_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/mu_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-8-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">ME (メ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">ME (メ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت مـِ تلفظ میشود</li>
                             <li>
@@ -2361,15 +2369,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/メ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/メ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/me_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/me_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-8-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">MO (モ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">MO (モ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت مـُ تلفظ میشود</li>
                             <li>
@@ -2381,10 +2389,10 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/モ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/モ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/mo_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/mo_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -2414,7 +2422,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2429,9 +2437,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-9">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ر (R)
-                        </h1>
+                        </h2>
                         <div class="alert alert-danger" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2470,7 +2478,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-9-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RA (ラ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RA (ラ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت را تلفظ میشود</li>
                             <li>
@@ -2482,15 +2490,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ラ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ラ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ra_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ra_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-9-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RI (リ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RI (リ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ری تلفظ میشود </li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت شبیه نی(Reed) میباشد، همچنین مشابه رودخانه(River) است</li>
@@ -2503,15 +2511,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/リ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/リ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ri_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ri_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-9-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RU (ル)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RU (ル)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت رو تلفظ میشود</li>
                             <li>
@@ -2523,15 +2531,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ル.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ル.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ru_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ru_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-9-4">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RE (レ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RE (レ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت رِ تلفظ میشود</li>
                             <li>
@@ -2543,15 +2551,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/レ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/レ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/re_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/re_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-9-5">
-                        <h2 class="section-heading"><span onclick="Copy(this)">RO (ロ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">RO (ロ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت رُ تلفظ میشود</li>
                             <li>
@@ -2563,10 +2571,10 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ロ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ロ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ro_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ro_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -2596,7 +2604,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2611,9 +2619,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-10">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف ی (Y)
-                        </h1>
+                        </h2>
                         <div class="alert alert-info" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2640,7 +2648,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-10-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">YA (ヤ, ャ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">YA (ヤ, ャ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت یا تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> علامت کوچک یا به منظور مخفف کردن تلفظ مورد استفاده قرار میگیرد</li>
@@ -2653,15 +2661,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ヤ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ヤ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/ya_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/ya_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-10-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">YU (ユ, ュ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">YU (ユ, ュ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت یو تلفظ میشود </li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> علامت کوچک یو به منظور مخفف کردن تلفظ مورد استفاده قرار میگیرد</li>
@@ -2674,15 +2682,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ユ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ユ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/yu_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/yu_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-10-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">YO (ヨ, ョ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">YO (ヨ, ョ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت یـُ تلفظ میشود</li>
                             <li><strong class="me-1">کاراکتر مشابه:</strong> علامت کوچک یـُ به منظور مخفف کردن تلفظ مورد استفاده قرار میگیرد</li>
@@ -2695,13 +2703,13 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ヨ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ヨ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/yo_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/yo_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                             <div class="col-12 pl-0 mt-3">
-                                <img src="katakana/pic/y.jpg" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/y.jpg" class="img-thumbnail w-100" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -2731,7 +2739,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2746,9 +2754,9 @@ include("katakana/data.php");
                 </article>
                 <article class="docs-article" id="section-11">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">
+                        <h2 class="docs-heading V rtl">
                             حرف و (W)
-                        </h1>
+                        </h2>
                         <div class="alert alert-warning" role="alert">
                             <table class="table text-center mb-0 table-borderless">
                                 <tr>
@@ -2775,7 +2783,7 @@ include("katakana/data.php");
                         </div>
                     </header>
                     <section class="docs-section" id="item-11-1">
-                        <h2 class="section-heading"><span onclick="Copy(this)">WA (ワ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">WA (ワ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت وا تلفظ میشود</li>
                             <li>
@@ -2787,15 +2795,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ワ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ワ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/wa_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/wa_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-11-2">
-                        <h2 class="section-heading"><span onclick="Copy(this)">WO,O (ヲ)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">WO,O (ヲ)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت وُ یا اُ تلفظ میشود </li>
                             <li>
@@ -2807,15 +2815,15 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ヲ.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ヲ.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/wo_font.jpg" class="img-thumbnail" alt="">
+                                <img loading="lazy" decoding="async" src="katakana/pic/wo_font.jpg" class="img-thumbnail" alt="">
                             </div>
                         </div>
                     </section>
                     <section class="docs-section" id="item-11-3">
-                        <h2 class="section-heading"><span onclick="Copy(this)">N (ン)</span><input type="text" class="NV"></h2>
+                        <h2 class="section-heading"><span onclick="Copy(this)">N (ン)</span></h2>
                         <ul class="rtl V">
                             <li><strong class="me-1">تلفظ:</strong> بصورت ن یا م یا انگ(ng) تلفظ میشود</li>
                             <li><strong class="me-1">نشانه گذاری:</strong> این علامت مانند n میباشد</li>
@@ -2828,13 +2836,13 @@ include("katakana/data.php");
                         </ul>
                         <div class="row mb-3 rtl">
                             <div class="col-5 mb-3">
-                                <img src="katakana/media/ン.gif" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/media/ン.gif" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-7 mb-3">
-                                <img src="katakana/pic/dakuten.jpg" class="img-thumbnail w-100" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/dakuten.jpg" class="img-thumbnail w-100" alt="katakana">
                             </div>
                             <div class="col-12 pl-0">
-                                <img src="katakana/pic/n_font.jpg" class="img-thumbnail" alt="katakana">
+                                <img loading="lazy" decoding="async" src="katakana/pic/n_font.jpg" class="img-thumbnail" alt="katakana">
                             </div>
                         </div>
                     </section>
@@ -2864,7 +2872,7 @@ include("katakana/data.php");
                                                     <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg>
                                                 </button>
                                             </td>
-                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span><input type="text" class="NV"></td>
+                                            <td><span onclick="Copy(this)"><?= $v['jp'] ?></span></td>
                                             <td><?= $v['ro'] ?></td>
                                             <td><?= $v['me'] ?></td>
                                             <td class="V"><?= $v['tr'] ?></td>
@@ -2890,6 +2898,7 @@ include("katakana/data.php");
     <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
+    <script src="js/functions.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         function ClickAudio(obj) {
@@ -2969,21 +2978,7 @@ include("katakana/data.php");
             }
         }
 
-        function Copy(obj) {
-            $(obj).next().val($(obj).html());
-            var Inp = obj.nextElementSibling;
-            Inp.select();
-            Inp.setSelectionRange(0, 99999);
-            navigator.clipboard.writeText(Inp.value);
-            const tooltip = new bootstrap.Tooltip(obj, {
-                trigger: 'manual',
-                title: 'Copied'
-            });
-            tooltip.show();
-            setTimeout(() => {
-                tooltip.hide();
-            }, 1000);
-        }
+
         document.addEventListener("keydown", function (event) {
             if (event.key !== "Escape") return;
             var input = event.target.closest(".kana-filter-all");
@@ -2994,6 +2989,7 @@ include("katakana/data.php");
             }));
         });
     </script>
+    <input type="text" id="Copy" size="2" style="visibility: hidden;">
 </body>
 
 </html>

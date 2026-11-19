@@ -113,6 +113,7 @@
 }
 
 span:has(+ .NV),
+[onclick^="Copy("],
 .CP {
     cursor: pointer;
 }
@@ -368,4 +369,53 @@ span.Note {
 #search-all .kata-count {
     color: #0f5132;
     white-space: nowrap;
+}
+
+/* ظاهر عنوان بخش‌ها پس از تبدیل h1 به h2 در صفحه‌های کانا ثابت بماند */
+.docs-article h2.docs-heading {
+    color: #252930;
+}
+
+/* کمبوباکس انتخاب زبان بخش ژاپنی (کنار دکمهٔ بازگشت) */
+.jp-lang-form {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    margin-inline-start: .75rem;
+}
+
+.jp-lang-form .jp-lang-select {
+    width: auto;
+    min-width: 9.5rem;
+    font-size: .85rem;
+    padding-block: .25rem;
+}
+
+@media (max-width: 575.98px) {
+    .jp-lang-form .jp-lang-select {
+        min-width: 6rem;
+    }
+}
+
+/* دکمهٔ بازگشت کامل در سمت راست بنشیند؛ باکس جست‌وجوی قالب عرض ۳۰۰px می‌داد و دکمه را وسط می‌گذاشت */
+.docs-top-utilities .top-search-box.d-none.d-lg-flex {
+    width: auto;
+    min-width: 0;
+    justify-content: flex-end;
+}
+
+/* ---------- حالت انگلیسی: متن‌ها LTR و چپ‌چین؛ محتوای جدول‌ها دست‌نخورده ---------- */
+html[lang="en"] body :not(table, table *) {
+    direction: ltr !important;
+    text-align: left !important;
+}
+
+/* جدول‌های راست‌به‌چپ چینش پیش‌فرض خود را نگه می‌دارند (سلول‌های بدون قاعدهٔ صریح) */
+html[lang="en"] table.rtl {
+    text-align: right;
+}
+
+/* آیکون‌های دایره‌ای منوی کنار در حالت انگلیسی هم وسط دایره بمانند */
+html[lang="en"] .theme-icon-holder {
+    text-align: center !important;
 }
