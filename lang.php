@@ -8,10 +8,6 @@
  * متنی که در فایل نباشد دست‌نخورده می‌ماند تا هیچ‌جا خالی نشود.
  */
 
-if (session_status() === PHP_SESSION_NONE) {
-    @session_start();
-}
-
 if (!defined('JP_LANGS')) {
     define('JP_LANGS', array('fa' => 'فارسی', 'en' => 'English'));
 }
@@ -23,16 +19,53 @@ if (!defined('JP_FA_RE')) {
     define('JP_FA_RE', '/[\x{0600}-\x{06FF}]/u');
 }
 
-/* زبان درخواستی؛ مقدارهای ناشناخته (مثل ja سایت اصلی) نادیده گرفته می‌شوند */
-if (isset($_GET['lang']) && isset(JP_LANGS[$_GET['lang']])) {
-    $_SESSION['lang'] = $_GET['lang'];
+/*
+ * نشست عمداً استفاده نمی‌شود: PHP با session_start هدر «no-store» می‌فرستد و
+ * هیچ صفحه‌ای کش نمی‌شود. زبان از آدرس (?lang) یا کوکی jp_lang خوانده می‌شود.
+ */
+
+/** زبان درخواستی از آدرس؛ مقدارهای ناشناخته (مثل ja سایت اصلی) نادیده گرفته می‌شوند */
+function jp_lang_param(): ?string
+{
+    $raw = $_GET['lang'] ?? null;
+    return (is_string($raw) && isset(JP_LANGS[$raw])) ? $raw : null;
+}
+
+/*
+ * اگر زبان از کوکی آمده و آدرس پارامتر lang ندارد، به همان آدرس با پارامتر
+ * صریح هدایت می‌کنیم: بدنهٔ هر صفحه فقط به آدرس وابسته می‌ماند (نه به کوکی) و
+ * کش مشترک می‌تواند نسخهٔ درست زبان را ذخیره کند.
+ */
+if (jp_lang_param() === null) {
+    $cookie = $_COOKIE['jp_lang'] ?? '';
+    if (is_string($cookie) && isset(JP_LANGS[$cookie]) && $cookie !== JP_DEFAULT_LANG) {
+        $query = $_GET;
+        $query['lang'] = $cookie;
+        $path = strtok((string) ($_SERVER['REQUEST_URI'] ?? '/'), '?');
+        header('Cache-Control: no-store, max-age=0', true);
+        header('Location: ' . $path . '?' . http_build_query($query), true, 302);
+        exit;
+    }
+}
+
+/* بدنهٔ صفحه به هیچ داده شخصی وابسته نیست؛ پس HTML قابل کش عمومی است */
+if (!headers_sent()) {
+    header('Cache-Control: public, max-age=600', true);
+    header('Vary: Accept-Encoding', false);
 }
 
 /** زبان فعلی این بخش */
 function jp_lang(): string
 {
-    $lang = $_SESSION['lang'] ?? JP_DEFAULT_LANG;
-    return isset(JP_LANGS[$lang]) ? $lang : JP_DEFAULT_LANG;
+    static $lang = null;
+    if ($lang === null) {
+        $lang = jp_lang_param();
+        if ($lang === null) {
+            $cookie = $_COOKIE['jp_lang'] ?? JP_DEFAULT_LANG;
+            $lang = (is_string($cookie) && isset(JP_LANGS[$cookie])) ? $cookie : JP_DEFAULT_LANG;
+        }
+    }
+    return $lang;
 }
 
 /** آیا الان حالت انگلیسی است؟ */
@@ -191,9 +224,15 @@ function jp_lang_switch(): string
         $html .= '<option value="' . $code . '">'
             . htmlspecialchars($name, ENT_QUOTES, 'UTF-8') . '</option>';
     }
+    /* کوکی زبان را سمت کاربر می‌نویسیم تا پاسخ‌های عمومی هدر Set-Cookie نداشته باشند
+       (وگرنه کش مشترک همان کوکی را به بازدیدکننده‌های دیگر هم می‌داد) */
     return $html . '</select>'
         . '<noscript><button type="submit" class="btn btn-success V">OK</button></noscript>'
-        . '</form>';
+        . '</form>'
+        . '<script>'
+        . '(function () { var m = /[?&]lang=(fa|en)(?:&|$)/.exec(location.search);'
+        . ' if (m) { document.cookie = "jp_lang=" + m[1] + ";path=/;max-age=31536000;samesite=lax"; } })();'
+        . '</script>';
 }
 
 /* در حالت انگلیسی، کل خروجی صفحه از همین فیلتر رد می‌شود */
