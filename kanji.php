@@ -419,6 +419,7 @@ foreach ($kanji_categories as $c) {
                 img.className = 'stroke-gif';
                 img.width = 150;
                 img.height = 150;
+                img.loading = 'lazy';
                 img.decoding = 'async';
                 img.alt = <?= json_encode(jp_t('ترتیب نوشتن') . ' ', JSON_UNESCAPED_UNICODE) ?> + ch;
                 img.onerror = function() {
