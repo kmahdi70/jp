@@ -423,3 +423,13 @@ html[lang="en"] table.rtl {
 html[lang="en"] .theme-icon-holder {
     text-align: center !important;
 }
+
+/*
+ * چارت‌های کانا در کادرهای سربرگ صفحه در عرض موبایل از ستون بیرون می‌زنند و
+ * کل صفحه را اسکرول‌پذیر می‌کنند؛ به‌جایش خود کادر اسکرول افقی می‌گیرد.
+ */
+@media (max-width: 575.98px) {
+    .docs-header .alert {
+        overflow-x: auto;
+    }
+}

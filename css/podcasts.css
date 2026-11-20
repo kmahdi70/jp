@@ -35,9 +35,10 @@
     border-bottom: none;
 }
 
-/* جملهٔ ژاپنی */
+/* جملهٔ ژاپنی (قابل جمع‌شدن تا جملهٔ بلند در موبایل از سطر بیرون نزند) */
 .conv-list .conv-jp {
-    flex: 0 0 auto;
+    flex: 0 1 auto;
+    min-width: 0;
     direction: ltr;
     display: inline-block;
     font-size: 1.04rem;

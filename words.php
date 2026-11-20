@@ -40,7 +40,7 @@ foreach ($word_sections as $ws) {
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261119e">
+    <link rel="stylesheet" href="css/global.css?20261119f">
     <link rel="stylesheet" href="css/words.css?1793936419">
 </head>
 
