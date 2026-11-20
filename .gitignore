@@ -11,3 +11,6 @@ Thumbs.db
 desktop.ini
 *.log
 .env
+
+# کش زمان اجرای جست‌وجو (خودکار بازسازی می‌شود؛ نباید منتشر شود)
+search/cache.jsonl
