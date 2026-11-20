@@ -44,7 +44,7 @@ include("hiragana/data.php");
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261119c">
+    <link rel="stylesheet" href="css/global.css?20261119e">
 </head>
 
 <body class="docs-page">
@@ -60,10 +60,7 @@ include("hiragana/data.php");
                     <div class="site-logo"><a class="navbar-brand" href="./"><img class="logo-icon me-2" src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Japan<span class="text-alt">Docs</span></span></a></div>
                 </div>
                 <div class="docs-top-utilities d-flex justify-content-end align-items-center">
-                    <div class="top-search-box d-none d-lg-flex">
-                        <a class="btn btn-success V" href="./">بازگشت</a>
-                    </div>
-                    <?= jp_lang_switch() ?>
+                    <?= jp_header_actions() ?>
 
                 </div>
             </div>
@@ -1146,6 +1143,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/ka.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> が
                                 <audio preload="none">
                                     <source src="hiragana/media/ga.mp3" type="audio/mpeg">
@@ -1187,6 +1186,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/ki.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぎ
                                 <audio preload="none">
                                     <source src="hiragana/media/gi.mp3" type="audio/mpeg">
@@ -1228,6 +1229,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/ku.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぐ
                                 <audio preload="none">
                                     <source src="hiragana/media/gu.mp3" type="audio/mpeg">
@@ -1269,6 +1272,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/ke.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> げ
                                 <audio preload="none">
                                     <source src="hiragana/media/ge.mp3" type="audio/mpeg">
@@ -1310,6 +1315,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/ko.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ご
                                 <audio preload="none">
                                     <source src="hiragana/media/go.mp3" type="audio/mpeg">
@@ -1472,6 +1479,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/sa.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ざ
                                 <audio preload="none">
                                     <source src="hiragana/media/ja.mp3" type="audio/mpeg">
@@ -1513,6 +1522,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/si.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> じ
                                 <audio preload="none">
                                     <source src="hiragana/media/ji.mp3" type="audio/mpeg">
@@ -1554,6 +1565,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/su.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ず
                                 <audio preload="none">
                                     <source src="hiragana/media/ju.mp3" type="audio/mpeg">
@@ -1595,6 +1608,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/se.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぜ
                                 <audio preload="none">
                                     <source src="hiragana/media/je.mp3" type="audio/mpeg">
@@ -1636,6 +1651,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/so.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぞ
                                 <audio preload="none">
                                     <source src="hiragana/media/jo.mp3" type="audio/mpeg">
@@ -1798,6 +1815,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/ta.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> だ
                                 <audio preload="none">
                                     <source src="hiragana/media/da.mp3" type="audio/mpeg">
@@ -1839,6 +1858,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/chi.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぢ
                                 <audio preload="none">
                                     <source src="hiragana/media/dji.mp3" type="audio/mpeg">
@@ -1882,6 +1903,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/tsu.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> づ
                                 <audio preload="none">
                                     <source src="hiragana/media/dju.mp3" type="audio/mpeg">
@@ -1923,6 +1946,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/te.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> で
                                 <audio preload="none">
                                     <source src="hiragana/media/de.mp3" type="audio/mpeg">
@@ -1964,6 +1989,8 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/to.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ど
                                 <audio preload="none">
                                     <source src="hiragana/media/do.mp3" type="audio/mpeg">
@@ -2378,10 +2405,14 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/ha.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ば
                                 <audio preload="none">
                                     <source src="hiragana/media/ba.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぱ
                                 <audio preload="none">
                                     <source src="hiragana/media/pa.mp3" type="audio/mpeg">
@@ -2434,10 +2465,14 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/hi.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> び
                                 <audio preload="none">
                                     <source src="hiragana/media/bi.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぴ
                                 <audio preload="none">
                                     <source src="hiragana/media/pi.mp3" type="audio/mpeg">
@@ -2490,10 +2525,14 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/hu.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぶ
                                 <audio preload="none">
                                     <source src="hiragana/media/bu.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぷ
                                 <audio preload="none">
                                     <source src="hiragana/media/pu.mp3" type="audio/mpeg">
@@ -2546,10 +2585,14 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/he.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> べ
                                 <audio preload="none">
                                     <source src="hiragana/media/be.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぺ
                                 <audio preload="none">
                                     <source src="hiragana/media/pe.mp3" type="audio/mpeg">
@@ -2602,10 +2645,14 @@ include("hiragana/data.php");
                                 <audio preload="none">
                                     <source src="hiragana/media/ho.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぼ
                                 <audio preload="none">
                                     <source src="hiragana/media/bo.mp3" type="audio/mpeg">
                                 </audio>
+                            </li>
+                            <li>
                                 <button type="button" class="kata-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="PlayMp3(this)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button> ぽ
                                 <audio preload="none">
                                     <source src="hiragana/media/po.mp3" type="audio/mpeg">

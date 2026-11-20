@@ -404,18 +404,22 @@ span.Note {
     justify-content: flex-end;
 }
 
-/* ---------- حالت انگلیسی: متن‌ها LTR و چپ‌چین؛ محتوای جدول‌ها دست‌نخورده ---------- */
-html[lang="en"] body :not(table, table *) {
+/* ---------- حالت انگلیسی: متن‌ها LTR و چپ‌چین ---------- */
+/*
+ * `:not()`های زنجیره‌ای (سطح ۳) و نه لیست در :not؛ سافاری پیش از ۱۶.۴ لیست
+ * داخل :not را نمی‌فهمد و کل قاعده را باطل می‌کرد. محتوای جدول‌ها استثناست.
+ */
+html[lang="en"] body :not(table):not(thead):not(tbody):not(tr):not(td):not(th):not(caption) {
     direction: ltr !important;
     text-align: left !important;
 }
 
-/* جدول‌های راست‌به‌چپ چینش پیش‌فرض خود را نگه می‌دارند (سلول‌های بدون قاعدهٔ صریح) */
+/* سلول‌های بدون قاعدهٔ صریح همان چینش قبلی جدول را بگیرند */
 html[lang="en"] table.rtl {
     text-align: right;
 }
 
-/* آیکون‌های دایره‌ای منوی کنار در حالت انگلیسی هم وسط دایره بمانند */
+/* آیکون‌های دایره‌ای منوی کنار وسط دایره بمانند (بعد از قاعدهٔ بالا و با وزن بیشتر) */
 html[lang="en"] .theme-icon-holder {
     text-align: center !important;
 }

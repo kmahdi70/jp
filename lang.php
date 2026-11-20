@@ -143,7 +143,10 @@ function jp_translate_html(string $html): string
         $offset = $block[1] + strlen($block[0]);
     }
     $out .= jp_translate_fragment(substr($html, $offset));
-    return jp_html_lang($out);
+    /* صفت lang تگ html هم en می‌شود؛ جهت صفحه دست نمی‌خورد */
+    return preg_replace_callback('#<html\b[^>]*>#i', static function (array $m): string {
+        return preg_replace('/\blang="fa"/i', 'lang="en"', $m[0]);
+    }, $out, 1) ?? $out;
 }
 
 /** ترجمهٔ یک تکهٔ HTML: تگ‌ها فقط از نظر attribute و بقیه به‌عنوان متن */
@@ -161,18 +164,20 @@ function jp_translate_fragment(string $fragment): string
     ) ?? $fragment;
 }
 
-/** در حالت انگلیسی صفت lang تگ html هم en می‌شود (جهت صفحه دست نمی‌خورد) */
-function jp_html_lang(string $html): string
+/**
+ * نوار بالای صفحه‌های مستندات: دکمهٔ بازگشت و بعد از آن کمبوباکس زبان.
+ * سلکت چون آخرین عنصر است، در لبهٔ راست می‌نشیند.
+ */
+function jp_header_actions(string $backHref = './'): string
 {
-    return preg_replace_callback('#<html\b[^>]*>#i', static function (array $m): string {
-        return preg_replace('/\blang="fa"/i', 'lang="en"', $m[0]);
-    }, $html, 1) ?? $html;
+    return '<div class="top-search-box d-none d-lg-flex">'
+        . '<a class="btn btn-success V" href="' . htmlspecialchars($backHref, ENT_QUOTES, 'UTF-8') . '">بازگشت</a>'
+        . '</div>' . jp_lang_switch();
 }
 
 /**
- * کمبوباکس انتخاب زبان (سمت راست هدر، پیش از دکمهٔ بازگشت در ترتیب صفحه).
- * متن دیده‌شدهٔ خود کادر به زبان جاری صفحه است: انگلیسی «Select language» و
- * فارسی «انتخاب زبان».
+ * کمبوباکس انتخاب زبان (سمت راست هدر، پس از دکمهٔ بازگشت).
+ * متن دیده‌شدهٔ خود کادر به زبان جاری صفحه است: «Select language» یا «انتخاب زبان».
  */
 function jp_lang_switch(): string
 {

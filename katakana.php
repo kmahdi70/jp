@@ -45,7 +45,7 @@ include("katakana/data.php");
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261119c">
+    <link rel="stylesheet" href="css/global.css?20261119e">
 </head>
 
 <body class="docs-page">
@@ -61,10 +61,7 @@ include("katakana/data.php");
                     <div class="site-logo"><a class="navbar-brand" href="./"><img class="logo-icon me-2" src="assets/images/coderdocs-logo.svg" alt="logo"><span class="logo-text">Japan<span class="text-alt">Docs</span></span></a></div>
                 </div>
                 <div class="docs-top-utilities d-flex justify-content-end align-items-center">
-                    <div class="top-search-box d-none d-lg-flex">
-                        <a class="btn btn-success V" href="./">بازگشت</a>
-                    </div>
-                    <?= jp_lang_switch() ?>
+                    <?= jp_header_actions() ?>
 
                 </div>
             </div>

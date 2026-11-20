@@ -31,7 +31,7 @@ require_once __DIR__ . '/seo.php'; ?><!DOCTYPE html>
     <link rel="icon" type="image/png" sizes="96x96" href="katakana/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="katakana/favicon/favicon-16x16.png">
     <link rel="stylesheet" href="css/bootstrap.min.css">
-    <link rel="stylesheet" href="css/common.css?v4">
+    <link rel="stylesheet" href="css/common.css?v6">
     <link rel="stylesheet" href="css/kana.css">
 </head>
 
