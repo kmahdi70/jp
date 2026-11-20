@@ -433,3 +433,30 @@ html[lang="en"] .theme-icon-holder {
         overflow-x: auto;
     }
 }
+
+/* ---------- بارگذاری تدریجی ردیف‌ها (js/chunks.js) ---------- */
+tr.jp-chunk-sentinel td.jp-chunk-cell {
+    padding: 0.8rem 0.5rem;
+    text-align: center;
+    border-bottom: none;
+}
+
+.jp-chunk-note {
+    display: inline-block;
+    color: #8a94a6;
+    font-size: 1.1rem;
+    line-height: 1;
+    letter-spacing: 0.1em;
+}
+
+.jp-chunk-sentinel[data-failed="1"] .jp-chunk-note {
+    color: #c0392b;
+}
+
+.docs-article .word-list li.jp-chunk-sentinel {
+    display: flex;
+    justify-content: center;
+    padding: 0.8rem 0.5rem;
+    border-bottom: none;
+    direction: rtl;
+}

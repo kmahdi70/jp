@@ -8,6 +8,52 @@ $words_total = 0;
 foreach ($word_sections as $ws) {
     $words_total += count($ws['words']);
 }
+
+/* ─────────────────────────────────────────────────────────────
+ * سطرهای واژه‌نامه یک‌بار به‌صورت تابع نوشته می‌شوند تا نمایش اولیه و بخش‌های
+ * بعدیِ بارگذاری تدریجی از همان قالب استفاده کنند.
+ * ───────────────────────────────────────────────────────────── */
+function jp_word_rows(array $words): string
+{
+    $out = '';
+    foreach ($words as $w) {
+        $spoken = $w[0] !== '' ? $w[0] : $w[1];
+        $out .= '<li><button type="button" class="word-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="SpeakJa(this, '
+            . htmlspecialchars(json_encode($spoken, JSON_UNESCAPED_UNICODE), ENT_QUOTES) . ')">'
+            . '<svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button>'
+            . '<span class="jp" onclick="Copy(this)">' . $spoken . '</span>'
+            . '<span class="kana">' . $w[1] . '</span>'
+            . '<span class="romaji">' . $w[2] . '</span>'
+            . '<span class="meaning">' . $w[3] . '</span></li>';
+    }
+    return $out;
+}
+
+/* اندازهٔ بخش اول و اندازهٔ بخش‌های بعدی */
+function jp_words_chunk_size(int $from): int
+{
+    return $from === 0 ? 40 : 300;
+}
+
+/*
+ * بخش بعدی واژه‌ها: words.php?chunk=words&group=<شمارهٔ بخش>&from=<n>
+ * فقط سطرهای <li> برمی‌گردند تا js/chunks.js آن‌ها را پیش از نگهبان همان
+ * <ul> بگذارد.
+ */
+if (($_GET['chunk'] ?? '') === 'words') {
+    $chunkSection = $word_sections[((int) ($_GET['group'] ?? 0)) - 1] ?? null;
+    $chunkFrom = max(0, (int) ($_GET['from'] ?? 0));
+    if (!is_array($chunkSection)) {
+        http_response_code(400);
+        exit;
+    }
+    $chunkWords = array_slice($chunkSection['words'], $chunkFrom, jp_words_chunk_size($chunkFrom));
+    header('Content-Type: text/html; charset=utf-8');
+    header('X-Jp-From: ' . ($chunkFrom + count($chunkWords)));
+    header('X-Jp-Total: ' . count($chunkSection['words']));
+    echo jp_word_rows($chunkWords);
+    exit;
+}
 ?>
 
 <!DOCTYPE html>
@@ -40,8 +86,8 @@ foreach ($word_sections as $ws) {
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261119f">
-    <link rel="stylesheet" href="css/words.css?1793936419">
+    <link rel="stylesheet" href="css/global.css?20261120a">
+    <link rel="stylesheet" href="css/words.css?20261120a">
 </head>
 
 <body class="docs-page">
@@ -233,9 +279,13 @@ foreach ($word_sections as $ws) {
                                 <span class="wh-meaning">معنی فارسی</span>
                             </div>
                             <ul class="word-list" id="wordList-<?= $wi ?>">
-                                <?php foreach ($sec['words'] as $w): ?>
-                                    <li><button type="button" class="word-play" title="پخش تلفظ" aria-label="پخش تلفظ" onclick="SpeakJa(this, <?= htmlspecialchars(json_encode($w[0] !== '' ? $w[0] : $w[1], JSON_UNESCAPED_UNICODE), ENT_QUOTES) ?>)"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><polygon points="4 9 8 9 13 5 13 19 8 15 4 15"></polygon><path d="M17 8.5a5 5 0 0 1 0 7"></path><path d="M19.5 6a8.5 8.5 0 0 1 0 12"></path></svg></button><span class="jp" onclick="Copy(this)"><?= $w[0] !== '' ? $w[0] : $w[1] ?></span><span class="kana"><?= $w[1] ?></span><span class="romaji"><?= $w[2] ?></span><span class="meaning"><?= $w[3] ?></span></li>
-                                <?php endforeach; ?>
+                                <?php
+                                /* بخش اول همین‌جا رندر می‌شود؛ بقیه با js/chunks.js می‌آید */
+                                $word_items_init = min($n, jp_words_chunk_size(0));
+                                echo jp_word_rows(array_slice($sec['words'], 0, $word_items_init));
+                                if ($n > $word_items_init): ?>
+                                    <li class="jp-chunk-sentinel" data-endpoint="words.php" data-kind="words" data-group="<?= $wi ?>" data-from="<?= $word_items_init ?>" data-total="<?= $n ?>"><span class="jp-chunk-note" aria-hidden="true">…</span></li>
+                                <?php endif; ?>
                             </ul>
                         </section>
                     <?php
@@ -255,6 +305,7 @@ foreach ($word_sections as $ws) {
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/chunks.js"></script>
     <script>
 
 
@@ -295,15 +346,20 @@ foreach ($word_sections as $ws) {
             return shown;
         }
 
-        function FilterWords(input, listId, countId, emptyId) {
+        async function FilterWords(input, listId, countId, emptyId) {
             /* جست‌وجوی سراسری را خالی کن تا با فیلتر این بخش قاطی نشود */
             var all = document.getElementById('wordFilterAll');
             if (all && all.value !== '') {
                 all.value = '';
                 ResetAllWords();
             }
+            var list = document.getElementById(listId);
+            /* فیلتر روی کل فهرست است؛ پس بخش‌های نرسیده اول گرفته می‌شوند */
+            if (window.JpChunks) {
+                await JpChunks.all(list);
+            }
             var q = (input.value || '').trim().toLowerCase();
-            var rows = document.querySelectorAll('#' + listId + ' li');
+            var rows = list ? list.querySelectorAll('li:not(.jp-chunk-sentinel)') : [];
             var shown = ShowWords(rows, q);
             document.getElementById(countId).textContent = shown + ' / ' + rows.length;
             if (emptyId) {
@@ -313,11 +369,14 @@ foreach ($word_sections as $ws) {
         }
 
         /* همهٔ بخش‌ها را به حالت اول برمی‌گرداند */
-        function ResetAllWords() {
+        async function ResetAllWords() {
+            if (window.JpChunks) {
+                await JpChunks.all(document);
+            }
             var sections = document.querySelectorAll('.docs-article section[id^="item-2-"]');
             var total = 0;
             for (var s = 0; s < sections.length; s++) {
-                var rows = sections[s].querySelectorAll('.word-list li');
+                var rows = sections[s].querySelectorAll('.word-list li:not(.jp-chunk-sentinel)');
                 ShowWords(rows, '');
                 sections[s].style.display = '';
                 var countEl = sections[s].querySelector('.word-count');
@@ -331,13 +390,17 @@ foreach ($word_sections as $ws) {
         }
 
         /* جست‌وجوی سراسری: عبارت را در همهٔ بخش‌ها و هر چهار ستون می‌گردد */
-        function FilterAllWords(input) {
+        async function FilterAllWords(input) {
+            /* جست‌وجوی سراسری باید همهٔ بخش‌ها را ببیند */
+            if (window.JpChunks) {
+                await JpChunks.all(document);
+            }
             var q = (input.value || '').trim().toLowerCase();
             var sections = document.querySelectorAll('.docs-article section[id^="item-2-"]');
             var total = 0;
             var shownTotal = 0;
             for (var s = 0; s < sections.length; s++) {
-                var rows = sections[s].querySelectorAll('.word-list li');
+                var rows = sections[s].querySelectorAll('.word-list li:not(.jp-chunk-sentinel)');
                 total += rows.length;
                 var shown = ShowWords(rows, q);
                 /* کادر جست‌وجوی خودِ بخش کنار برود؛ نتیجهٔ سراسری حاکم است */

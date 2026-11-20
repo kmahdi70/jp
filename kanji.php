@@ -56,6 +56,98 @@ $kanji_total = 0;
 foreach ($kanji_categories as $c) {
     $kanji_total += count($c['items']);
 }
+
+/* ─────────────────────────────────────────────────────────────
+ * ردیف‌های کانجی یک‌بار به‌صورت تابع نوشته می‌شوند تا نمایش اولیه و بخش‌های
+ * بعدیِ بارگذاری تدریجی هر دو از همان قالب استفاده کنند و چینش و rowspan
+ * دست‌نخورده بماند.
+ * ───────────────────────────────────────────────────────────── */
+function jp_kanji_e(string $value): string
+{
+    return htmlspecialchars($value, ENT_QUOTES, 'UTF-8');
+}
+
+/* جدول‌هایی که هر کانجی یک ردیف دارد */
+function jp_kanji_rows_plain(array $items): string
+{
+    $out = '';
+    foreach ($items as $item) {
+        $k = jp_kanji_e((string) ($item['k'] ?? ''));
+        $out .= '<tr data-verb-group="' . $k . '">'
+            . '<td class="text-center"><span class="kanji-ch CP" onclick="Copy(this)">' . $k . '</span><input type="text" class="NV"></td>'
+            . '<td class="text-center"><button type="button" class="stroke-btn" data-bs-toggle="modal" data-bs-target="#StrokeModal" onclick="StrokeOrder(\'' . $k . '\')" title="ترتیب نوشتن" aria-label="ترتیب نوشتن ' . $k . '"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></td>'
+            . '<td class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr">' . jp_kanji_e((string) ($item['kun'] ?? '')) . '</span></td>'
+            . '<td class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr">' . jp_kanji_e((string) ($item['on'] ?? '')) . '</span></td>'
+            . '<td class="V">' . jp_kanji_e((string) ($item['mean'] ?? '')) . '</td>'
+            . '<td class="en-meaning">' . jp_kanji_e((string) ($item['mean_en'] ?? '')) . '</td>'
+            . '</tr>';
+    }
+    return $out;
+}
+
+/* جدول‌هایی که هر کانجی چند ردیف مثال دارد و سلول‌های اول rowspan می‌گیرند */
+function jp_kanji_rows_examples(array $items, int $startIndex = 0): string
+{
+    $out = '';
+    $rowIndex = $startIndex;
+    foreach ($items as $item) {
+        $groupClass = ($rowIndex % 2 === 0) ? 'kanji-group-light' : 'kanji-group-dark';
+        $examples = $item['ex'] ?? [];
+        if (!$examples) {
+            $examples = [['-', '-', '-']];
+        }
+        $rowCount = count($examples);
+        $first = true;
+        $k = jp_kanji_e((string) ($item['k'] ?? ''));
+        foreach ($examples as $ex) {
+            $out .= '<tr class="' . $groupClass . '" data-verb-group="' . $k . '">';
+            if ($first) {
+                $first = false;
+                $out .= '<td rowspan="' . $rowCount . '" class="text-center">'
+                    . '<span class="kanji-ch CP" onclick="Copy(this)">' . $k . '</span><input type="text" class="NV"></td>'
+                    . '<td rowspan="' . $rowCount . '" class="text-center">'
+                    . '<button type="button" class="stroke-btn" data-bs-toggle="modal" data-bs-target="#StrokeModal" onclick="StrokeOrder(\'' . $k . '\')" title="ترتیب نوشتن" aria-label="ترتیب نوشتن ' . $k . '"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></td>'
+                    . '<td rowspan="' . $rowCount . '" class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr">' . ($item['kun'] ?? '') . '</span></td>'
+                    . '<td rowspan="' . $rowCount . '" class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr">' . ($item['on'] ?? '') . '</span></td>'
+                    . '<td rowspan="' . $rowCount . '" class="V">' . ($item['mean'] ?? '') . '</td>';
+            }
+            $out .= '<td class="text-center"><span class="ex-jp CP" onclick="Copy(this)" dir="ltr">' . ($ex[0] ?? '') . '</span></td>'
+                . '<td class="text-center"><span class="ex-ro CP" onclick="Copy(this)" dir="ltr">' . ($ex[1] ?? '') . '</span></td>'
+                . '<td class="V ex-tr">' . ($ex[2] ?? '') . '</td>'
+                . '</tr>';
+        }
+        $rowIndex++;
+    }
+    return $out;
+}
+
+/* اندازهٔ بخش اول و اندازهٔ بخش‌های بعدی */
+function jp_kanji_chunk_size(int $from): int
+{
+    return $from === 0 ? 15 : 120;
+}
+
+/*
+ * بخش بعدی ردیف‌ها: kanji.php?chunk=kanji&group=<index>&from=<n>
+ * فقط ردیف‌ها برمی‌گردند (بدون قالب صفحه) تا js/chunks.js آن‌ها را پیش از
+ * ردیف نگهبان همان tbody بگذارد.
+ */
+if (($_GET['chunk'] ?? '') === 'kanji') {
+    $chunkCategory = $kanji_categories[(int) ($_GET['group'] ?? -1)] ?? null;
+    $chunkFrom = max(0, (int) ($_GET['from'] ?? 0));
+    if (!is_array($chunkCategory)) {
+        http_response_code(400);
+        exit;
+    }
+    $chunkItems = array_slice($chunkCategory['items'], $chunkFrom, jp_kanji_chunk_size($chunkFrom));
+    header('Content-Type: text/html; charset=utf-8');
+    header('X-Jp-From: ' . ($chunkFrom + count($chunkItems)));
+    header('X-Jp-Total: ' . count($chunkCategory['items']));
+    echo !empty($chunkCategory['no_examples'])
+        ? jp_kanji_rows_plain($chunkItems)
+        : jp_kanji_rows_examples($chunkItems, $chunkFrom);
+    exit;
+}
 ?>
 <!DOCTYPE html>
 <html lang="fa">
@@ -89,7 +181,7 @@ foreach ($kanji_categories as $c) {
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261119f">
+    <link rel="stylesheet" href="css/global.css?20261120a">
     <link rel="stylesheet" href="css/kanji.css?20261118b">
 </head>
 
@@ -277,7 +369,7 @@ foreach ($kanji_categories as $c) {
                     </section>
                 </article>
                 <?php $i = 2;
-                foreach ($kanji_categories as $cat) { ?>
+                foreach ($kanji_categories as $catIndex => $cat) { ?>
                     <article class="docs-article" id="section-<?= $i ?>">
                         <header class="docs-header">
                             <h2 class="docs-heading V rtl">
@@ -324,49 +416,19 @@ foreach ($kanji_categories as $c) {
                                         <?php } ?>
                                     </thead>
                                     <tbody>
-                                        <?php if (!empty($cat['no_examples'])) {
-                                            foreach ($cat['items'] as $item) { ?>
-                                                <tr data-verb-group="<?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>">
-                                                    <td class="text-center"><span class="kanji-ch CP" onclick="Copy(this)"><?= $item['k'] ?></span><input type="text" class="NV"></td>
-                                                    <td class="text-center"><button type="button" class="stroke-btn" data-bs-toggle="modal" data-bs-target="#StrokeModal" onclick="StrokeOrder('<?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>')" title="ترتیب نوشتن" aria-label="ترتیب نوشتن <?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button></td>
-                                                    <td class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr"><?= htmlspecialchars($item['kun'], ENT_QUOTES, 'UTF-8') ?></span></td>
-                                                    <td class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr"><?= htmlspecialchars($item['on'], ENT_QUOTES, 'UTF-8') ?></span></td>
-                                                    <td class="V"><?= htmlspecialchars($item['mean'], ENT_QUOTES, 'UTF-8') ?></td>
-                                                    <td class="en-meaning"><?= htmlspecialchars($item['mean_en'], ENT_QUOTES, 'UTF-8') ?></td>
-                                                </tr>
-                                            <?php }
-                                        } else { ?>
-                                            <?php $kanjiRowIndex = 0;
-                                            foreach ($cat['items'] as $item) {
-                                                $groupClass = ($kanjiRowIndex % 2 === 0) ? 'kanji-group-light' : 'kanji-group-dark';
-                                                $examples = $item['ex'] ?? [];
-                                                if (!$examples) {
-                                                    $examples = [['-', '-', '-']];
-                                                }
-                                                $rowCount = count($examples);
-                                                $first = true;
-                                                foreach ($examples as $ex) { ?>
-                                                    <tr class="<?= $groupClass ?>" data-verb-group="<?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>">
-                                                        <?php if ($first) {
-                                                            $first = false; ?>
-                                                            <td rowspan="<?= $rowCount ?>" class="text-center">
-                                                                <span class="kanji-ch CP" onclick="Copy(this)"><?= $item['k'] ?></span><input type="text" class="NV">
-                                                            </td>
-                                                            <td rowspan="<?= $rowCount ?>" class="text-center">
-                                                                <button type="button" class="stroke-btn" data-bs-toggle="modal" data-bs-target="#StrokeModal" onclick="StrokeOrder('<?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>')" title="ترتیب نوشتن" aria-label="ترتیب نوشتن <?= htmlspecialchars($item['k'], ENT_QUOTES, 'UTF-8') ?>"><i class="fas fa-pencil-alt" aria-hidden="true"></i></button>
-                                                            </td>
-                                                            <td rowspan="<?= $rowCount ?>" class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr"><?= $item['kun'] ?></span></td>
-                                                            <td rowspan="<?= $rowCount ?>" class="text-center"><span class="kana-cell CP" onclick="Copy(this)" dir="ltr"><?= $item['on'] ?></span></td>
-                                                            <td rowspan="<?= $rowCount ?>" class="V"><?= $item['mean'] ?></td>
-                                                        <?php } ?>
-                                                        <td class="text-center"><span class="ex-jp CP" onclick="Copy(this)" dir="ltr"><?= $ex[0] ?></span></td>
-                                                        <td class="text-center"><span class="ex-ro CP" onclick="Copy(this)" dir="ltr"><?= $ex[1] ?></span></td>
-                                                        <td class="V ex-tr"><?= $ex[2] ?></td>
-                                                    </tr>
-                                                <?php } ?>
-                                                <?php $kanjiRowIndex++; ?>
-                                            <?php } ?>
-                                        <?php } ?>
+                                        <?php
+                                        /* بخش اول همین‌جا رندر می‌شود؛ بقیه با js/chunks.js می‌آید */
+                                        $kanji_items_total = count($cat['items']);
+                                        $kanji_items_init = min($kanji_items_total, jp_kanji_chunk_size(0));
+                                        $kanji_items_head = array_slice($cat['items'], 0, $kanji_items_init);
+                                        echo !empty($cat['no_examples'])
+                                            ? jp_kanji_rows_plain($kanji_items_head)
+                                            : jp_kanji_rows_examples($kanji_items_head, 0);
+                                        if ($kanji_items_total > $kanji_items_init): ?>
+                                            <tr class="jp-chunk-sentinel" data-endpoint="kanji.php" data-kind="kanji" data-group="<?= $catIndex ?>" data-from="<?= $kanji_items_init ?>" data-total="<?= $kanji_items_total ?>">
+                                                <td colspan="<?= !empty($cat['no_examples']) ? 6 : 8 ?>" class="jp-chunk-cell"><span class="jp-chunk-note" aria-hidden="true">…</span></td>
+                                            </tr>
+                                        <?php endif; ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -403,6 +465,7 @@ foreach ($kanji_categories as $c) {
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/chunks.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         /* ترتیب نوشتن: برای هر کاراکتر GIF مربوط را از پوشهٔ kanji/media نشان می‌دهد
@@ -449,7 +512,7 @@ foreach ($kanji_categories as $c) {
         /* گروه‌های هر جدول: هر کانجی یک گروه است و ردیف‌های مثالش با هم می‌آیند */
         function KanjiGroups(table) {
             var groups = new Map();
-            table.querySelectorAll('tbody tr').forEach(function(row) {
+            table.querySelectorAll('tbody tr:not(.jp-chunk-sentinel)').forEach(function(row) {
                 var key = row.dataset.verbGroup || row;
                 if (!groups.has(key)) groups.set(key, {
                     rows: [],
@@ -462,15 +525,20 @@ foreach ($kanji_categories as $c) {
             return groups;
         }
 
-        function FilterKanjiTable(input, tableId, countId) {
+        async function FilterKanjiTable(input, tableId, countId) {
             /* جست‌وجوی سراسری را خالی کن تا با فیلتر این جدول قاطی نشود */
             var all = document.getElementById('kanjiFilterAll');
             if (all && all.value !== '') {
                 all.value = '';
                 FilterAllKanji(all);
             }
+            var table = document.getElementById(tableId);
+            /* فیلتر روی کل ردیف‌هاست؛ پس بخش‌های نرسیده اول گرفته می‌شوند */
+            if (window.JpChunks) {
+                await JpChunks.all(table);
+            }
             var q = (input.value || '').trim().toLowerCase();
-            var groups = KanjiGroups(document.getElementById(tableId));
+            var groups = KanjiGroups(table);
             var shown = 0;
             groups.forEach(function(group) {
                 var hit = q === '' || group.text.indexOf(q) !== -1;
@@ -483,7 +551,11 @@ foreach ($kanji_categories as $c) {
         }
 
         /* جست‌وجوی سراسری: عبارت را در همهٔ جدول‌های کانجی صفحه می‌گردد */
-        function FilterAllKanji(input) {
+        async function FilterAllKanji(input) {
+            /* جست‌وجوی سراسری باید همهٔ جدول‌ها را ببیند */
+            if (window.JpChunks) {
+                await JpChunks.all(document);
+            }
             var q = (input.value || '').trim().toLowerCase();
             var articles = document.querySelectorAll('.docs-article[id^="section-"]');
             var total = 0;
