@@ -88,7 +88,7 @@ if (($_GET['chunk'] ?? '') === 'words') {
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261121c">
+    <link rel="stylesheet" href="css/global.css?20261121f">
     <link rel="stylesheet" href="css/words.css?20261120a">
 </head>
 

@@ -129,7 +129,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261121c">
+    <link rel="stylesheet" href="css/global.css?20261121f">
     <link rel="stylesheet" href="css/kanji.css?20261121a">
 </head>
 

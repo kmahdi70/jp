@@ -519,6 +519,18 @@ a.jp-chunk-note:focus-visible {
     margin-inline-start: 0;
 }
 
+/* ویدیوهای هیراگانا تا کلیک کاربر دانلود نمی‌شوند (js/video-defer.js).
+   تا آن لحظه نه فایل ویدیو و نه تصویری گرفته می‌شود؛ فقط یک دکمهٔ پخش درون‌خطی
+   (data URI) دیده می‌شود تا کادر خالی نماند. */
+video[data-src] {
+    cursor: pointer;
+    background: #f5f7fa url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 48 48'%3E%3Ccircle cx='24' cy='24' r='21' fill='%23ffffff' stroke='%23c7d0e0' stroke-width='2'/%3E%3Cpolygon points='20,15 34,24 20,33' fill='%238a9bb8'/%3E%3C/svg%3E") center / 32px no-repeat;
+}
+
+video[data-src]:hover {
+    background-color: #eef3fa;
+}
+
 .docs-article .word-list li.jp-chunk-sentinel {
     display: flex;
     justify-content: center;

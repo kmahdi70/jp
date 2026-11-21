@@ -44,7 +44,7 @@ include("hiragana/data.php");
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261121c">
+    <link rel="stylesheet" href="css/global.css?20261121f">
 </head>
 
 <body class="docs-page">
@@ -725,9 +725,7 @@ include("hiragana/data.php");
                                 </h4>
                                 <div class="row">
                                     <div class="col align-self-center mb-3">
-                                        <video preload="none" poster="hiragana/pic/poster.jpg" class="img-fluid w-100" controls>
-                                            <source src="hiragana/media/hiragana.mp4" type="video/mp4">
-                                        </video>
+                                        <video preload="none" poster="hiragana/pic/poster.jpg" class="img-fluid w-100" data-controls="1" data-src="hiragana/media/hiragana.mp4"></video>
                                     </div>
                                 </div>
                                 <h4 class="callout-title rtl V">
@@ -738,9 +736,7 @@ include("hiragana/data.php");
                                 </h4>
                                 <div class="row">
                                     <div class="col align-self-center mb-3">
-                                        <video preload="none" poster="hiragana/pic/poster1.jpg" class="img-fluid w-100" controls>
-                                            <source src="hiragana/media/hiragana.webm" type="video/webm">
-                                        </video>
+                                        <video preload="none" poster="hiragana/pic/poster1.jpg" class="img-fluid w-100" data-controls="1" data-src="hiragana/media/hiragana.webm"></video>
                                     </div>
                                 </div>
                             </div>
@@ -893,9 +889,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/a.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/a.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/a.jpg" class="img-thumbnail" alt="">
@@ -919,9 +913,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/i.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/i.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/i.jpg" class="img-thumbnail" alt="">
@@ -945,9 +937,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/u.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/u.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/u.jpg" class="img-thumbnail" alt="">
@@ -971,9 +961,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/e.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/e.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/e.jpg" class="img-thumbnail" alt="">
@@ -998,9 +986,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/o.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/o.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/o.jpg" class="img-thumbnail" alt="">
@@ -1153,9 +1139,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ka.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ka.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ka.jpg" class="img-thumbnail" alt="">
@@ -1166,9 +1150,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ga.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ga.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ga.jpg" class="img-thumbnail" alt="">
@@ -1196,9 +1178,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ki.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ki.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ki.jpg" class="img-thumbnail" alt="">
@@ -1209,9 +1189,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/gi.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/gi.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/gi.jpg" class="img-thumbnail" alt="">
@@ -1239,9 +1217,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ku.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ku.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ku.jpg" class="img-thumbnail" alt="">
@@ -1252,9 +1228,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/gu.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/gu.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/gu.jpg" class="img-thumbnail" alt="">
@@ -1282,9 +1256,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 pt-1 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ke.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ke.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ke.jpg" class="img-thumbnail" alt="">
@@ -1295,9 +1267,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 pt-1 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ge.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ge.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ge.jpg" class="img-thumbnail" alt="">
@@ -1325,9 +1295,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 pt-1 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ko.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ko.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ko.jpg" class="img-thumbnail" alt="">
@@ -1338,9 +1306,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 pt-1 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/go.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/go.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/go.jpg" class="img-thumbnail" alt="">
@@ -1489,9 +1455,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/sa.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/sa.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/sa.jpg" class="img-thumbnail" alt="">
@@ -1502,9 +1466,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ja.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ja.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ja.jpg" class="img-thumbnail" alt="">
@@ -1532,9 +1494,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/si.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/si.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/si.jpg" class="img-thumbnail" alt="">
@@ -1545,9 +1505,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ji.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ji.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ji.jpg" class="img-thumbnail" alt="">
@@ -1575,9 +1533,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/su.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/su.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/su.jpg" class="img-thumbnail" alt="">
@@ -1588,9 +1544,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ju.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ju.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ju.jpg" class="img-thumbnail" alt="">
@@ -1618,9 +1572,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/se.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/se.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/se.jpg" class="img-thumbnail" alt="">
@@ -1631,9 +1583,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/je.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/je.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/je.jpg" class="img-thumbnail" alt="">
@@ -1661,9 +1611,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/so.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/so.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/so.jpg" class="img-thumbnail" alt="">
@@ -1674,9 +1622,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/jo.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/jo.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/jo.jpg" class="img-thumbnail" alt="">
@@ -1825,9 +1771,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ta.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ta.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ta.jpg" class="img-thumbnail" alt="">
@@ -1838,9 +1782,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/da.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/da.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/da.jpg" class="img-thumbnail" alt="">
@@ -1868,9 +1810,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/chi.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/chi.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/chi.jpg" class="img-thumbnail" alt="">
@@ -1881,9 +1821,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/dji.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/dji.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/dji.jpg" class="img-thumbnail" alt="">
@@ -1913,9 +1851,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/tsu.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/tsu.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/tsu.jpg" class="img-thumbnail" alt="">
@@ -1926,9 +1862,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/dju.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/dju.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/dju.jpg" class="img-thumbnail" alt="">
@@ -1956,9 +1890,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/te.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/te.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/te.jpg" class="img-thumbnail" alt="">
@@ -1969,9 +1901,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/de.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/de.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/de.jpg" class="img-thumbnail" alt="">
@@ -1999,9 +1929,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/to.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/to.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/to.jpg" class="img-thumbnail" alt="">
@@ -2012,9 +1940,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/do.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/do.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/do.jpg" class="img-thumbnail" alt="">
@@ -2124,9 +2050,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/na.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/na.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/na.jpg" class="img-thumbnail" alt="">
@@ -2150,9 +2074,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ni.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ni.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ni.jpg" class="img-thumbnail" alt="">
@@ -2176,9 +2098,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/nu.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/nu.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/nu.jpg" class="img-thumbnail" alt="">
@@ -2202,9 +2122,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ne.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ne.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ne.jpg" class="img-thumbnail" alt="">
@@ -2228,9 +2146,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/no.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/no.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/no.jpg" class="img-thumbnail" alt="">
@@ -2421,9 +2337,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ha.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ha.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ha.jpg" class="img-thumbnail" alt="">
@@ -2434,9 +2348,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ba.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ba.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ba.jpg" class="img-thumbnail" alt="">
@@ -2444,9 +2356,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/pa.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/pa.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/pa.jpg" class="img-thumbnail" alt="">
@@ -2481,9 +2391,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/hi.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/hi.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/hi.jpg" class="img-thumbnail" alt="">
@@ -2494,9 +2402,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/bi.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/bi.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/bi.jpg" class="img-thumbnail" alt="">
@@ -2504,9 +2410,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/pi.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/pi.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/pi.jpg" class="img-thumbnail" alt="">
@@ -2541,9 +2445,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/hu.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/hu.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/hu.jpg" class="img-thumbnail" alt="">
@@ -2554,9 +2456,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/bu.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/bu.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/bu.jpg" class="img-thumbnail" alt="">
@@ -2564,9 +2464,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/pu.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/pu.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/pu.jpg" class="img-thumbnail" alt="">
@@ -2601,9 +2499,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/he.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/he.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/he.jpg" class="img-thumbnail" alt="">
@@ -2614,9 +2510,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/be.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/be.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/be.jpg" class="img-thumbnail" alt="">
@@ -2624,9 +2518,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/pe.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/pe.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/pe.jpg" class="img-thumbnail" alt="">
@@ -2661,9 +2553,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ho.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ho.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ho.jpg" class="img-thumbnail" alt="">
@@ -2684,9 +2574,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/bo.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/bo.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/bo.jpg" class="img-thumbnail" alt="">
@@ -2694,9 +2582,7 @@ include("hiragana/data.php");
                         </div>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/po.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/po.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/po.jpg" class="img-thumbnail" alt="">
@@ -2806,9 +2692,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ma.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ma.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ma.jpg" class="img-thumbnail" alt="">
@@ -2832,9 +2716,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/mi.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/mi.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/mi.jpg" class="img-thumbnail" alt="">
@@ -2858,9 +2740,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/mu.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/mu.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/mu.jpg" class="img-thumbnail" alt="">
@@ -2884,9 +2764,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/me.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/me.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/me.jpg" class="img-thumbnail" alt="">
@@ -2910,9 +2788,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/mo.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/mo.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/mo.jpg" class="img-thumbnail" alt="">
@@ -3025,9 +2901,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ra.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ra.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ra.jpg" class="img-thumbnail" alt="">
@@ -3051,9 +2925,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ri.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ri.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ri.jpg" class="img-thumbnail" alt="">
@@ -3077,9 +2949,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid" width="80%" autoplay muted loop>
-                                    <source src="hiragana/media/ru.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid" width="80%" muted loop data-src="hiragana/media/ru.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ru.jpg" class="img-thumbnail" alt="">
@@ -3103,9 +2973,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/re.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/re.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/re.jpg" class="img-thumbnail" alt="">
@@ -3129,9 +2997,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ro.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ro.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ro.jpg" class="img-thumbnail" alt="">
@@ -3233,9 +3099,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/ya.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/ya.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/ya.jpg" class="img-thumbnail" alt="">
@@ -3260,9 +3124,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/yu.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/yu.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/yu.jpg" class="img-thumbnail" alt="">
@@ -3287,9 +3149,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/yo.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/yo.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/yo.jpg" class="img-thumbnail" alt="">
@@ -3393,9 +3253,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/wa.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/wa.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/wa.jpg" class="img-thumbnail" alt="">
@@ -3422,9 +3280,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/wo.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/wo.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/wo.jpg" class="img-thumbnail" alt="">
@@ -3448,9 +3304,7 @@ include("hiragana/data.php");
                         </ul>
                         <div class="row mb-3">
                             <div class="col-5 mb-3 border">
-                                <video preload="none" class="img-fluid Video" width="70%" autoplay muted loop>
-                                    <source src="hiragana/media/n.mp4" type="video/mp4">
-                                </video>
+                                <video preload="none" class="img-fluid Video" width="70%" muted loop data-src="hiragana/media/n.mp4"></video>
                             </div>
                             <div class="col-7 mb-3">
                                 <img loading="lazy" decoding="async" src="hiragana/pic/n.jpg" class="img-thumbnail" alt="">
@@ -3519,6 +3373,7 @@ include("hiragana/data.php");
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/search-clear.js"></script>
+    <script src="js/video-defer.js?20261121g"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         function ClickAudio(obj) {
