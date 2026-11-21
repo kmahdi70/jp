@@ -49,6 +49,8 @@ if (($_GET['chunk'] ?? '') === 'words') {
     }
     $chunkWords = array_slice($chunkSection['words'], $chunkFrom, jp_words_chunk_size($chunkFrom));
     header('Content-Type: text/html; charset=utf-8');
+    /* تکه‌ها صفحهٔ مستقل نیستند؛ نباید جداگانه ایندکس شوند */
+    header('X-Robots-Tag: noindex, follow');
     header('X-Jp-From: ' . ($chunkFrom + count($chunkWords)));
     header('X-Jp-Total: ' . count($chunkSection['words']));
     echo jp_word_rows($chunkWords);
@@ -86,7 +88,7 @@ if (($_GET['chunk'] ?? '') === 'words') {
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261121a">
+    <link rel="stylesheet" href="css/global.css?20261121b">
     <link rel="stylesheet" href="css/words.css?20261120a">
 </head>
 
@@ -286,9 +288,14 @@ if (($_GET['chunk'] ?? '') === 'words') {
                                 $word_items_init = min($n, jp_words_chunk_size(0));
                                 echo jp_word_rows(array_slice($sec['words'], 0, $word_items_init));
                                 if ($n > $word_items_init): ?>
-                                    <li class="jp-chunk-sentinel" data-endpoint="words.php" data-kind="words" data-group="<?= $wi ?>" data-from="<?= $word_items_init ?>" data-total="<?= $n ?>"><span class="jp-chunk-note" aria-hidden="true">…</span></li>
+                                    <li class="jp-chunk-sentinel" data-endpoint="words.php" data-kind="words" data-group="<?= $wi ?>" data-from="<?= $word_items_init ?>" data-total="<?= $n ?>"><a class="jp-chunk-note" href="words-all.php#item-2-<?= $wi ?>" aria-label="فهرست کامل واژه‌ها" title="فهرست کامل واژه‌ها">…</a></li>
                                 <?php endif; ?>
                             </ul>
+                            <?php if ($n > $word_items_init): ?>
+                                <noscript>
+                                    <p class="jp-noscript-note">جاوااسکریپت خاموش است؛ بقیهٔ واژه‌های این بخش یک‌جا در این صفحه هست: <a href="words-all.php#item-2-<?= $wi ?>">فهرست کامل واژه‌ها</a></p>
+                                </noscript>
+                            <?php endif; ?>
                         </section>
                     <?php
                     }

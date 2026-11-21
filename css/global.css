@@ -453,6 +453,25 @@ tr.jp-chunk-sentinel td.jp-chunk-cell {
     color: #c0392b;
 }
 
+/* زیر همان «…» یک لینک به فهرست کامل است: بدون جاوااسکریپت و برای خزنده‌ها،
+   بقیهٔ ردیف‌های همان جدول/بخش از همین‌جا در دسترس است. */
+a.jp-chunk-note {
+    text-decoration: none;
+}
+
+a.jp-chunk-note:hover,
+a.jp-chunk-note:focus-visible {
+    color: #28b76b;
+    text-decoration: underline;
+}
+
+/* همان لینک، این بار به‌صورت نوشتهٔ خوانا و فقط وقتی جاوااسکریپت خاموش است */
+.jp-noscript-note {
+    margin: 0.5rem 0 0;
+    font-size: 0.9rem;
+    color: #8a93a2;
+}
+
 .docs-article .word-list li.jp-chunk-sentinel {
     display: flex;
     justify-content: center;

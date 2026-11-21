@@ -87,6 +87,8 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
     }
     $chunkItems = array_slice($chunkCategory['items'], $chunkFrom, jp_kanji_chunk_size($chunkFrom));
     header('Content-Type: text/html; charset=utf-8');
+    /* تکه‌ها صفحهٔ مستقل نیستند؛ نباید جداگانه ایندکس شوند */
+    header('X-Robots-Tag: noindex, follow');
     header('X-Jp-From: ' . ($chunkFrom + count($chunkItems)));
     header('X-Jp-Total: ' . count($chunkCategory['items']));
     echo !empty($chunkCategory['no_examples'])
@@ -127,7 +129,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261121a">
+    <link rel="stylesheet" href="css/global.css?20261121b">
     <link rel="stylesheet" href="css/kanji.css?20261121a">
 </head>
 
@@ -374,12 +376,17 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
                                             : jp_kanji_rows_examples($kanji_items_head, 0);
                                         if ($kanji_items_total > $kanji_items_init): ?>
                                             <tr class="jp-chunk-sentinel" data-endpoint="kanji.php" data-kind="kanji" data-group="<?= $catIndex ?>" data-from="<?= $kanji_items_init ?>" data-total="<?= $kanji_items_total ?>">
-                                                <td colspan="<?= !empty($cat['no_examples']) ? 6 : 8 ?>" class="jp-chunk-cell"><span class="jp-chunk-note" aria-hidden="true">…</span></td>
+                                                <td colspan="<?= !empty($cat['no_examples']) ? 6 : 8 ?>" class="jp-chunk-cell"><a class="jp-chunk-note" href="kanji-all.php#section-<?= $i ?>" aria-label="فهرست کامل کانجی" title="فهرست کامل کانجی">…</a></td>
                                             </tr>
                                         <?php endif; ?>
                                     </tbody>
                                 </table>
                             </div>
+                            <?php if ($kanji_items_total > $kanji_items_init): ?>
+                                <noscript>
+                                    <p class="jp-noscript-note">جاوااسکریپت خاموش است؛ بقیهٔ ردیف‌های این جدول یک‌جا در این صفحه هست: <a href="kanji-all.php#section-<?= $i ?>">فهرست کامل کانجی</a></p>
+                                </noscript>
+                            <?php endif; ?>
                         </section>
                     </article>
                     <?php $i++; ?>
