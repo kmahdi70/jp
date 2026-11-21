@@ -43,7 +43,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261121b">
+    <link rel="stylesheet" href="css/global.css?20261121c">
 
 </head>
 

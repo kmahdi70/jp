@@ -88,7 +88,7 @@ if (($_GET['chunk'] ?? '') === 'words') {
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261121b">
+    <link rel="stylesheet" href="css/global.css?20261121c">
     <link rel="stylesheet" href="css/words.css?20261120a">
 </head>
 
@@ -288,7 +288,7 @@ if (($_GET['chunk'] ?? '') === 'words') {
                                 $word_items_init = min($n, jp_words_chunk_size(0));
                                 echo jp_word_rows(array_slice($sec['words'], 0, $word_items_init));
                                 if ($n > $word_items_init): ?>
-                                    <li class="jp-chunk-sentinel" data-endpoint="words.php" data-kind="words" data-group="<?= $wi ?>" data-from="<?= $word_items_init ?>" data-total="<?= $n ?>"><a class="jp-chunk-note" href="words-all.php#item-2-<?= $wi ?>" aria-label="فهرست کامل واژه‌ها" title="فهرست کامل واژه‌ها">…</a></li>
+                                    <li class="jp-chunk-sentinel" data-endpoint="words.php" data-kind="words" data-group="<?= $wi ?>" data-from="<?= $word_items_init ?>" data-total="<?= $n ?>"><button type="button" class="jp-chunk-more" hidden>نمایش بیشتر</button><a class="jp-chunk-note" href="words-all.php#item-2-<?= $wi ?>" aria-label="فهرست کامل واژه‌ها" title="فهرست کامل واژه‌ها">…</a></li>
                                 <?php endif; ?>
                             </ul>
                             <?php if ($n > $word_items_init): ?>
@@ -314,7 +314,7 @@ if (($_GET['chunk'] ?? '') === 'words') {
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
-    <script src="js/chunks.js"></script>
+    <script src="js/chunks.js?20261121c"></script>
     <script src="js/search-clear.js"></script>
     <script>
 

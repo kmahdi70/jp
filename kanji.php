@@ -129,7 +129,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261121b">
+    <link rel="stylesheet" href="css/global.css?20261121c">
     <link rel="stylesheet" href="css/kanji.css?20261121a">
 </head>
 
@@ -376,7 +376,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
                                             : jp_kanji_rows_examples($kanji_items_head, 0);
                                         if ($kanji_items_total > $kanji_items_init): ?>
                                             <tr class="jp-chunk-sentinel" data-endpoint="kanji.php" data-kind="kanji" data-group="<?= $catIndex ?>" data-from="<?= $kanji_items_init ?>" data-total="<?= $kanji_items_total ?>">
-                                                <td colspan="<?= !empty($cat['no_examples']) ? 6 : 8 ?>" class="jp-chunk-cell"><a class="jp-chunk-note" href="kanji-all.php#section-<?= $i ?>" aria-label="فهرست کامل کانجی" title="فهرست کامل کانجی">…</a></td>
+                                                <td colspan="<?= !empty($cat['no_examples']) ? 6 : 8 ?>" class="jp-chunk-cell"><button type="button" class="jp-chunk-more" hidden>نمایش بیشتر</button><a class="jp-chunk-note" href="kanji-all.php#section-<?= $i ?>" aria-label="فهرست کامل کانجی" title="فهرست کامل کانجی">…</a></td>
                                             </tr>
                                         <?php endif; ?>
                                     </tbody>
@@ -420,7 +420,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
-    <script src="js/chunks.js"></script>
+    <script src="js/chunks.js?20261121c"></script>
     <script src="js/search-clear.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>

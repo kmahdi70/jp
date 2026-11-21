@@ -142,6 +142,47 @@
         }
     }
 
+    /* اگر فیلتری در همان بخش فعال باشد، بعد از گرفتن تکه دوباره اجرا می‌شود تا
+       ردیف‌های تازه هم فیلتر شوند و شمارنده‌ها همان عدد درست را نشان بدهند. */
+    function refreshFilter(sentinel) {
+        var scope = sentinel.closest ? sentinel.closest('.docs-section') : null;
+        if (!scope) {
+            return;
+        }
+        var inputs = scope.querySelectorAll('input.form-control');
+        for (var i = 0; i < inputs.length; i++) {
+            if (inputs[i].value !== '') {
+                inputs[i].dispatchEvent(new Event('input', { bubbles: true }));
+                return;
+            }
+        }
+    }
+
+    /* دکمهٔ «نمایش بیشتر»: دکمه در HTML هست ولی با hidden پنهان است؛ همین‌جا
+       آشکار می‌شود تا بدون جاوااسکریپت دکمهٔ بی‌اثر دیده نشود. وقتی بارگذاری
+       خودکار هنگام اسکرول اجرا نشود (مرورگر قدیمی، تب پنهان) کار می‌کند. */
+    function wireMore(sentinel) {
+        var btn = sentinel.querySelector('.jp-chunk-more');
+        if (!btn) {
+            return;
+        }
+        btn.hidden = false;
+        btn.addEventListener('click', function () {
+            if (btn.disabled) {
+                return;
+            }
+            btn.disabled = true;
+            btn.setAttribute('aria-busy', 'true');
+            load(sentinel).then(function () {
+                btn.disabled = false;
+                btn.removeAttribute('aria-busy');
+                if (sentinel.parentNode) {
+                    refreshFilter(sentinel);
+                }
+            });
+        });
+    }
+
     function init() {
         var sentinels = document.querySelectorAll(SELECTOR);
         if (!sentinels.length) {
@@ -156,7 +197,10 @@
                 });
             }, { rootMargin: '700px 0px' });
         }
-        Array.prototype.forEach.call(sentinels, observe);
+        Array.prototype.forEach.call(sentinels, function (sentinel) {
+            observe(sentinel);
+            wireMore(sentinel);
+        });
     }
 
     window.JpChunks = {
