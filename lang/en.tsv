@@ -12633,3 +12633,22 @@ b247d45b6cc976179f56ef0a250b2f59	I paid twice.
 8ae351aeff3e8d626c6235498262cbd9	Be careful from now on.
 36a8e86b375c25cd37080058d4d588d7	/* filter rows of a list; Returns the number of rows left */
 5b8d33ae0655ea625d447ae0aef7ba6d	Select language
+e6a81edce1a6b6499e6903577369d7bd	Complete list of Jōyō kanji
+a69156bd01a5480443de5c805f877f85	Complete kanji list
+84d405a38c4d0735d393505b72eadc50	kanji page
+7056d0783d8f877c5d66a643c7da8800	This page shows every kanji of the site in one place, category by category, with the kunyomi (hiragana), the onyomi (katakana) and the Persian and English meanings. The rows are rendered by PHP, so every kanji is present in the page text for search engines to find.
+4bcdfca374f2bb7a8adcd5f355ac213a	For interactive tables, audio, stroke order or in-page search use the
+5c9ba8588c7ae4cd2235a0354c0311a7	; it is lighter for everyday browsing and its rows arrive in chunks as you scroll.
+3d5e69aa6d43029191ad9d660ad72346	All kanji in one place:
+82be639ae05fbf312cecdbc793110411	Complete Jōyō kanji list with readings and Persian meanings
+0ae81fe36226e3964f607c4624a4f9fb	All Jōyō kanji on one page: kunyomi and onyomi readings, Persian and English meanings, grouped by category for quick review and search.
+6424018ab5140bcfab1e4a17462862f6	All Jōyō kanji with kunyomi and onyomi readings and Persian and English meanings.
+ec107f66ca03b11f19173d22d5394e0b	Complete list of Japanese words
+ce2cf46bf7ecb86c5eeb2286ef9c0204	Complete word list
+741c0f300d6a6ea587ebd3c606d8900c	words page
+8820e37f158f8b55aa997468ed7055bf	This page shows every word of the site in one place: fifteen sections, each word with its kanji or kana, the kana reading, romaji and the Persian meaning. The rows are rendered by PHP, so every word is present in the page text for search engines to find.
+484639645f48e404ae7e0ddfce346436	For in-page search, pronunciation playback and section-by-section browsing use the
+a1c5a88438599a969aa0fd6fc4b26fc6	All words in one place:
+19d52046103716c2826bc84c9fe0c033	Complete list of 5000 common Japanese words with Persian meanings
+ef84671fe104aee6360657eff91374b5	All 5000 everyday Japanese words on one page: kanji, kana, romaji and Persian meanings, grouped into fifteen sections.
+01ec6c604c4f554f45a12a66aedb1c00	All 5000 everyday Japanese words with kanji, kana, romaji and Persian meanings.

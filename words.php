@@ -124,6 +124,7 @@ if (($_GET['chunk'] ?? '') === 'words') {
                     <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Word Classes</a></li>
                     <li class="nav-item"><a class="nav-link scrollto" href="#item-1-3">Order Of Words</a></li>
                     <li class="nav-item"><a class="nav-link scrollto" href="#search-all"><i class="fas fa-search me-2"></i>Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="words-all.php">فهرست کامل واژه‌ها</a></li>
                     <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#item-2-1"><span class="theme-icon-holder me-2"><i class="fas fa-users"></i></span>People & Family <span class="badge bg-success ms-2">164</span></a></li>
                     <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#item-2-2"><span class="theme-icon-holder me-2"><i class="fas fa-clock"></i></span>Time &amp; Date <span class="badge bg-success ms-2">165</span></a></li>
                     <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#item-2-3"><span class="theme-icon-holder me-2"><i class="fas fa-utensils"></i></span>Food &amp; Drink <span class="badge bg-success ms-2">100</span></a></li>
@@ -151,6 +152,7 @@ if (($_GET['chunk'] ?? '') === 'words') {
                         </h1>
                     </header>
                     <section class="docs-intro V docs-section rtl">
+                        <p class="text-justify">همهٔ واژه‌ها یک‌جا: <a href="words-all.php">فهرست کامل واژه‌ها</a></p>
                         <p class="text-justify">این صفحه فهرستی از پرتکرارترین واژه‌های گفتار روزمرهٔ ژاپنی است: ۵۰۰۰ واژه، بر پایهٔ بسامد واقعی کاربرد در مکالمه، گروه‌بندی‌شده در پانزده بخش. ساختار هر سطر همانند صفحهٔ گرامر است: کانجی و کانا در چپ، سپس روماجی و در انتهای سمت راست معنی فارسی.</p>
                         <div class="callout-block callout-block-info rtl">
                             <div class="content">

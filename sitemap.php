@@ -11,6 +11,9 @@ $pages = [
     'katakana.php'         => ['0.9', 'weekly'],
     'kanji.php'            => ['0.9', 'weekly'],
     'words.php'            => ['0.9', 'weekly'],
+    /* فهرست‌های کامل: همهٔ کانجی‌ها و واژه‌ها در یک صفحه، برای ایندکس شدن */
+    'kanji-all.php'        => ['0.8', 'monthly'],
+    'words-all.php'        => ['0.8', 'monthly'],
     'grammar.php'          => ['0.9', 'weekly'],
     'podcasts.php'         => ['0.8', 'weekly'],
     'hiragana_summary.php' => ['0.6', 'monthly'],

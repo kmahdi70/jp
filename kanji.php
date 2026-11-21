@@ -1,61 +1,7 @@
 <?php
 require_once __DIR__ . '/lang.php';
 require_once __DIR__ . '/seo.php';
-include("kanji/data.php");
-foreach ($kanji_categories as $categoryIndex => $category) {
-    if (($category['title_en'] ?? '') === 'Grade 1 School Kanji') {
-        array_splice($kanji_categories, $categoryIndex, 1);
-        break;
-    }
-}
-$kanji_categories = array_merge($kanji_categories, $school_grade_categories);
-foreach ($kanji_categories as &$cat) {
-    if (($cat['title_en'] ?? '') === 'Basic Verbs') {
-        foreach ($verb_kanji_extra as $it) {
-            $cat['items'][] = $it;
-        }
-        $cat['items'] = array_values(array_filter($cat['items'], static function ($item) {
-            $meanParts = preg_split('/[\x{060C}\x{061B},;]/u', $item['mean'] ?? '', 2);
-            $firstMeaning = trim($meanParts[0] ?? '');
-            return preg_match('/(?:\x{062F}\x{0646}|\x{062A}\x{0646}|\x{06A9}\x{0631}\x{062F}\x{0646}|\x{0634}\x{062F}\x{0646})$/u', $firstMeaning) === 1;
-        }));
-    }
-}
-unset($cat);
-/* بخش تکمیلی: کانجی‌های رسمی جویو که در هیچ‌کدام از بخش‌های بالا نیامده‌اند */
-$kanji_seen = [];
-foreach ($kanji_categories as $cat) {
-    foreach ($cat['items'] as $item) {
-        $kanji_seen[$item['k']] = true;
-    }
-}
-$joyo_remaining = [];
-foreach ($joyo_kanji as $row) {
-    if (empty($kanji_seen[$row[0]])) {
-        $joyo_remaining[] = [
-            'k' => $row[0],
-            'kun' => $row[1],
-            'on' => $row[2],
-            'mean' => $row[3],
-            'mean_en' => $row[4],
-            'ex' => [],
-        ];
-    }
-}
-if (!empty($joyo_remaining)) {
-    $kanji_categories[] = [
-        'title' => 'کانجی‌های تکمیلی جویو',
-        'title_en' => 'Remaining Jōyō Kanji',
-        'icon' => 'fa-layer-group',
-        'desc' => 'این بخش مکمل بخش‌های بالاست: هر کانجی رسمی 常用漢字 که در دسته‌های موضوعی یا جدول پایه‌های تحصیلی نیامده بود، اینجا فهرست شده است. داده‌ها از فهرست رسمی ۲۱۳۶ کانجی جویو (کانجی، کونیومی، اونیومی، معنی فارسی و انگلیسی) آمده‌اند و با فهرست رسمی ژاپن یکی است.',
-        'no_examples' => true,
-        'items' => $joyo_remaining,
-    ];
-}
-$kanji_total = 0;
-foreach ($kanji_categories as $c) {
-    $kanji_total += count($c['items']);
-}
+require_once __DIR__ . '/kanji/prepare.php';
 
 /* ─────────────────────────────────────────────────────────────
  * ردیف‌های کانجی یک‌بار به‌صورت تابع نوشته می‌شوند تا نمایش اولیه و بخش‌های
@@ -182,7 +128,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
     <link rel="stylesheet" href="css/global.css?20261120a">
-    <link rel="stylesheet" href="css/kanji.css?20261118b">
+    <link rel="stylesheet" href="css/kanji.css?20261121a">
 </head>
 
 <body class="docs-page">
@@ -220,6 +166,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
                     <li class="nav-item"><a class="nav-link scrollto" href="#item-1-2">Kunyomi &amp; Onyomi</a></li>
                     <li class="nav-item"><a class="nav-link scrollto" href="#item-1-3">Table Guide</a></li>
                     <li class="nav-item"><a class="nav-link scrollto" href="#search-all"><i class="fas fa-search me-2"></i>Search</a></li>
+                    <li class="nav-item"><a class="nav-link" href="kanji-all.php">فهرست کامل کانجی</a></li>
                     <?php $i = 2;
                     foreach ($kanji_categories as $cat) { ?>
                         <li class="nav-item section-title mt-3"><a class="nav-link scrollto" href="#section-<?= $i ?>"><span class="theme-icon-holder me-2"><i class="fas <?= $cat['icon'] ?>"></i></span><?= !empty($cat['school_grade']) ? 'Grade ' . $cat['school_grade'] . ' School' : $cat['title_en'] ?> <span class="badge bg-success ms-2"><?= count($cat['items']) ?></span></a></li>
@@ -237,6 +184,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
                         </h1>
                     </header>
                     <section class="docs-intro V docs-section rtl">
+                        <p class="text-justify">همهٔ کانجی‌ها یک‌جا: <a href="kanji-all.php">فهرست کامل کانجی</a></p>
                         <ol>
                             <li class="text-justify"><strong>کانجی چیست:</strong> کانجی (漢字) کاراکترهای تصویری ژاپن هستند که از زبان چینی وارد شده‌اند. برخلاف هیراگانا و کاتاکانا، هر کانجی یک معنی (یا چند معنی مرتبط) دارد و خواندن‌های متفاوتی می‌تواند داشته باشد.</li>
                             <li class="text-justify"><strong>دسته‌بندی:</strong> کانجی‌های پایه در دسته‌های موضوعی و از آسان به سخت چیده شده‌اند: اعداد، شمارنده‌های رایج، تقویم (روز، هفته، ماه، سال)، ساعت و زمان، جهت‌ها و اندازه‌ها، رنگ‌ها، کلاس اول دبستان، انسان و خانواده، طبیعت، غذا و نوشیدنی، حیوانات و افعال پایه. می‌توانید بعداً دسته‌بندی را تغییر دهید یا دسته جدید اضافه کنید.</li>
@@ -391,7 +339,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
                                 <span id="kanjiCount-<?= $i ?>" class="joyo-count"><?= count($cat['items']) ?> / <?= count($cat['items']) ?></span>
                             </div>
                             <div class="table-responsive my-4">
-                                <table class="table table-striped kanji-table rtl" id="kanjiTable-<?= $i ?>">
+                                <table class="table table-striped kanji-table rtl<?= !empty($cat['no_examples']) ? ' kanji-table-plain' : '' ?>" id="kanjiTable-<?= $i ?>">
                                     <thead class="V">
                                         <?php if (!empty($cat['no_examples'])) { ?>
                                             <tr>

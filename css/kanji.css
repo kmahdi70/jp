@@ -217,3 +217,96 @@
     color: #8a93a2;
     font-size: .9rem;
 }
+
+/* ─────────────────────────────────────────────────────────────
+ * عرض ثابت ستون‌های جدول کانجی
+ *
+ * ردیف‌های بعدی با بارگذاری تدریجی می‌رسند؛ با چیدمان خودکار، هر بخش تازه عرض
+ * ستون‌ها را از روی محتوای خودش از نو حساب می‌کرد و ستون‌ها وسط اسکرول جابه‌جا
+ * می‌شدند (اندازه‌گیری: ستون معنی از ۷۹ به ۱۱۱ پیکسل می‌پرید و عرض جدول از ۴۱۰
+ * به ۴۷۵ می‌رفت). با table-layout: fixed عرض ستون‌ها فقط از سطر سرستون می‌آید و
+ * با رسیدن بخش‌های بعدی ثابت می‌ماند. درصدها همان نسبتی است که جدول کامل با
+ * چیدمان خودکار داشت، تا ظاهر صفحه تقریباً همان بماند.
+ * ───────────────────────────────────────────────────────────── */
+.docs-content .kanji-table {
+    table-layout: fixed;
+}
+
+/* جدول‌هایی که هر کانجی یک ردیف دارد (بدون ستون‌های مثال) */
+.docs-content .kanji-table > thead > tr > th:nth-child(1) {
+    width: 12%;
+}
+
+.docs-content .kanji-table > thead > tr > th:nth-child(3) {
+    width: 20%;
+}
+
+.docs-content .kanji-table > thead > tr > th:nth-child(4) {
+    width: 13%;
+}
+
+.docs-content .kanji-table > thead > tr > th:nth-child(5) {
+    width: 13%;
+}
+
+.docs-content .kanji-table > thead > tr > th:nth-child(6) {
+    width: 10%;
+}
+
+.docs-content .kanji-table > thead > tr > th:nth-child(7) {
+    width: 16%;
+}
+
+.docs-content .kanji-table > thead > tr > th:nth-child(8) {
+    width: 16%;
+}
+
+/* ستون «ترتیب نوشتن» با پیکسل ثابت می‌ماند تا دکمه در موبایل جا شود */
+.docs-content .kanji-table > thead > tr > th:nth-child(2) {
+    width: 44px;
+}
+
+/* جدول ضمیمه: کانجی | ترتیب نوشتن | کونیومی | اونیومی | معنی فارسی | معنی انگلیسی */
+.docs-content .kanji-table-plain > thead > tr > th:nth-child(3) {
+    width: 29%;
+}
+
+.docs-content .kanji-table-plain > thead > tr > th:nth-child(4) {
+    width: 11%;
+}
+
+.docs-content .kanji-table-plain > thead > tr > th:nth-child(5) {
+    width: 22%;
+}
+
+.docs-content .kanji-table-plain > thead > tr > th:nth-child(6) {
+    width: 25%;
+}
+
+/* زیر ۷۶۸ پیکسل جدول داخل باکس خودش اسکرول افقی دارد (بالاتر از آن overflow
+   برای چسبیدن سرستون باز است)؛ همان‌جا هم حداقل عرضی می‌دهیم تا ستون‌ها خیلی
+   باریک نشوند و ستون «ترتیب نوشتن» دکمه را جا کند. */
+@media (max-width: 767.98px) {
+    .docs-content .kanji-table {
+        min-width: 600px;
+    }
+}
+
+/* فهرست کامل کانجی (kanji-all.php): صفحه یک‌بار و کامل رندر می‌شود، پس چیدمان
+   خودکار جدول مشکلی ندارد و فقط ستون کانجی و متن‌ها باید خوانا بمانند. */
+.kanji-all-table {
+    direction: ltr;
+}
+
+.kanji-all-table > thead > tr > th {
+    text-align: center;
+}
+
+.kanji-all-table .kanji-ch {
+    font-size: 1.35rem;
+}
+
+.kanji-all-table > tbody > tr > td.V {
+    direction: rtl;
+    text-align: right;
+}
