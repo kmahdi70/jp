@@ -224,6 +224,15 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                         </div><!--//card-->
                     </div><!--//col-->
                 </div><!--//row-->
+                <div class="row justify-content-center pb-3">
+                    <div class="col-12 text-center V rtl">
+                        <p class="mb-0">
+                            <a href="kanji-all.php">فهرست کامل کانجی</a>
+                            <span class="mx-2">·</span>
+                            <a href="words-all.php">فهرست کامل واژه‌ها</a>
+                        </p>
+                    </div>
+                </div><!--//row-->
             </div><!--//container-->
         </div><!--//container-->
     </div><!--//page-content-->
