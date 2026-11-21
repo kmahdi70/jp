@@ -314,7 +314,7 @@ if (($_GET['chunk'] ?? '') === 'words') {
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
-    <script src="js/chunks.js?20261121c"></script>
+    <script src="js/chunks.js?20261121h"></script>
     <script src="js/search-clear.js"></script>
     <script>
 

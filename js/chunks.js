@@ -40,7 +40,17 @@
     function swap(sentinel, html) {
         var holder = document.createElement('template');
         holder.innerHTML = html;
+        /* جای نگهبان را پیش و پس از درج می‌سنجیم تا بفهمیم تکه کجای کادر دید افتاد */
+        var topBefore = sentinel.getBoundingClientRect().top;
         sentinel.parentNode.insertBefore(holder.content, sentinel);
+        var topAfter = sentinel.getBoundingClientRect().top;
+        /* اگر تکه بالاتر از کادر دید درج شد (کاربر سریع رد شده) و مرورگر خودش
+           تصویر را نگه نداشت، همان‌جا جبران می‌کنیم تا صفحه نپرد. مرورگر برای
+           چیدمان جدول anchor نمی‌کند؛ برای فهرست‌ها معمولاً خودش جبران می‌کند و
+           در آن حالت تفاوت صفر است، پس این خط کاری نمی‌کند. */
+        if (topBefore < 0 && topAfter > topBefore) {
+            window.scrollBy(0, topAfter - topBefore);
+        }
     }
 
     function load(sentinel) {
