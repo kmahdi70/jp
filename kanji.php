@@ -127,7 +127,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
     <!-- Theme CSS -->
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261120a">
+    <link rel="stylesheet" href="css/global.css?20261121a">
     <link rel="stylesheet" href="css/kanji.css?20261121a">
 </head>
 
@@ -414,6 +414,7 @@ if (($_GET['chunk'] ?? '') === 'kanji') {
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/chunks.js"></script>
+    <script src="js/search-clear.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         /* ترتیب نوشتن: برای هر کاراکتر GIF مربوط را از پوشهٔ kanji/media نشان می‌دهد

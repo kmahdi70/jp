@@ -43,7 +43,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
 
     <!-- Theme CSS -->
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261119f">
+    <link rel="stylesheet" href="css/global.css?20261121a">
 
 </head>
 
@@ -260,6 +260,7 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
     <script src="assets/plugins/simplelightbox/simple-lightbox.min.js"></script>
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <!-- <script src="assets/js/docs.js"></script> -->
+    <script src="js/search-clear.js"></script>
 
     <script>
         /* بستن جعبهٔ نتایج: حذف کامل از صفحه، پاک کردن کادر جست‌وجو و آدرس */

@@ -45,7 +45,7 @@ include("katakana/data.php");
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261119f">
+    <link rel="stylesheet" href="css/global.css?20261121a">
 </head>
 
 <body class="docs-page">
@@ -2896,6 +2896,7 @@ include("katakana/data.php");
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/search-clear.js"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         function ClickAudio(obj) {

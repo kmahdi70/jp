@@ -460,3 +460,62 @@ tr.jp-chunk-sentinel td.jp-chunk-cell {
     border-bottom: none;
     direction: rtl;
 }
+
+/* ---------- دکمهٔ پاک‌کردن کادر جست‌وجو (js/search-clear.js) ---------- */
+/* فقط موبایل: در کادر جست‌وجو، وقتی متنی هست، آیکون × می‌آید و متن را پاک می‌کند */
+.jp-clear-host {
+    position: relative;
+}
+
+.search-clear {
+    position: absolute;
+    top: 50%;
+    left: 0.5rem;
+    transform: translateY(-50%);
+    display: none;
+    align-items: center;
+    justify-content: center;
+    width: 1.85rem;
+    height: 1.85rem;
+    padding: 0;
+    border: 0;
+    border-radius: 50%;
+    background: #e6ebf2;
+    color: #55617a;
+    line-height: 1;
+    cursor: pointer;
+    z-index: 3;
+    -webkit-appearance: none;
+    appearance: none;
+}
+
+.search-clear svg {
+    width: 0.95rem;
+    height: 0.95rem;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2.4;
+    stroke-linecap: round;
+}
+
+.search-clear:hover,
+.search-clear:focus-visible {
+    background: #d7dee8;
+    color: #33405a;
+}
+
+.search-clear:focus-visible {
+    outline: 2px solid #8a9bb8;
+    outline-offset: 1px;
+}
+
+@media (max-width: 767.98px) {
+    .jp-clear-host.has-value > .search-clear {
+        display: inline-flex;
+    }
+
+    /* جا برای آیکون در انتهای کادر، تا متن زیرش نرود */
+    .jp-clear-host.has-value > .form-control {
+        padding-left: 2.4rem;
+    }
+}
