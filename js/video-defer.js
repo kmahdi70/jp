@@ -7,6 +7,7 @@
  * شروع می‌کند. تا آن لحظه هیچ درخواستی به فایل ویدیو نمی‌رود.
  *
  * کلیک‌های بعدی برای کلیپ‌های بدون نوار کنترل، پخش را پاز/ادامه می‌کنند.
+ * کل کادرِ هر ویدیو کلیک‌پذیر است، نه فقط خود مستطیل تصویر.
  * ویدیوهای بلند آموزشی نوار کنترل خود را پس از بارگذاری می‌گیرند و رفتارشان
  * همان رفتار بومی پخش‌کننده است.
  */
@@ -54,12 +55,33 @@
         }
     }
 
+    /*
+     * کادر دور ویدیو هم کلیک‌پذیر می‌شود: کلیپ با width="70%" فقط بخشی از
+     * مربع را می‌گیرد و کلیک بیرون آن تا حالا کاری نمی‌کرد.
+     */
+    function box(video) {
+        var parent = video.parentElement;
+        if (!parent || parent === document.body) {
+            return;
+        }
+        parent.style.cursor = 'pointer';
+        parent.addEventListener('click', function (event) {
+            if (event.target === video || video.contains(event.target)) {
+                /* خود ویدیو (و نوار کنترل بومی‌اش) مسیر خودش را دارد */
+                return;
+            }
+            activate(video);
+        });
+    }
+
     function init() {
         var videos = document.querySelectorAll('video[data-src]');
         Array.prototype.forEach.call(videos, function (video) {
             video.addEventListener('click', function () {
                 activate(video);
             });
+
+            box(video);
 
             if (video.getAttribute('data-controls') === '1') {
                 if (!video.hasAttribute('tabindex')) {

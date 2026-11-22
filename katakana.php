@@ -2893,7 +2893,7 @@ include("katakana/data.php");
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/search-clear.js"></script>
-    <script src="js/video-defer.js?20261121g"></script>
+    <script src="js/video-defer.js?20261122a"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         function ClickAudio(obj) {
