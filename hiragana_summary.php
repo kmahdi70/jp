@@ -946,9 +946,7 @@ require_once __DIR__ . '/seo.php'; ?><!DOCTYPE html>
                 <div class="modal-body">
                     <div class="row">
                         <div class="col-12 text-center">
-                            <video preload="none" id="ModalVideo" class="img-fluid" autoplay muted loop>
-                                <source src="" type="video/mp4">
-                            </video>
+                            <video preload="none" id="ModalVideo" class="img-fluid" muted loop></video>
                         </div>
                     </div>
                 </div>
@@ -963,7 +961,7 @@ require_once __DIR__ . '/seo.php'; ?><!DOCTYPE html>
         });
 
         function Play(FileName) {
-            $('#ModalVideo source').attr('src', "hiragana/site/"+FileName+".mp4");
+            $('#ModalVideo').attr('src', "hiragana/site/"+FileName+".mp4");
             $("#ModalVideo")[0].defaultPlaybackRate = 2.5;
             $("#ModalVideo")[0].load();
             $("#ModalVideo")[0].play();
