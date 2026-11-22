@@ -718,7 +718,9 @@ include("katakana/data.php");
                                 </h4>
                                 <div class="row">
                                     <div class="col align-self-center mb-3">
-                                        <video preload="none" poster="katakana/pic/poster.jpg" class="img-fluid w-100" data-controls="1" data-src="katakana/media/katakana_write.mp4"></video>
+                                        <video preload="none" poster="katakana/pic/poster.jpg" class="img-fluid w-100" controls>
+                                            <source src="katakana/media/katakana_write.mp4" type="video/mp4">
+                                        </video>
                                     </div>
                                 </div>
                                 <h4 class="callout-title rtl V">
@@ -729,7 +731,9 @@ include("katakana/data.php");
                                 </h4>
                                 <div class="row">
                                     <div class="col align-self-center mb-3">
-                                        <video preload="none" poster="katakana/pic/poster1.jpg" class="img-fluid w-100" data-controls="1" data-src="katakana/media/katakana.mp4"></video>
+                                        <video preload="none" poster="katakana/pic/poster1.jpg" class="img-fluid w-100" controls>
+                                            <source src="katakana/media/katakana.mp4" type="video/mp4">
+                                        </video>
                                     </div>
                                 </div>
                             </div>
@@ -2893,7 +2897,6 @@ include("katakana/data.php");
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
     <script src="js/search-clear.js"></script>
-    <script src="js/video-defer.js?20261122a"></script>
     <script src="js/jquery-3.5.1.min.js"></script>
     <script>
         function ClickAudio(obj) {
