@@ -891,7 +891,7 @@ b09487f5738c7f9855d055e73f5376c1	Guide lines
 c3d69c67c0d0efaedf954b96b1eeb7a2	section
 f1ff0fc7a2cb9353a186ac675697e0ce	What does that mean?
 66030b7327265d059436d3391d1589c6	Farsi
-897289e046a40911f5083cdc083db386	Complete Japanese language training in Persian: hiragana and katakana with audio and video pronunciation, kanji with Persian meaning, grammar, 5000 commonly used words and everyday conversations.
+897289e046a40911f5083cdc083db386	A complete Japanese course: hiragana and katakana with audio and stroke-order video, joyo kanji, grammar, 5,000 common words and everyday conversations.
 aaf52c5915862d818842cb579e414766	Learning Japanese from scratch: Hiragana, Katakana, Kanji, grammar and vocabulary
 f7adf395c9780130fc22c36e24041749	Write a word, kanji, kana, romaji or sentence...
 8addc935671faa975c6ececfdaec5b00	Search in all parts of the site
@@ -908,8 +908,8 @@ ee87c0c883f613704a5a7ad1bd0cc254	Learning the kanji 漢字
 4fa83972183eb7ad27b21c62974e5ecc	Frequently used words 言葉 (ことば)
 de9d4b59fe5982a5b6515a04c9f631e4	Frequently used Japanese sentences 常帗会話
 f055426d5b7467c76119cd3c03e53a03	/* close the results box: completely remove from the page, clear the search box and the address */
-e9efb18587bb876ecd10279c8c844dee	All basic hiragana and combined sounds with audio pronunciation, video clip, romaji and Persian sample words; Along with the summary and search table.
-c017063a286ee6f249b4ff84b32e7ac1	Learning hiragana with audio pronunciation, video and sample words
+e9efb18587bb876ecd10279c8c844dee	All basic and combined hiragana sounds with audio, stroke-order clips, romaji and sample words, plus a summary chart and in-page search.
+c017063a286ee6f249b4ff84b32e7ac1	Hiragana: sounds, stroke order and sample words
 6a9d5310f167b1ecd357e96926d05373	Write the phrase (kana, romaji or meaning)...
 3b6fd873117f513ac959f005141b0cea	{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mahdikarimian.ir/jp/#organization","name":"MK70","url":"https://mahdikarimian.ir/jp","logo":"https://mahdikarimian.ir/jp/assets/images/logo.jpg","sameAs":["https:// /t.me/LearnKyokushin","https://facebook.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/","https://instagram.com/kmahdi70"]},{"@type":"WebSite","@id":"https://mahdikarimian.ir/jp/#website","url":"https://mahdikarimian.ir/jp/","name":"Education JapanDocs Japanese language","description":"All basic hiragana and combined sounds with audio pronunciation, video clips, romaji and Persian sample words; with summary and search table.","inLanguage":"fa-IR","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"}},{"@type":"Person","@id":"https://mahdikarimian.ir/#person","name":"Mahdi Karimian","alternateName":"MK70","url":"https://mahdikarimian.ir/","jobTitle":"Japanese language teacher, software engineer and Kyokushin karate instructor","sameAs":["https://t.me/LearnKyokushin","https://instagram.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/"]},{"@type":"LearningResource","name":"Learning Hiragana","description":"Hiragana Basic and Combined with Pronunciation Audio, video and words Example.","learningResourceType":"lesson","educationalLevel":"beginner","url":"https://mahdikarimian.ir/jp/hiragana.php","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"},"author":{"@id":"https://mahdikarimian.ir/#person"},"isPartOf":{"@id":"https://mahdikarimian.ir/#person"} r/jp/#website"},"inLanguage":"fa-IR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mahdikarimian.ir/jp/"},{"@type":"ListItem","position":2,"name":"Hiragana","item":"https://mahdikarimian.ir/jp/hiragana.php"}]}]}
 27a7ddf4da49b75e9d59c43b01d29f99	A comprehensive guide to Hiragana
@@ -1113,11 +1113,11 @@ b44bfb809580cc7d9e45e6b5800af050	the dream
 9c45b9d20b358f7c94f4e61d0451c7e3	This sign is the shape of a person whose face is hit by a boomerang and makes this sound, it is also broken like a wall.
 8c193115a846b516e956410cc14d0515	peace of mind
 18b3cfeeff1f364eebc789f05dadc0c0	Ring throwing game
-1724ce417158d9464bab26a279cb47ca	Compact hiragana table for quick reference: basic sounds, dakuten, handakuten and combinations on one page.
-173301ec4c9be567da07c2cf52336c14	Hiragana summary table — quick overview of all sounds
+1724ce417158d9464bab26a279cb47ca	A compact hiragana chart for quick review: basic sounds, dakuten, handakuten and combinations on one page.
+173301ec4c9be567da07c2cf52336c14	Hiragana chart: quick review of every sound
 f0013728f52811486bb1884ce0ada413	{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mahdikarimian.ir/jp/#organization","name":"MK70","url":"https://mahdikarimian.ir/jp","logo":"https://mahdikarimian.ir/jp/assets/images/logo.jpg","sameAs":["https:// /t.me/LearnKyokushin","https://facebook.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/","https://instagram.com/kmahdi70"]},{"@type":"WebSite","@id":"https://mahdikarimian.ir/jp/#website","url":"https://mahdikarimian.ir/jp/","name":"Education Japanese language JapanDocs","description":"Condensed hiragana table for quick review: basic sounds, dakuten, handakuten and combinations on one page.","inLanguage":"fa-IR","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"}},{"@type":"Person","@id":"https://mahdikarimian.ir/#person","name":"Mahdi Karimian","alternateName":"MK70","url":"https://mahdikarimian.ir/","jobTitle":"Japanese language teacher, software engineer and Kyokushin karate instructor","sameAs":["https://t.me/LearnKyokushin","https://instagram.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/"]},{"@type":"LearningResource","name":"Hiragana summary table","description":"Comprehensive table of all sounds Hiragana to browse Fast.","learningResourceType":"reference","url":"https://mahdikarimian.ir/jp/hiragana_summary.php","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"},"author":{"@id":"https://mahdikarimian.ir/#person"},"isPartOf":{"@id":"https://mahdikarimian.ir/jp/#person"} ://mahdikarimian.ir/jp/#website"},"inLanguage":"fa-IR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mahdikarimian.ir/jp/"},{"@type":"ListItem","position":2,"name":"Summary Hiragana","item":"https://mahdikarimian.ir/jp/hiragana_summary.php"}]}]}
-b472c2db1cc594fef752c4719a644382	All basic katakana and combinations with audio pronunciation, video clip, romaji and Persian sample words; Along with the summary and search table.
-326e03ae47a0b08bbeb3c4d73263fb02	Learn katakana with audio pronunciation, video and sample words
+b472c2db1cc594fef752c4719a644382	All basic and combined katakana sounds with audio, stroke-order clips, romaji and sample words, plus a summary chart and in-page search.
+326e03ae47a0b08bbeb3c4d73263fb02	Katakana: sounds, stroke order and sample words
 2241a3c0dde3de261d7c66c1683b90ff	Write the phrase (katakana, romaji or meaning)...
 439203b3f466de4e5b1460ff4391da0f	{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mahdikarimian.ir/jp/#organization","name":"MK70","url":"https://mahdikarimian.ir/jp","logo":"https://mahdikarimian.ir/jp/assets/images/logo.jpg","sameAs":["https:// /t.me/LearnKyokushin","https://facebook.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/","https://instagram.com/kmahdi70"]},{"@type":"WebSite","@id":"https://mahdikarimian.ir/jp/#website","url":"https://mahdikarimian.ir/jp/","name":"Education JapanDocs Japanese language","description":"All basic katakana and combinations with audio pronunciation, video clip, romaji and Persian sample words; with summary and search table.","inLanguage":"fa-IR","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"}},{"@type":"Person","@id":"https://mahdikarimian.ir/#person","name":"Mahdi Karimian","alternateName":"MK70","url":"https://mahdikarimian.ir/","jobTitle":"Japanese language teacher, software engineer and Kyokushin karate instructor","sameAs":["https://t.me/LearnKyokushin","https://instagram.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/"]},{"@type":"LearningResource","name":"Learning Katakana","description":"Basic and combined katakana with pronunciation Audio, video and words Example.","learningResourceType":"lesson","educationalLevel":"beginner","url":"https://mahdikarimian.ir/jp/katakana.php","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"},"author":{"@id":"https://mahdikarimian.ir/#person"},"isPartOf":{"@id":"https://mahdikarimian.ir/jp/#organization"} r/jp/#website"},"inLanguage":"fa-IR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mahdikarimian.ir/jp/"},{"@type":"ListItem","position":2,"name":"Katakana","item":"https://mahdikarimian.ir/jp/katakana.php"}]}]}
 80a2edb94add49c7d0aa89ed886d5085	Comprehensive guide to katakana
@@ -1399,11 +1399,11 @@ d34a78be2a116b9f6ed8c83a782bb437	yogurt
 883da9f030cec923d470f0bbd919a6d8	user
 baff0df1fb4792a8e8f2fd165001671e	Men's shirt
 4d386104fe4e8aa1f31b5c131429d6a5	vaccine
-45c3cf2da1df0f97f0be00c7789efa0d	Compact katakana table for quick review: basic sounds, dakuten, handakuten and combinations on one page.
-288ea4701049481b70826bb378eb2346	Katakana summary table — quick overview of all sounds
+45c3cf2da1df0f97f0be00c7789efa0d	A compact katakana chart for quick review: basic sounds, dakuten, handakuten and combinations on one page.
+288ea4701049481b70826bb378eb2346	Katakana chart: quick review of every sound
 93687dccca3176c5f1d05f27b40ae80c	{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mahdikarimian.ir/jp/#organization","name":"MK70","url":"https://mahdikarimian.ir/jp","logo":"https://mahdikarimian.ir/jp/assets/images/logo.jpg","sameAs":["https:// /t.me/LearnKyokushin","https://facebook.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/","https://instagram.com/kmahdi70"]},{"@type":"WebSite","@id":"https://mahdikarimian.ir/jp/#website","url":"https://mahdikarimian.ir/jp/","name":"Education Japanese language JapanDocs","description":"Condensed katakana table for quick review: basic sounds, dakuten, handakuten and combinations on one page.","inLanguage":"fa-IR","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"}},{"@type":"Person","@id":"https://mahdikarimian.ir/#person","name":"Mahdi Karimian","alternateName":"MK70","url":"https://mahdikarimian.ir/","jobTitle":"Japanese language teacher, software engineer and Kyokushin karate instructor","sameAs":["https://t.me/LearnKyokushin","https://instagram.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/"]},{"@type":"LearningResource","name":"Katakana summary table","description":"Comprehensive table of all sounds Katakana for browsing Fast.","learningResourceType":"reference","url":"https://mahdikarimian.ir/jp/katakana_summary.php","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"},"author":{"@id":"https://mahdikarimian.ir/#person"},"isPartOf":{"@id":"https://mahdikarimian.ir/jp/#person"} ://mahdikarimian.ir/jp/#website"},"inLanguage":"fa-IR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mahdikarimian.ir/jp/"},{"@type":"ListItem","position":2,"name":"Summary Katakana","item":"https://mahdikarimian.ir/jp/katakana_summary.php"}]}]}
-52275945b8cad13966c084f4836a1ae3	Zhuyu kanji with Persian meaning, immediate and Koni reading, Romaji, grammar category, sample words and global search on the page.
-516c12a0ac41c11844206bf032c53d34	Learning kanji juyo with Farsi meaning, reading and romaji
+52275945b8cad13966c084f4836a1ae3	Joyo kanji with onyomi and kunyomi readings, romaji, meanings, word class, sample words and full-page search.
+516c12a0ac41c11844206bf032c53d34	Joyo kanji: readings, meanings and romaji
 f3a4e16ad11ae3f3aa98f7653bae871b	Write the phrase (kanji, reading or meaning)...
 ac9fce45a6e70e5b20828d0269a12f3a	Search all kanji on the page
 e47aba1277bbead7a7cfc80913b746bb	Search in this table...
@@ -7750,8 +7750,8 @@ fde2326671fae9a9ab61cf80b5a08a07	label.textContent = 'write order ' + chars;
 35efbf7b30b7b6eb14a9f7de535db264	/* groups of each table: each kanji is a group and the rows of its examples come together */
 f1e67c90e007c7fd3eeb7b8e5bb120a7	/* Empty the global search so that it doesn't get confused with the filter of this table */
 2f41086ae9cc186776fc047065192d69	/* Global search: searches the phrase in all kanji tables on the page */
-8cc944ec8349ca988ed87918874111b2	Japanese grammar reference from は and です to indefinite, conditional and polite: more than 70 N5 and N4 patterns with bilingual examples, Romaji and adjective and verb table.
-0e512004ff665f1232bddcb979181cb0	Japanese grammar from zero to N4: complete reference with Persian examples
+8cc944ec8349ca988ed87918874111b2	From は and です to passive, conditional and polite forms: over 70 N5 and N4 patterns with examples, romaji, and verb and adjective tables.
+0e512004ff665f1232bddcb979181cb0	Japanese grammar from zero to N4 with examples
 610e82815430c6dcf67bf16282819383	{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mahdikarimian.ir/jp/#organization","name":"MK70","url":"https://mahdikarimian.ir/jp","logo":"https://mahdikarimian.ir/jp/assets/images/logo.jpg","sameAs":["https:// /t.me/LearnKyokushin","https://facebook.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/","https://instagram.com/kmahdi70"]},{"@type":"WebSite","@id":"https://mahdikarimian.ir/jp/#website","url":"https://mahdikarimian.ir/jp/","name":"Education Japanese language JapanDocs","description":"Japanese grammar reference from は and です to indefinite, conditional and politeness: more than 70 N5 and N4 patterns with bilingual examples, Romaji and table of adjectives and verbs.","inLanguage":"fa-IR","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"}},{"@type":"Person","@id":"https://mahdikarimian.ir/#person","name":"Mahdi Karimian","alternateName":"MK70","url":"https://mahdikarimian.ir/","jobTitle":"Japanese language teacher, software engineer and Kyokushin karate instructor","sameAs":["https://t.me/LearnKyokushin","https://instagram.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/"]},{"@type":"LearningResource","name":"Japanese grammar","description":"Japanese grammar rules with bilingual examples and Farsi explanation.","learningResourceType":"Dress","educationalLevel":"beginner, intermediate","url":"https://mahdikarimian.ir/jp/grammar.php","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"},"author":{"@id":"https://mahdikarimian.ir/#person"},"isPartOf":{"@id":"https://mahdikarimian.ir/jp/#website"},"inLangua ge":"fa-IR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mahdikarimian.ir/jp/"},{"@type":"ListItem","position":2,"name":"Grammar","item":"https://mahdikarimian.ir/jp/grammar.php"}]}
 31a11e6547dfa8e15cd5ab5942606597	Abstract of Japanese grammar
 c0044a2d0c8abdc867cd9aff784c3cb4	Japanese grammar is summarized in ten short sections: from sentence order and basic particles to adjectives, the て form, order of events, and comparison. Each topic has a title and exactly two real examples to review at a glance. All examples are written in hiragana and katakana only, so they are readable with knowledge of hiragana and katakana page.
@@ -8612,8 +8612,8 @@ b2c05a1d46981f99ebd3f72ab8f2ed33	The adjective い never takes な
 3663f5f2f0fb239de65cc64381a3f5a6	The adjective な precedes the noun な
 446003353f09c762d265534bb44891fc	It needs the object を
 e3b8c66545cbac707342c87115f8484c	です and だ do not go together
-a6377fcaa3e676055e215e23b2fd07a2	List of 5000 everyday Japanese words categorized (family, time, food, health, etc.) with kanji, romaji, Persian meaning and quick search.
-5aef12c56cc4d83d935d29d9f58a180e	5000 commonly used Japanese words with kanji and Persian meaning
+a6377fcaa3e676055e215e23b2fd07a2	A categorized list of 5,000 everyday Japanese words (family, time, food, health and more) with kanji, romaji, meanings and quick search.
+5aef12c56cc4d83d935d29d9f58a180e	5,000 common Japanese words with kanji and romaji
 03a0088d40ca3d5c7c067738145743af	Write the phrase (kanji, kana, romaji or meaning)...
 e188f22c580870bea9612cc8554c824e	Search in this section (kanji, kana, romaji or meaning)...
 f9ec65594386a65f54df4127ddb7976d	{"@context":"https://schema.org","@graph":[{"@type":"Organization","@id":"https://mahdikarimian.ir/jp/#organization","name":"MK70","url":"https://mahdikarimian.ir/jp","logo":"https://mahdikarimian.ir/jp/assets/images/logo.jpg","sameAs":["https:// /t.me/LearnKyokushin","https://facebook.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/","https://instagram.com/kmahdi70"]},{"@type":"WebSite","@id":"https://mahdikarimian.ir/jp/#website","url":"https://mahdikarimian.ir/jp/","name":"Education Japanese language JapanDocs","description":"List of 5000 Japanese everyday words categorized (family, time, food, health, etc.) with kanji, romaji, Persian meaning and quick search.","inLanguage":"fa-IR","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"}},{"@type":"Person","@id":"https://mahdikarimian.ir/#person","name":"Mahdi Karimian","alternateName":"MK70","url":"https://mahdikarimian.ir/","jobTitle":"Japanese language teacher, software engineer and Kyokushin karate instructor","sameAs":["https://t.me/LearnKyokushin","https://instagram.com/kmahdi70","https://www.linkedin.com/in/mkarimian70/"]},{"@type":"LearningResource","name":"Common Japanese words","description":"5000 everyday Japanese words With kanji, romaji and Farsi meaning.","learningResourceType":"list Word","educationalLevel":"beginner","url":"https://mahdikarimian.ir/jp/words.php","publisher":{"@id":"https://mahdikarimian.ir/jp/#organization"},"author":{"@id":"https://mahdikarimian.ir/#person"},"isPartOf":{"@id":"https://mahdikarimian.ir/jp/#website"} ,"inLanguage":"fa-IR"},{"@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://mahdikarimian.ir/jp/"},{"@type":"ListItem","position":2,"name":"Words","item":"https://mahdikarimian.ir/jp/words.php"}]}]
@@ -11380,8 +11380,8 @@ bb07b426cc9ea9dc7ab9e6cdcdc3014c	remarkable
 365af4615633b9177b61cedf8dff7a9d	who (polite)
 7fc1242bd62f1a708e5131655681415a	Moeen
 10550283b1e181468ee29799d479a950	/* Play the pronunciation of the word with the speech engine of the operating system, the same format as hiragana and katakana pages */
-aab8f62430984881c3912bf1a40a9ce9	Frequently used Japanese sentences in 20 everyday situations (asking for directions, traveling, shopping, restaurants, etc.) with Romaji, Persian meaning and audio playback.
-a2547ec88b0095260564592eab412a0f	Daily Japanese conversations with Persian translation and audio pronunciation
+aab8f62430984881c3912bf1a40a9ce9	Common Japanese phrases for 20 everyday situations (greetings, travel, shopping, restaurants and more) with romaji, meanings and audio playback.
+a2547ec88b0095260564592eab412a0f	Everyday Japanese conversations with audio
 7b065ad4ade1d0fd8296ed79d947385c	Play the pronunciation of the sentence
 02c14e07dee9a82567eeb3de34600678	Write the phrase (Japanese, romaji or meaning)...
 05a76d5f279ee1f6a1749901eb8d7db2	Search in whole page sentences
@@ -12640,8 +12640,8 @@ a69156bd01a5480443de5c805f877f85	Complete kanji list
 4bcdfca374f2bb7a8adcd5f355ac213a	For interactive tables, audio, stroke order or in-page search use the
 5c9ba8588c7ae4cd2235a0354c0311a7	; it is lighter for everyday browsing and its rows arrive in chunks as you scroll.
 3d5e69aa6d43029191ad9d660ad72346	All kanji in one place:
-82be639ae05fbf312cecdbc793110411	Complete Jōyō kanji list with readings and Persian meanings
-0ae81fe36226e3964f607c4624a4f9fb	All Jōyō kanji on one page: kunyomi and onyomi readings, Persian and English meanings, grouped by category for quick review and search.
+82be639ae05fbf312cecdbc793110411	Complete joyo kanji list with readings and meanings
+0ae81fe36226e3964f607c4624a4f9fb	Every joyo kanji on one page: kunyomi and onyomi readings, English meanings, grouped by category for quick review and search.
 6424018ab5140bcfab1e4a17462862f6	All Jōyō kanji with kunyomi and onyomi readings and Persian and English meanings.
 ec107f66ca03b11f19173d22d5394e0b	Complete list of Japanese words
 ce2cf46bf7ecb86c5eeb2286ef9c0204	Complete word list
@@ -12649,9 +12649,20 @@ ce2cf46bf7ecb86c5eeb2286ef9c0204	Complete word list
 8820e37f158f8b55aa997468ed7055bf	This page shows every word of the site in one place: fifteen sections, each word with its kanji or kana, the kana reading, romaji and the Persian meaning. The rows are rendered by PHP, so every word is present in the page text for search engines to find.
 484639645f48e404ae7e0ddfce346436	For in-page search, pronunciation playback and section-by-section browsing use the
 a1c5a88438599a969aa0fd6fc4b26fc6	All words in one place:
-19d52046103716c2826bc84c9fe0c033	Complete list of 5000 common Japanese words with Persian meanings
-ef84671fe104aee6360657eff91374b5	All 5000 everyday Japanese words on one page: kanji, kana, romaji and Persian meanings, grouped into fifteen sections.
+19d52046103716c2826bc84c9fe0c033	Complete list of 5,000 common Japanese words
+ef84671fe104aee6360657eff91374b5	All 5,000 everyday Japanese words on one page: kanji, kana, romaji and meanings, grouped into fifteen sections.
 01ec6c604c4f554f45a12a66aedb1c00	All 5000 everyday Japanese words with kanji, kana, romaji and Persian meanings.
 15fbafcac2b366f9005df39f4f805c28	JavaScript is off; the rest of this table sits on one page:
 f0292ab053c6f220cf6462ed772e1cf2	JavaScript is off; the rest of this section sits on one page:
 5eda79841b68f55bd7b34ff7c6a6dd20	Show more
+5bb3e54d748121853dc2e4dbae78148a	Hiragana summary
+ea858043701d4c3c17762c676bb2a2ac	Katakana summary
+d3d51ee8f27ca0f7e7576510511df323	This page is a compact quick-reference for hiragana: every basic sound, dakuten, handakuten and combination in one place, without the extra explanation. Click any character to play its stroke-order clip here, and use the button beside it to hear the sound. Columns follow the vowels a, i, u, e, o and rows follow the ka, sa, ta, na, ha, ma, ya, ra and wa groups. For meanings, sample words and full explanations, see the hiragana lesson page.
+56ba58873f46c41a82e48dd9243a8d67	This page is a compact quick-reference for katakana: every basic sound, dakuten, handakuten and combination in one place, without the extra explanation. Click any character to play its stroke-order clip here, and use the button beside it to hear the sound. Katakana is mainly used for loanwords, names and sound effects, so this table is also handy for reading signs and restaurant menus. For meanings, sample words and full explanations, see the katakana lesson page.
+67cf2cb66507e2ccdb9ddc76284e4673	Back to hiragana
+4fffa38ff1f6d0f54a84897de8deddf0	Back to katakana
+085d5d7f92f372b0017d0f900fb7da38	The table on
+5f50ece73a008275e7cadf82a2f26622	this site
+1fdbfb070c7d2d9ff9ac0d1bed0007cb	was the basis for this page.
+c66e384268b1b1c3eefd95ff9d854cbb	Writing
+2b4ece48572a9c1fc3817e07668992fe	Learn Japanese: hiragana, katakana, kanji and grammar

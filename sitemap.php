@@ -21,14 +21,25 @@ $pages = [
 ];
 
 echo '<?xml version="1.0" encoding="UTF-8"?>', "\n";
-echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">', "\n";
+echo '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"', "\n";
+echo '        xmlns:xhtml="http://www.w3.org/1999/xhtml">', "\n";
 
 foreach ($pages as $path => $meta) {
     $file = $path === '' ? 'index.php' : $path;
     $time = @filemtime(__DIR__ . '/' . $file) ?: time();
 
+    /* همان سه نسخه‌ای که seo_head با تگ hreflang اعلام می‌کند */
+    $alternates = [
+        'fa'        => seo_url($path),
+        'en'        => seo_url($path) . '?lang=en',
+        'x-default' => seo_url($path),
+    ];
+
     echo '  <url>', "\n";
     echo '    <loc>', seo_e(seo_url($path)), '</loc>', "\n";
+    foreach ($alternates as $hreflang => $href) {
+        echo '    <xhtml:link rel="alternate" hreflang="', $hreflang, '" href="', seo_e($href), '"/>', "\n";
+    }
     echo '    <lastmod>', date('Y-m-d', $time), '</lastmod>', "\n";
     echo '    <changefreq>', $meta[1], '</changefreq>', "\n";
     echo '    <priority>', $meta[0], '</priority>', "\n";

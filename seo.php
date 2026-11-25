@@ -49,7 +49,6 @@ function seo_e(string $value): string
  *   'type'        => نوع og:type ('website' یا 'article'),
  *   'robots'      => برای صفحه‌های نتیجهٔ جست‌وجو: 'noindex, follow',
  *   'image'       => تصویر اشتراک‌گذاری،
- *   'site'        => true فقط در صفحهٔ اصلی (WebSite + SearchAction)،
  *   'jsonld'      => یک یا چند موجودیت schema.org برای همین صفحه،
  * ];
  */
@@ -123,20 +122,6 @@ function seo_head(array $o): void
         'inLanguage'  => $inLang,
         'publisher'   => ['@id' => $home . '#organization'],
     ];
-
-    /* فقط در صفحهٔ اصلی: جست‌وجوی داخلی به‌عنوان SearchAction معرفی می‌شود */
-    if (!empty($o['site'])) {
-        $website['potentialAction'] = [
-            [
-                '@type'       => 'SearchAction',
-                'target'      => [
-                    '@type'       => 'EntryPoint',
-                    'urlTemplate' => seo_url('index.php') . '?q={search_term_string}',
-                ],
-                'query-input' => 'required name=search_term_string',
-            ],
-        ];
-    }
 
     $graph[] = $website;
 

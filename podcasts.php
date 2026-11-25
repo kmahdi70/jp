@@ -87,7 +87,7 @@ function podcast_fa_num($value)
     <script defer src="assets/fontawesome/js/all.min.js"></script>
     <link rel="stylesheet" href="assets/plugins/simplelightbox/simple-lightbox.min.css">
     <link id="theme-style" rel="stylesheet" href="assets/css/theme.css">
-    <link rel="stylesheet" href="css/global.css?20261119f">
+    <link rel="stylesheet" href="css/global.css?20261121f">
     <link rel="stylesheet" href="css/podcasts.css?1795050000">
 </head>
 
@@ -112,12 +112,6 @@ function podcast_fa_num($value)
 
     <div class="docs-wrapper">
         <div id="docs-sidebar" class="docs-sidebar">
-            <div class="top-search-box d-lg-none p-3">
-                <form class="search-form">
-                    <input type="text" placeholder="Search the docs..." name="search" class="form-control search-input">
-                    <button type="submit" class="btn search-btn" value="Search"><i class="fas fa-search"></i></button>
-                </form>
-            </div>
             <nav id="docs-nav" class="docs-nav navbar">
                 <ul class="section-items list-unstyled nav flex-column pb-3">
                     <li class="nav-item section-title"><a class="nav-link scrollto" href="#section-1"><span class="theme-icon-holder me-2"><i class="fas fa-comments"></i></span>Conversations</a></li>
@@ -284,9 +278,8 @@ function podcast_fa_num($value)
     <script src="assets/plugins/gumshoe/gumshoe.polyfills.min.js"></script>
     <script src="assets/js/docs.js"></script>
     <script src="js/functions.js"></script>
+    <script src="js/search-clear.js"></script>
     <script>
-
-
         /* فیلتر سطرهای یک فهرست؛ تعداد سطرهای مانده را برمی‌گرداند */
         function FilterRows(rows, q) {
             var shown = 0;

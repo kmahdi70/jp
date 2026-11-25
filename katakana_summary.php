@@ -33,6 +33,12 @@ require_once __DIR__ . '/seo.php'; ?><!DOCTYPE html>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/common.css?v6">
     <link rel="stylesheet" href="css/kana.css">
+    <style>
+        .summary-title { direction: rtl; text-align: right; margin-bottom: 10px; }
+        .summary-intro { direction: rtl; text-align: right; max-width: 900px; margin: 0 auto 22px; padding: 0 15px; line-height: 1.9; color: #444; }
+        html[lang="en"] .summary-title,
+        html[lang="en"] .summary-intro { direction: ltr; text-align: left; }
+    </style>
 </head>
 
 <body>
@@ -40,12 +46,12 @@ require_once __DIR__ . '/seo.php'; ?><!DOCTYPE html>
         <div class="m_section_inner">
             <br>
             <div class="jp-top-utilities">
-                <a href="katakana.php" class="btn btn-success">Return To Katakana</a>
+                <a href="katakana.php" class="btn btn-success">بازگشت به کاتاکانا</a>
                 <?= jp_lang_switch() ?>
             </div>
             <br><br>
-            <h1>Katakana Summary</h1>
-            <br>
+            <h1 class="summary-title">جدول خلاصهٔ کاتاکانا</h1>
+            <p class="summary-intro">این صفحه مرور سریع و فشردهٔ کاتاکاناست: همهٔ صداهای پایه، داکوتن، هانداکوتن و ترکیب‌ها یک‌جا و بدون توضیح اضافه. با کلیک روی هر کاراکتر، کلیپ ترتیب نوشتن آن در همین صفحه پخش می‌شود و دکمهٔ کنارش صدای همان صدا را می‌خواند. کاتاکانا بیشتر برای نوشتن واژه‌های خارجی، نام‌ها و صداها به کار می‌رود؛ همین جدول برای خواندن تابلوها و منوی رستوران‌ها هم به کار می‌آید. برای معنی، واژه‌های نمونه و توضیح کامل هر صدا، صفحهٔ آموزش کاتاکانا را ببینید.</p>
             <div class="kana_list">
                 <div class="seidakuon">
                     <ul>
@@ -893,12 +899,12 @@ require_once __DIR__ . '/seo.php'; ?><!DOCTYPE html>
                             </ul>
                         </li>
                     </ul>
-                    <a href="katakana.php" class="btn btn-success">Return To Katakana</a>
+                    <a href="katakana.php" class="btn btn-success">بازگشت به کاتاکانا</a>
                     <br><br>
                 </div>
             </div>
-            <div style="text-align: center;">
-                This page is oriented from <a href="https://a1.marugotoweb.jp/en/katakana.php" style="text-decoration: underline;">this site</a>
+            <div style="text-align: center;" dir="rtl">
+                این صفحه بر پایهٔ جدول <a href="https://a1.marugotoweb.jp/en/katakana.php" style="text-decoration: underline;">این سایت</a> ساخته شده است.
             </div>
         </div>
     </section>
@@ -908,8 +914,8 @@ require_once __DIR__ . '/seo.php'; ?><!DOCTYPE html>
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h6 class="modal-title " id="exampleModalLabel">Drawing</h6>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    <h6 class="modal-title " id="exampleModalLabel">نوشتار</h6>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="بستن"></button>
                 </div>
                 <div class="modal-body">
                     <div class="row">

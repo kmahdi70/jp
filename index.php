@@ -13,12 +13,11 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
 <head>
     <meta charset="utf-8">
     <?php seo_head([
-        'title' => $search_q !== '' ? 'نتایج جست‌وجو برای «' . $search_q . '» | JapanDocs' : 'آموزش زبان ژاپنی از صفر: هیراگانا، کاتاکانا، کانجی، گرامر و واژه‌ها',
+        'title' => $search_q !== '' ? 'نتایج جست‌وجو برای «' . $search_q . '» | JapanDocs' : 'آموزش زبان ژاپنی: هیراگانا، کاتاکانا، کانجی و گرامر',
         'robots' => $search_q !== '' ? 'noindex, follow' : null,
         'description' => 'آموزش کامل زبان ژاپنی به فارسی: هیراگانا و کاتاکانا با تلفظ صوتی و فیلم، کانجی با معنی فارسی، گرامر، ۵۰۰۰ واژهٔ پرکاربرد و مکالمات روزمره.',
         'path' => '',
         'type' => 'website',
-        'site' => true,
         'jsonld' => [
             '@type' => 'CollectionPage',
             'name' => 'آموزش زبان ژاپنی',
