@@ -13,7 +13,9 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
 <head>
     <meta charset="utf-8">
     <?php seo_head([
-        'title' => $search_q !== '' ? 'نتایج جست‌وجو برای «' . $search_q . '» | JapanDocs' : 'آموزش زبان ژاپنی: هیراگانا، کاتاکانا، کانجی و گرامر',
+        'title' => $search_q !== ''
+            ? jp_bi('نتایج جست‌وجو برای «' . $search_q . '» | JapanDocs', 'Search results for «' . $search_q . '» | JapanDocs')
+            : 'آموزش زبان ژاپنی: هیراگانا، کاتاکانا، کانجی و گرامر',
         'robots' => $search_q !== '' ? 'noindex, follow' : null,
         'description' => 'آموزش کامل زبان ژاپنی به فارسی: هیراگانا و کاتاکانا با تلفظ صوتی و فیلم، کانجی با معنی فارسی، گرامر، ۵۰۰۰ واژهٔ پرکاربرد و مکالمات روزمره.',
         'path' => '',
@@ -82,13 +84,13 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
             <?php if ($search_results !== null): ?>
                 <section class="search-results rtl V" id="search-results" aria-live="polite">
                     <div class="sr-head">
-                        <button type="button" class="sr-close" onclick="CloseSearchResults()" aria-label="بستن نتایج جست‌وجو" title="بستن نتایج">&times;</button>
-                        <h2 class="sr-title">نتایج جست‌وجو برای «<?= htmlspecialchars($search_q, ENT_QUOTES, 'UTF-8') ?>»</h2>
+                        <button type="button" class="sr-close" onclick="CloseSearchResults()" aria-label="<?= jp_bi('بستن نتایج جست‌وجو', 'Close search results') ?>" title="<?= jp_bi('بستن نتایج', 'Close results') ?>">&times;</button>
+                        <h2 class="sr-title"><?= jp_bi('نتایج جست‌وجو برای «', 'Search results for «') ?><?= htmlspecialchars($search_q, ENT_QUOTES, 'UTF-8') ?>»</h2>
                         <?php if ($search_results['total'] > 0): ?>
                             <p class="sr-summary">
-                                <strong><?= number_format($search_results['total']) ?></strong> مورد در
-                                <strong><?= number_format(count($search_results['pages'])) ?></strong> بخش پیدا شد
-                                <span class="sr-time">(<?= $search_results['took'] ?> میلی‌ثانیه)</span>
+                                <strong><?= number_format($search_results['total']) ?></strong> <?= jp_bi('مورد در', 'results found in') ?>
+                                <strong><?= number_format(count($search_results['pages'])) ?></strong> <?= jp_bi('بخش پیدا شد', 'sections') ?>
+                                <span class="sr-time"><?= jp_bi('(' . $search_results['took'] . ' میلی‌ثانیه)', '(' . $search_results['took'] . ' ms)') ?></span>
                             </p>
                             <?php
                             $shown = 0;
@@ -97,11 +99,11 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                             }
                             ?>
                             <?php if ($shown < $search_results['total']): ?>
-                                <p class="sr-more">فقط <?= number_format($shown) ?> نتیجهٔ اول نمایش داده شده است؛ عبارت دقیق‌تری بنویسید تا فهرست کوتاه‌تر شود.</p>
+                                <p class="sr-more"><?= jp_bi('فقط', 'Only the first') ?> <?= number_format($shown) ?> <?= jp_bi('نتیجهٔ اول نمایش داده شده است؛ عبارت دقیق‌تری بنویسید تا فهرست کوتاه‌تر شود.', 'results are shown; write a more specific query to shorten the list.') ?></p>
                             <?php endif; ?>
                         <?php else: ?>
                             <p class="sr-summary sr-empty">
-                                چیزی پیدا نشد. املای دیگری را امتحان کنید؛ می‌توانید کانجی، کانا، روماجی یا معنی فارسی را بنویسید.
+                                <?= jp_bi('چیزی پیدا نشد. املای دیگری را امتحان کنید؛ می‌توانید کانجی، کانا، روماجی یا معنی فارسی را بنویسید.', 'Nothing found. Try a different spelling; you can search with kanji, kana or romaji.') ?>
                             </p>
                         <?php endif; ?>
                     </div>
@@ -111,18 +113,18 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
                             <h3 class="sr-page">
                                 <span class="sr-page-dot"></span>
                                 <?= $pg['name'] ?>
-                                <span class="sr-page-count"><?= number_format($pg['count']) ?> نتیجه</span>
+                                <span class="sr-page-count"><?= number_format($pg['count']) ?> <?= jp_bi('نتیجه', $pg['count'] == 1 ? 'result' : 'results') ?></span>
                             </h3>
                             <ul class="sr-list">
                                 <?php foreach ($pg['items'] as $item): ?>
                                     <li class="sr-item">
                                         <div class="sr-meta">
-                                            <?php if ($item['m'] !== ''): ?><span class="sr-menu"><?= htmlspecialchars($item['m'], ENT_QUOTES, 'UTF-8') ?></span><?php endif; ?>
-                                            <?php if ($item['s'] !== '' && $item['s'] !== $item['m']): ?><span class="sr-sep">›</span><span class="sr-sub"><?= htmlspecialchars($item['s'], ENT_QUOTES, 'UTF-8') ?></span><?php endif; ?>
+                                            <?php if ($item['m'] !== ''): ?><span class="sr-menu"><?= htmlspecialchars(jp_sr_show((string) $item['m']), ENT_QUOTES, 'UTF-8') ?></span><?php endif; ?>
+                                            <?php if ($item['s'] !== '' && $item['s'] !== $item['m']): ?><span class="sr-sep">›</span><span class="sr-sub"><?= htmlspecialchars(jp_sr_show((string) $item['s']), ENT_QUOTES, 'UTF-8') ?></span><?php endif; ?>
                                         </div>
-                                        <div class="sr-text"><?= jp_sr_highlight((string) $item['t'], $search_q) ?></div>
+                                        <div class="sr-text"><?= jp_sr_highlight(jp_sr_show((string) $item['t']), $search_q) ?></div>
                                         <a class="sr-link" href="<?= $pg['file'] ?>#<?= htmlspecialchars($item['a'], ENT_QUOTES, 'UTF-8') ?>">
-                                            رفتن به این بخش در صفحهٔ <?= $pg['name'] ?> <i class="fas fa-arrow-left"></i>
+                                            <?= jp_bi('رفتن به این بخش در صفحهٔ', 'Open this section in') ?> <?= jp_t((string) $pg['name']) ?> <i class="fas fa-arrow-left"></i>
                                         </a>
                                     </li>
                                 <?php endforeach; ?>

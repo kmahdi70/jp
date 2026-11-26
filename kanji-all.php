@@ -113,7 +113,7 @@ function jp_kanji_all_rows(array $items, bool $withEn): string
             <div class="container">
                 <article class="docs-article" id="section-1">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">فهرست کامل کانجی‌های ژویو <span class="badge bg-success count-badge"><?= $kanji_total ?> کانجی</span></h1>
+                        <h1 class="docs-heading V rtl">فهرست کامل کانجی‌های ژویو <span class="badge bg-success count-badge"><?= $kanji_total ?> <?= jp_bi('کانجی', 'kanji') ?></span></h1>
                     </header>
                     <section class="docs-intro V docs-section rtl">
                         <p class="text-justify">این صفحه همهٔ کانجی‌های سایت را یک‌جا و کامل نشان می‌دهد: دسته‌به‌دسته، با خوانش کونیومی (هیراگانا)، اونیومی (کاتاکانا)، معنی فارسی و انگلیسی. ردیف‌ها با PHP رندر شده‌اند و برای پیدا شدن هر کانجی در جست‌وجوی گوگل در متن صفحه حاضرند.</p>
@@ -125,7 +125,7 @@ function jp_kanji_all_rows(array $items, bool $withEn): string
                     $cat_has_en = jp_kanji_all_has_en($cat['items']); ?>
                     <article class="docs-article" id="section-<?= $i ?>">
                         <header class="docs-header">
-                            <h2 class="docs-heading V rtl"><?= $cat['title'] ?> <span class="badge bg-success count-badge"><?= count($cat['items']) ?> کانجی</span></h2>
+                            <h2 class="docs-heading V rtl"><?= $cat['title'] ?> <span class="badge bg-success count-badge"><?= count($cat['items']) ?> <?= jp_bi('کانجی', 'kanji') ?></span></h2>
                         </header>
                         <div class="table-responsive my-4">
                             <table class="table table-striped table-sm kanji-all-table rtl">

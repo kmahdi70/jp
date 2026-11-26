@@ -438,6 +438,58 @@ function jp_sr_search(string $q, int $perPage = 20, int $maxTotal = 150): array
     return $out;
 }
 
+/**
+ * متن یک سطر ایندکس برای نمایش.
+ *
+ * ایندکس عمداً یک نسخه و فارسی می‌ماند: ساختن ایندکس انگلیسی یعنی ترجمهٔ همهٔ
+ * داده‌های درس‌ها در زمان ساخت و یک کش دوم (دو برابر حجم و دو برابر زمان
+ * بازسازی) و در عوض جست‌وجوی فارسی در حالت انگلیسی از کار می‌افتد. هزینهٔ
+ * نمایشی بسیار کمتر است: در حالت انگلیسی هر قطعهٔ سطر که با « — » جدا شده
+ * جداگانه از همان دیکشنری ترجمه می‌شود، پس بریده‌ها و منو/زیرمنوی نتیجه هم
+ * انگلیسی دیده می‌شوند. قطعه‌ای که در دیکشنری نباشد دست‌نخورده می‌ماند،
+ * مثل بقیهٔ متن‌های صفحه‌ها.
+ */
+function jp_sr_show(string $text): string
+{
+    if ($text === '' || !function_exists('jp_is_en') || !jp_is_en()) {
+        return $text;
+    }
+    if (strpos($text, '—') === false) {
+        return jp_sr_show_piece($text);
+    }
+    /* فاصله‌های دو سر هر قطعه حفظ می‌شود تا قالب سطر دست‌نخورده بماند */
+    return preg_replace_callback('/[^—]+/u', static function (array $m): string {
+        if (preg_match('/^(\s*)(.*?)(\s*)$/su', $m[0], $p) && $p[2] !== '') {
+            return $p[1] . jp_sr_show_piece($p[2]) . $p[3];
+        }
+        return $m[0];
+    }, $text) ?? $text;
+}
+
+/**
+ * ترجمهٔ یک قطعهٔ سطر.
+ *
+ * بعضی سطرها برچسب و متن را در یک تکه دارند («تلفظ: …»، «نشانه گذاری: …») در
+ * حالی که دیکشنری برچسب و متن را جدا دارد؛ در این حالت دو نیمه جدا ترجمه و
+ * دوباره کنار هم گذاشته می‌شوند. اگر هر دو نیمه ترجمه نداشته باشند، قطعه
+ * دست‌نخورده می‌ماند.
+ */
+function jp_sr_show_piece(string $piece): string
+{
+    $en = jp_lookup($piece);
+    if ($en !== null) {
+        return $en;
+    }
+    if (preg_match('/^(.{1,30}?[:：])\s*(.+)$/su', $piece, $m)) {
+        $label = jp_lookup(trim($m[1]));
+        $rest  = jp_lookup(trim($m[2]));
+        if ($label !== null && $rest !== null) {
+            return $label . ' ' . $rest;
+        }
+    }
+    return $piece;
+}
+
 /** هایلایت عبارت جست‌وجوشده در متن سطر */
 function jp_sr_highlight(string $text, string $q): string
 {

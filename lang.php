@@ -116,6 +116,16 @@ function jp_t(string $fa): string
     return jp_lookup($fa) ?? $fa;
 }
 
+/**
+ * انتخاب متن فارسی یا انگلیسی برای جمله‌هایی که با متغیر ساخته می‌شوند
+ * (عدد، عبارت جست‌وجو، زمان). این‌ها در en.tsv نمی‌گنجند، چون کلید هر سطر آن
+ * md5 کل متن است و با عوض شدن عدد یا عبارت، کلید هم عوض می‌شود.
+ */
+function jp_bi(string $fa, string $en): string
+{
+    return jp_is_en() ? $en : $fa;
+}
+
 /** ترجمهٔ یک گرهٔ متنی با حفظ فاصله‌های دو سر */
 function jp_text(string $text): string
 {

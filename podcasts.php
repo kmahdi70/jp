@@ -367,7 +367,7 @@ function podcast_fa_num($value)
 
         function Speak(btn) {
             if (!('speechSynthesis' in window)) {
-                alert('مرورگر شما از پخش صدا پشتیبانی نمی‌کند.');
+                alert(<?= json_encode(jp_is_en() ? 'Your browser cannot play audio.' : 'مرورگر شما از پخش صدا پشتیبانی نمی‌کند.', JSON_UNESCAPED_UNICODE) ?>);
                 return;
             }
             var li = btn.closest('li');

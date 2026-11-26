@@ -104,7 +104,7 @@ function jp_words_all_rows(array $words): string
             <div class="container">
                 <article class="docs-article" id="section-1">
                     <header class="docs-header">
-                        <h1 class="docs-heading V rtl">فهرست کامل واژه‌های ژاپنی <span class="badge bg-success count-badge"><?= $words_total ?> واژه</span></h1>
+                        <h1 class="docs-heading V rtl">فهرست کامل واژه‌های ژاپنی <span class="badge bg-success count-badge"><?= $words_total ?> <?= jp_bi('واژه', 'words') ?></span></h1>
                     </header>
                     <section class="docs-intro V docs-section rtl">
                         <p class="text-justify">این صفحه همهٔ واژه‌های سایت را یک‌جا و کامل نشان می‌دهد: پانزده بخش، هر واژه با کانجی یا کانا، خواندن کانا، روماجی و معنی فارسی. ردیف‌ها با PHP رندر شده‌اند و برای پیدا شدن هر واژه در جست‌وجوی گوگل در متن صفحه حاضرند.</p>
@@ -117,7 +117,7 @@ function jp_words_all_rows(array $words): string
                     $wi++;
                 ?>
                     <section class="docs-section rtl V" id="item-2-<?= $wi ?>">
-                        <h2 class="section-heading V rtl"><?= $sec['title'] ?> <span class="Note">(<?= count($sec['words']) ?> واژه)</span></h2>
+                        <h2 class="section-heading V rtl"><?= $sec['title'] ?> <span class="Note">(<?= count($sec['words']) ?> <?= jp_bi('واژه', 'words') ?>)</span></h2>
                         <ul class="word-list">
                             <?= jp_words_all_rows($sec['words']) ?>
                         </ul>
