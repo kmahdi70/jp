@@ -7,9 +7,16 @@
  * تغییر کند، ایندکس خودکار بازسازی می‌شود.
  *
  * هر خط ایندکس: [صفحه، منو، زیرمنو، لنگر، متن، متنِ نرمال‌شده، تیترِ نرمال‌شده]
+ *
+ * برای جست‌وجوی انگلیسی، ایندکس تکرار نمی‌شود: کنارش یک نگاشت کوچک
+ * (search/en-map.tsv) نگه داشته می‌شود که هر واژهٔ انگلیسی را به قطعه‌های
+ * فارسی دارای همان ترجمه وصل می‌کند. عبارت انگلیسی با این نگاشت به چند
+ * عبارت فارسی برگردانده و روی همان ایندکس جست‌وجو می‌شود.
  */
 
-define('JP_SEARCH_VERSION', 5);
+define('JP_SEARCH_VERSION', 6);
+
+require_once __DIR__ . '/../lang.php';
 
 /* ---------------------------------------------------------------- تنظیمات */
 
@@ -33,6 +40,32 @@ function jp_sr_root(): string
 function jp_sr_cache_file(): string
 {
     return __DIR__ . '/cache.jsonl';
+}
+
+/** نگاشت واژهٔ انگلیسی ← قطعهٔ فارسی (فایل کوچک کنار ایندکس) */
+function jp_sr_en_map_file(): string
+{
+    return __DIR__ . '/en-map.tsv';
+}
+
+/** واژه‌های انگلیسی یک متن: کوچک، بی‌نقطه‌گذاری، بی‌واژه‌های دستوری */
+function jp_sr_en_tokens(string $text): array
+{
+    static $stop = null;
+    if ($stop === null) {
+        $stop = array_flip([
+            'the', 'a', 'an', 'of', 'to', 'in', 'on', 'and', 'or', 'is', 'are', 'be', 'it',
+            'that', 'this', 'for', 'with', 'as', 'at', 'by', 'from', 'not', 'no', 'you',
+            'your', 'we', 'our', 'they', 'their',
+        ]);
+    }
+    $out = [];
+    foreach (preg_split('/[^a-z0-9\']+/', strtolower($text), -1, PREG_SPLIT_NO_EMPTY) as $w) {
+        if (strlen($w) >= 2 && !isset($stop[$w])) {
+            $out[$w] = 1;
+        }
+    }
+    return array_keys($out);
 }
 
 /* ------------------------------------------------------------- نرمال‌سازی */
@@ -168,6 +201,8 @@ function jp_sr_sources_mtime(): int
         $root . '/grammar.php', $root . '/words.php', $root . '/podcasts.php',
         $root . '/hiragana/data.php', $root . '/katakana/data.php',
         $root . '/kanji/data.php', $root . '/words/data.php',
+        /* دیکشنری هم منبع است: با تغییر ترجمه‌ها نگاشت انگلیسی هم تازه می‌شود */
+        $root . '/lang/en.tsv',
     ];
     foreach (glob($root . '/podcasts/*.php') ?: [] as $f) {
         $files[] = $f;
@@ -304,7 +339,107 @@ function jp_sr_build(): array
     ];
 
     jp_sr_write_cache($meta, $rows);
+    jp_sr_en_map_build($rows);
     return $meta;
+}
+
+/**
+ * ساخت نگاشت واژهٔ انگلیسی ← قطعهٔ فارسی از همان سطرهای ایندکس.
+ *
+ * فقط یک فایل خطی کوچک است؛ ایندکس تکراری ساخته نمی‌شود و برای هر واژه
+ * همهٔ قطعه‌هایی که ترجمه‌شان آن واژه را دارد نگه داشته می‌شود.
+ */
+function jp_sr_en_map_build(array $rows): void
+{
+    $map = [];
+    foreach ($rows as $row) {
+        $pieces = array_merge([$row[1], $row[2]], preg_split('/—/u', $row[4]) ?: []);
+        foreach ($pieces as $piece) {
+            $piece = trim($piece);
+            if ($piece === '' || !preg_match(JP_FA_RE, $piece)) {
+                continue;
+            }
+            $en = jp_dict_text($piece);
+            if ($en === null) {
+                continue;
+            }
+            foreach (jp_sr_en_tokens($en) as $word) {
+                $map[$word][$piece] = 1;
+            }
+        }
+    }
+    ksort($map);
+
+    $file = jp_sr_en_map_file();
+    $tmp = $file . '.tmp';
+    $fh = @fopen($tmp, 'wb');
+    if (!$fh) {
+        return;
+    }
+    foreach ($map as $word => $set) {
+        fwrite($fh, $word . "\t" . implode('|', array_keys($set)) . "\n");
+    }
+    fclose($fh);
+    if (is_file($file)) {
+        @unlink($file);
+    }
+    @rename($tmp, $file);
+}
+
+/**
+ * عبارت انگلیسی ← قطعه‌های فارسی.
+ *
+ * هر واژهٔ عبارت در نگاشت جست‌وجو می‌شود و قطعه‌هایی می‌مانند که ترجمه‌شان همهٔ
+ * واژه‌ها را دارد؛ پس «family member» فقط قطعه‌های دقیق‌تر را می‌گیرد.
+ */
+function jp_sr_en_terms(string $q): array
+{
+    $tokens = jp_sr_en_tokens($q);
+    if (!$tokens) {
+        return [];
+    }
+    $need = array_flip($tokens);
+    $sets = [];
+    $fh = @fopen(jp_sr_en_map_file(), 'rb');
+    if (!$fh) {
+        return [];
+    }
+    while (($line = fgets($fh)) !== false) {
+        $tab = strpos($line, "\t");
+        if ($tab === false) {
+            continue;
+        }
+        $word = substr($line, 0, $tab);
+        if (!isset($need[$word])) {
+            continue;
+        }
+        $sets[$word] = array_flip(explode('|', rtrim(substr($line, $tab + 1))));
+        if (count($sets) === count($need)) {
+            break;
+        }
+    }
+    fclose($fh);
+    if (count($sets) !== count($need)) {
+        return [];
+    }
+
+    /* قطعه‌ای که همهٔ واژه‌ها را دارد دقیق‌ترین جواب است؛ اگر نبود (مثل
+       «family member» که در داده یک قطعه نیست) از نادرترین واژه استفاده می‌شود */
+    $common = null;
+    foreach ($sets as $set) {
+        $common = $common === null ? $set : array_intersect_key($common, $set);
+    }
+    if ($common) {
+        return array_keys($common);
+    }
+
+    $rarest = null;
+    foreach ($sets as $set) {
+        if ($rarest === null || count($set) < count($rarest)) {
+            $rarest = $set;
+        }
+    }
+    return array_keys($rarest ?? []);
 }
 
 function jp_sr_write_cache(array $meta, array $rows): void
@@ -335,7 +470,7 @@ function jp_sr_ready(): array
     $file = jp_sr_cache_file();
     $src = jp_sr_sources_mtime();
 
-    if (is_file($file)) {
+    if (is_file($file) && is_file(jp_sr_en_map_file())) {
         $fh = @fopen($file, 'rb');
         if ($fh) {
             $first = (string) fgets($fh);
@@ -369,6 +504,21 @@ function jp_sr_search(string $q, int $perPage = 20, int $maxTotal = 150): array
 
     jp_sr_ready();
 
+    /*
+     * عبارت انگلیسی (بدون حرف فارسی) با نگاشت به قطعه‌های فارسی برگردانده
+     * می‌شود؛ جست‌وجوی فارسی و کانا و روماجی مثل قبل کار می‌کند.
+     */
+    $enTerms = [];
+    if (!preg_match(JP_FA_RE, $q)) {
+        foreach (array_slice(jp_sr_en_terms($q), 0, 400) as $term) {
+            $norm = jp_sr_norm($term);
+            if ($norm !== '') {
+                $enTerms[$norm] = 1;
+            }
+        }
+        $enTerms = array_keys($enTerms);
+    }
+
     $hits = [];
     $seenAnchor = [];
     $pageTotals = [];
@@ -384,6 +534,14 @@ function jp_sr_search(string $q, int $perPage = 20, int $maxTotal = 150): array
             }
             [$p, $m, $s, $a, $t, $n, $h] = $row;
             $inText = strpos($n, $qn) !== false;
+            if (!$inText && $enTerms) {
+                foreach ($enTerms as $term) {
+                    if (strpos($n, $term) !== false) {
+                        $inText = true;
+                        break;
+                    }
+                }
+            }
             $inHead = !$inText && strpos($h, $qn) !== false;
 
             if ($inText) {

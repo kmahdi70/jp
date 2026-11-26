@@ -94,12 +94,14 @@ function jp_dict(): array
 }
 
 /**
- * ترجمهٔ یک متن فارسی؛ null اگر ترجمه‌ای نباشد.
- * نخست خود متن و بعد نسخهٔ فاصله‌های یکسان‌شده جست‌وجو می‌شود.
+ * ترجمهٔ یک متن از دیکشنری، بی‌توجه به زبان جاری صفحه.
+ *
+ * jp_lookup برای نمایش است و در حالت فارسی چیزی برنمی‌گرداند؛ این تابع برای
+ * ساخت نگاشت جست‌وجوی انگلیسی است که همیشه به هر دو زبان نیاز دارد.
  */
-function jp_lookup(string $fa): ?string
+function jp_dict_text(string $fa): ?string
 {
-    if (!jp_is_en() || $fa === '') {
+    if ($fa === '') {
         return null;
     }
     $flat = trim(preg_replace('/\s+/u', ' ', $fa));
@@ -108,6 +110,18 @@ function jp_lookup(string $fa): ?string
     }
     $dict = jp_dict();
     return $dict[md5($fa)] ?? $dict[md5($flat)] ?? null;
+}
+
+/**
+ * ترجمهٔ یک متن فارسی؛ null اگر ترجمه‌ای نباشد.
+ * نخست خود متن و بعد نسخهٔ فاصله‌های یکسان‌شده جست‌وجو می‌شود.
+ */
+function jp_lookup(string $fa): ?string
+{
+    if (!jp_is_en()) {
+        return null;
+    }
+    return jp_dict_text($fa);
 }
 
 /** ترجمهٔ یک متن؛ اگر ترجمه نبود همان متن */

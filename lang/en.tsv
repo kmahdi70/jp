@@ -12680,8 +12680,8 @@ bc3b82c5eef5f47fbd670f6279a2fc1a	Katakana chart
 7b05eecc12c1c1af4ca8f47fa580eeb4	Kanji table
 834246b29f438fd69053809da70025f5	Appendix
 bfa5b7a1b11a317bb4930c4663a8e4d8	Complete jōyō list
-6479ea807d4175bddf9a65f2774fa09a	Hiragana summary (click the characters to hear them)
-dcffe77f0c738d952d8f4a234723506b	Katakana summary (click the characters to hear them)
+6479ea807d4175bddf9a65f2774fa09a	Summary of hiragana (click on the text to play the sound)
+dcffe77f0c738d952d8f4a234723506b	Summary of katakana (click on the text to play the sound)
 c170c508b6fbb3058099b9f82d15124b	Section 1
 cd45426afe7b1ca2018ab588e6312f2d	Sentences and basic particles
 f64623be8997070304a6fc1b42531a81	Section 2
@@ -12697,14 +12697,14 @@ bd924b90a95450d530f21a62b66c73f2	Existence and counting
 b8968147af7b810dac27ce51f955e474	Section 7
 833b2a36ee646e81eb50f32d5d1b7d5b	Wanting and ability
 c0b2715480a7c8eb722e0e8aedfd909d	Section 8
-8003ce9b454a478349da69b41f32cecc	The て form and linking sentences
+8003ce9b454a478349da69b41f32cecc	The て-form and linking sentences
 daaea137e57dcb50a311583e1561e405	Section 9
 e3621cda8abcb91d6a475f543539861d	Order of events
 cdfb7afaa5ba1e01dc08bfcbc237ccb8	Section 10
 9eae0c181681f7eb1f283fed76120010	Comparison and opinion
 aecd3d07ecd233dd9fc59b71d9f0e757	2. The particle の
 ff7e8752becfe8a82124f55a47d6a8d0	Possession and connection
-9d373b67569b1a00b4af332ca8d5986b	No, it isn't.
+9d373b67569b1a00b4af332ca8d5986b	No, that's not right.
 ae05ffe9e1d74d01d403ed97871fbf47	Are you Mr. Miller?
 a6676beedefc15f6a7aacce889d5ce43	Yes, I am Miller.
 d88423a62ab353babeec5f71191fa94e	Are you Japanese?
@@ -12720,7 +12720,7 @@ b8f6cb59ec5a4c6a8d9a170fe21960db	How old is your father?
 bed7ed7fea8abb45f7d853b5de9eb9f1	What is your name?
 d3b95da1a9828d34abfb899a5f24fc05	Mike Miller.
 64f15119d7388fc05aa827d23d777320	What do you do?
-27af96a2c54cdb4863d85a5f2c2fd476	I'm from America.
+27af96a2c54cdb4863d85a5f2c2fd476	I came from America.
 f01201a44d2c0677fd637089728de056	Australia.
 d267daaad4fa9564b00dfb4740c62eba	Whose bag is this?
 60272d2d38db6909d488eaeb49c4c815	Mine.
@@ -12728,7 +12728,7 @@ d267daaad4fa9564b00dfb4740c62eba	Whose bag is this?
 40e50eb36667f3558e890f099989db9f	Mr. Miller's.
 64eea6b7c70c3c2824413f8dbbb0b41f	Is this book yours?
 286152f0b190460b258c827a54ea00db	Yes, it's mine.
-fec3987238dfd3da0b0bda1601601e31	From what time until what time?
+fec3987238dfd3da0b0bda1601601e31	From what time to what time?
 1dabdf2ff1b2754ba759b665c5bae3a9	From nine to five.
 be4cfae9e86adcb654327c084848e1fd	Who is it?
 a7ad0772e40b7cadcd0c2471c0e72538	Mr. Miller.
@@ -12738,19 +12738,19 @@ d0e651f1ab2dc267d6a097dddfd30277	What is your phone number?
 eeca3fa8b44313edd383921b02fea3f6	090 1234 5678.
 b97f5c876c284a849a3054ba50eb9f53	The second floor.
 7cfcdc5b2e2873f9523b5e0c24ee736a	How many people are in the class?
-d44c2fa8358a7d1fe40cfebc99aeaa19	Ten.
-b463de99b9ee9e84ad8cbed937a90b2b	9. The て form
-0fa8a074c83764c368f26026253605ca	Forming and requesting
+d44c2fa8358a7d1fe40cfebc99aeaa19	Ten people.
+b463de99b9ee9e84ad8cbed937a90b2b	9. て-form
+0fa8a074c83764c368f26026253605ca	Formation and requests
 0d68b3677b8dca2255267db99244e908	10. ています
 86bc918579847bcd5beebbc002fe5503	Ongoing action and state
-92e4ae3c81c326aeece4f5c4bc6668da	4. The た form
+92e4ae3c81c326aeece4f5c4bc6668da	4. た-form
 423040f3a8af2f1d5ccb601ef4c88b29	Experience, sequence and recency
 926a33b3b0168a907e1e46574f50491c	5. ながら
-3e3909fc0e324dea8e31271bd143b522	While doing
+3e3909fc0e324dea8e31271bd143b522	At the same time as
 4620e58c94608ff4fb6359b4f71e4d2f	6. とき and あいだ
 7676afd14d46a2a70355a27aa3a9d9df	12. そうです
 6ab74a187e12b169e84ba685ca148b16	It seems
-b0f2f260e41e0139523f5b8b97e7b81e	What happened?
+b0f2f260e41e0139523f5b8b97e7b81e	What's wrong?
 603c67d5b977c74967b4a502a9674bdc	I have a slight fever.
 849f34769ff75ccaf69779f4d40a69ba	Why did you take time off?
 9aee2a7d9c42d2ec07cca4fb3d5ac929	I had something to do.
@@ -12762,11 +12762,11 @@ be44047a07aeffd472ca5695f3cbb777	5. Passive (受身)
 882441b11647c749a0b178f897137b76	7. Causative (使役)
 49f018ee63377c8002049a14ca70be42	Making and letting
 ed0802305dd37ad6145e1b745794f174	8. Causative passive (使役受身)
-816958c046d810d883690610ae63c766	I was made to
+816958c046d810d883690610ae63c766	I was forced to
 d646c790966d0a85b15f25e4d803abbd	9. Conditional ば
 4b5da9a00d3ec338fa87c545bdb602e5	If …
 00cac6f0f67005fc1ff05d9bd396014c	10. なら
-d2fc73bc7f8181606a83082ff71c3d1c	If it is about …
+d2fc73bc7f8181606a83082ff71c3d1c	If you mean …
 48942dfb76a360bda7436b2cab9f0a9e	11. ても
 af4e05ed4878170168d3313702ab4a6b	Even if
 444493af464316dad4e0cc3ee94d9f6e	12. はずです
@@ -12774,7 +12774,7 @@ af4e05ed4878170168d3313702ab4a6b	Even if
 b6eb5d37225fa19be85cc607252d22eb	14. そうです
 d4a9c931dad6d9f175e6036881bc78ed	I heard that …
 7a869dde98c3787012b61e0c66d53241	15. ところです
-fa638274485b28b683731f7ed4fe725a	Right now, just before, just
+fa638274485b28b683731f7ed4fe725a	Right now, about to, just now
 29758b523ecda7fcd65bfa6b1e5a3205	16. ばかり and だけ
 898fd210e385c135dd10f5dde09b9eab	Only and just
 fd6510b5a22ddd5dd1df2d45c6d417ff	2. 〜し、〜し
@@ -12789,7 +12789,7 @@ c6d16daacb8a946793b411448b4dd065	6. たびに
 0af5141c5acba624e4aaa705c85fcaec	7. 〜ば〜ほど
 69274ffa6190c391e7d4e02380e13e6e	The more …
 9ff55904b7c744fe3b689d4c95603e90	8. くらい and ほど
-a1dfa4ad32b39b5ac983a60b320bd57d	Approximate extent
+a1dfa4ad32b39b5ac983a60b320bd57d	Approximation and degree
 9346217b297a698f28be77ac753ca818	9. によって / による
 b4948fa875cc23dab6dd4c29db8dc495	Depending on, by
 94220492020003ef7388a29fe8d8592f	10. に対して
@@ -12813,5 +12813,5 @@ b874a14e49c2e27e2e175bde31e28652	2. Adjectives
 662e744480873addc953ab0b9276e395	4. Levels of politeness
 755617bcac21ab96a8a0b489ea2ed923	From plain to humble
 aa21b255a68a39a5c57dc8783bb3a6ae	Purple, violet
-82882e5acac47913c8d7b327fbbb5872	Indigo, warship
+82882e5acac47913c8d7b327fbbb5872	Dark blue, navy
 d3b962e475ece5611ec251b1971f7ce3	Indigo
