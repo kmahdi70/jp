@@ -39,6 +39,24 @@ function seo_e(string $value): string
 }
 
 /**
+ * ترجمهٔ متن‌های فارسی دادهٔ ساختاریافته.
+ *
+ * فیلتر خروجی jp/lang.php بلوک‌های script را دست نمی‌زند، پس گراف پیش از
+ * json_encode از همان دیکشنری رد می‌شود. در حالت فارسی jp_t متن را دست‌نخورده
+ * برمی‌گرداند، پس فراخوانی آن همیشه بی‌خطر است. زبان (inLanguage) از $inLang
+ * می‌آید و اینجا کاری با آن نیست.
+ */
+function seo_jsonld_translate(array $graph): array
+{
+    array_walk_recursive($graph, static function (&$value): void {
+        if (is_string($value)) {
+            $value = jp_t($value);
+        }
+    });
+    return $graph;
+}
+
+/**
  * چاپ همهٔ تگ‌های سئو در <head>.
  *
  * $o = [
@@ -168,6 +186,8 @@ function seo_head(array $o): void
             ],
         ];
     }
+
+    $graph = seo_jsonld_translate($graph);
 
     $lines[] = '<script type="application/ld+json">' . json_encode(
         ['@context' => 'https://schema.org', '@graph' => $graph],

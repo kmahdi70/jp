@@ -22,7 +22,6 @@ $search_results = $search_q !== '' ? jp_sr_search($search_q) : null;
             '@type' => 'CollectionPage',
             'name' => 'آموزش زبان ژاپنی',
             'description' => 'آموزش کامل زبان ژاپنی به فارسی: هیراگانا و کاتاکانا با تلفظ صوتی و فیلم، کانجی با معنی فارسی، گرامر، ۵۰۰۰ واژهٔ پرکاربرد و مکالمات روزمره.',
-            'inLanguage' => 'fa-IR',
         ],
     ]); ?>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
